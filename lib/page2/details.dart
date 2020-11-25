@@ -96,9 +96,9 @@ and functional Mobile Applications/Software.''',
     );
   }
 }
-var logo = new SvgPicture.asset(
-  'assets/images/candle.svg',
-  height: 20.0,
-  width: 20.0,
-  allowDrawingOutsideViewBox: true,
-),
+// var logo = new SvgPicture.asset(
+//   'assets/images/candle.svg',
+//   height: 20.0,
+//   width: 20.0,
+//   allowDrawingOutsideViewBox: true,
+// ),
