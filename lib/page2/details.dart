@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:travis_ugo/Home/home.dart';
 
@@ -88,7 +89,11 @@ and functional Mobile Applications/Software.''',
               height: 450,
               width: 500,
               //padding: EdgeInsets.all(50),
-              child: Image.asset('assets/undraw_mobile_web_2g8b.png'),
+              child: SvgPicture.asset(
+                'assets/undraw.svg',
+                height: 50,
+                color: Colors.green,
+              ), //Image.asset(),
             ),
           ],
         ),
