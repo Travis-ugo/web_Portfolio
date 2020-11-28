@@ -18,6 +18,8 @@ class Data extends StatefulWidget {
 class _DataState extends State<Data> {
   @override
   Widget build(BuildContext context) {
-    return Column();
+    return Column(
+      children: [],
+    );
   }
 }

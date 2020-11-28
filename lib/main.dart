@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Home/home.dart';
-import 'package:travis_ugo/To%20Do/Services.dart';
-
-import 'page2/details.dart';
+import 'package:travis_ugo/ToDo/Services.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Details(),
+      home: Services(),
     );
   }
 }

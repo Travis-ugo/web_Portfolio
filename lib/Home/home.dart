@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -13,7 +12,7 @@ class Home extends StatelessWidget {
           children: [
             NavBar(),
             SizedBox(height: 130),
-            Body(),
+            Hody(),
           ],
         ),
       ),
@@ -63,7 +62,7 @@ class NavBar extends StatelessWidget {
   }
 }
 
-class Body extends StatelessWidget {
+class Hody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(

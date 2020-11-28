@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:travis_ugo/Home/home.dart';
+import 'images.dart';
+
+class MiddleChild extends StatelessWidget {
+  final Widget child;
+  const MiddleChild({Key key, this.child}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.fromLTRB(80, 80, 0.0, 80),
+      alignment: Alignment.topCenter,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: 1200),
+        child: child,
+      ),
+    );
+  }
+}
 
 class Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: CenteredView(child: Body()),
+      body: MiddleChild(child: Body()),
     );
   }
 }
@@ -80,30 +95,23 @@ and functional Mobile Applications/Software.''',
             ),
           ],
         ),
-        SizedBox(width: 150),
+        SizedBox(width: 100),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
-              height: 450,
-              width: 500,
-              //padding: EdgeInsets.all(50),
-              child: SvgPicture.asset(
-                'assets/undraw.svg',
-                height: 50,
                 color: Colors.green,
-              ), //Image.asset(),
-            ),
+                height: 500,
+                width: 600,
+                child: MyHomePage()
+                //     Image(
+                //   image: AssetImage('undraw_Devices_re_dxae.png'),
+                // ),
+                ),
           ],
         ),
       ],
     );
   }
 }
-// var logo = new SvgPicture.asset(
-//   'assets/images/candle.svg',
-//   height: 20.0,
-//   width: 20.0,
-//   allowDrawingOutsideViewBox: true,
-// ),
