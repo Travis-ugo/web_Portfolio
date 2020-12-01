@@ -57,23 +57,25 @@ class _MyHomePageState extends State<MyHomePage>
       autoSlide: true,
 
       /// Time for automatic sliding
-      duration: new Duration(seconds: 6),
+      duration: new Duration(seconds: 4),
 
       /// If manual sliding is required
       /// allowManualSlide: true,
 
       /// Children in slideView to slide
-      children: links.map((String link) {
-        return new ClipRRect(
-          borderRadius: BorderRadius.circular(8.0),
-          child: Image.asset(
-            link,
-            width: MediaQuery.of(context).size.width,
-            // height: 220,
-            fit: BoxFit.fill,
-          ),
-        );
-      }).toList(),
+      children: links.map(
+        (String link) {
+          return new ClipRRect(
+            borderRadius: BorderRadius.circular(8.0),
+            child: Image.asset(
+              link,
+              width: MediaQuery.of(context).size.width,
+              // height: 220,
+              fit: BoxFit.fill,
+            ),
+          );
+        },
+      ).toList(),
     );
   }
 }
