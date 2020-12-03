@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
-import 'Home/home.dart';
-import 'page2/details.dart';
+import '../Home/home.dart';
+import '../page2/details.dart';
 
 class FooterPage extends StatefulWidget {
   @override

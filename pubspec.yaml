@@ -35,7 +35,8 @@ dependencies:
   simple_slider: ^0.0.2
   image_slider: ^1.0.2
   footer: ^0.0.3
-  
+  carousel_slider: ^2.3.1
+
 
 dev_dependencies:
   flutter_test:
@@ -69,13 +70,13 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Montserrat
+    - family: ProximaSoft
       fonts:
-        - asset: fonts/Montserrat-Regular.ttf
-        - asset: fonts/Montserrat-Bold.ttf
-        - asset: fonts/Montserrat-Regular.ttf
-        - asset: fonts/Montserrat-Medium.ttf
-        - asset: fonts/Montserrat-SemiBold.ttf
+        - asset: fonts/ProximaSoft-Regular.ttf
+        - asset: fonts/ProximaSoft-Bold.ttf
+        - asset: fonts/ProximaSoft-Regular.ttf
+        - asset: fonts/ProximaSoft-Medium.ttf
+        - asset: fonts/ProximaSoft-SemiBold.ttf
           style: italic
   #   - family: Trajan Pro
   #     fonts:

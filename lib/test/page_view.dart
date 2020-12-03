@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
-import 'Footer/footer.dart';
-import 'Home/home.dart';
-import 'ToDo/Services.dart';
-import 'page2/details.dart';
+import '../Footer/footer.dart';
+import '../Home/home.dart';
+import '../ToDo/Services.dart';
+import '../page2/details.dart';
 
 class Views extends StatelessWidget {
   @override

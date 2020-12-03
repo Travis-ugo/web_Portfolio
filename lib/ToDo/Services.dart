@@ -1,7 +1,48 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:travis_ugo/Home/home.dart';
 
-class Services extends StatelessWidget {
+// final List<Port> info = [
+//   Port(title: 'Fine grary', subtitle: 'agricultural wEbsite', img: 'agro.jpg'),
+//   Port(
+//       title: 'NetFlix Redesign',
+//       subtitle: 'A Redesign of Netflix',
+//       img: 'net.jpg'),
+//   Port(
+//       title: 'Love Ink', subtitle: 'A Ui Design for love', img: 'download.jpg'),
+//   Port(
+//       title: 'Flutter For Web',
+//       subtitle: 'A flutter Design for web',
+//       img: 'intro.dart'),
+// ];
+
+final List<String> info = [
+  'assets/black.jpg',
+  'assets/agro.jpg',
+  'assets/download.jpg',
+  'assets/intro.png',
+  'assets/undraw_mobile.png',
+  'assets/agro.jpg',
+  'assets/undraw_Devices_re_dxae.png',
+  'assets/undraw_mobile.png',
+];
+
+final List<Widget> imageSliders = info
+    .map((corn) => Container(
+          height: 300,
+          width: 300,
+          child: Card(
+            child: Image.asset(corn, fit: BoxFit.cover, width: 300.0),
+          ),
+        ))
+    .toList();
+
+class Services extends StatefulWidget {
+  @override
+  _ServicesState createState() => _ServicesState();
+}
+
+class _ServicesState extends State<Services> {
   @override
   Widget build(BuildContext context) {
     return CenteredView(
@@ -12,78 +53,50 @@ class Services extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0.0,
         ),
-        body: Row(
-          children: [
-            Column(
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('homeboy'),
-                  ],
-                ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 90),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 170,
-                        width: 260,
-                        child: Card(
-                          color: Colors.blue,
-                          child: Image(
-                            image: AssetImage(
-                                'assets/undraw_Mobile_application_mr4r.svg'),
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 200,
-                        width: 290,
-                        child: Card(
-                          color: Colors.blue,
-                          child: Image(
-                            image:
-                                AssetImage('assets/undraw_Devices_re_dxae.png'),
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 170,
-                        width: 260,
-                        child: Card(
-                          color: Colors.blue,
-                          child: Image(
-                            image: AssetImage('assets/undraw.svg'),
-                            //fit: BoxFit.fill,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
+        body: Center(
+          child: Container(
+            color: Colors.green,
+            height: 400,
+            width: 600,
+            child: Love(),
+          ),
         ),
       ),
     );
   }
 }
 
-// Container(
-//         color: Colors.blue,
-//         height: 500,
-//         width: MediaQuery.of(context).size.width,
-//         child: Center(child: Text('lolo')),
-//       ),
+class Love extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            height: 200,
+            width: 600,
+            child: CarouselSlider(
+              options: CarouselOptions(
+                autoPlay: true,
+                autoPlayAnimationDuration: Duration(seconds: 4),
+                aspectRatio: 2.0,
+                enlargeCenterPage: true,
+                disableCenter: true,
+              ),
+              items: imageSliders,
+            ),
+          ),
+          Text("love"),
+        ],
+      ),
+    );
+  }
+}
+
+class Call extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CustomScrollView();
+  }
+}
