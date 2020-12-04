@@ -16,7 +16,6 @@ class Views extends StatelessWidget {
       children: [
         Home(),
         Details(),
-        Services(),
       ],
     );
   }

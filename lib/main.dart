@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Footer/footer.dart';
 
+import 'Skills/skills.dart';
 
 void main() {
   runApp(MyApp());
