@@ -22,7 +22,7 @@ class Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Color(0xFFF8FDFF),
       body: MiddleChild(child: Body()),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Home/home.dart';
+import 'Footer/footer.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: Land(),
     );
   }
 }

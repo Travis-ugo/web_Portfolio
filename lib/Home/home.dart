@@ -5,7 +5,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Color color = Color(0xFFFAFDFF);
+    Color color = Color(0xFFF4FAFD);
     return Scaffold(
       backgroundColor: color,
       body: CenteredView(
@@ -56,12 +56,12 @@ class NavBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('Blog', style: text),
-        SizedBox(width: 100),
-        Text('About', style: text),
-        SizedBox(width: 100),
+        Text('Portfolio', style: text),
+        SizedBox(width: 80),
+        Text('Resume', style: text),
+        SizedBox(width: 80),
         Text('Contact', style: text),
-        SizedBox(width: 100),
+        SizedBox(width: 80),
         Icon(
           MdiIcons.moonWaxingCrescent,
           color: Colors.black54,
@@ -150,9 +150,9 @@ class Hody extends StatelessWidget {
                       child: Text(
                         "Explore",
                         style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'ProximaSoft-Bold.ttf',
-                          color: Colors.blue,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'ProximaSoft-SemiBold.ttf',
+                          color: Colors.blue[400],
                           fontSize: 12,
                           letterSpacing: 0.5,
                         ),
