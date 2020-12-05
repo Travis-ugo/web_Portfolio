@@ -9,7 +9,7 @@ class Land extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Color(0xFFF4FAFD),
       body: CenteredView(child: Skills()),
     );
   }
@@ -34,24 +34,22 @@ class _SkillsState extends State<Skills> {
             RoundMan(
               color: Colors.blueAccent,
               title: 'UI?UX design',
-              subtitle: '''Beautiful user friendly\n
-                  applications for moble and web\n
-                  applications''',
+              subtitle:
+                  '''Beautiful user friendly\napplications for moble and web\napplications''',
               icon: MdiIcons.pictureInPictureBottomRight,
             ),
             RoundMan(
               color: Colors.grey,
               title: "Mobile application",
-              subtitle: '''Engage in developing\n
-              cross platform fast and beautiful\n
-              native apps for easy user\n
-              experiences''',
+              subtitle:
+                  '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
+              icon: Icons.phone_android,
             ),
             RoundMan(
               color: Colors.redAccent,
-              title: 'Descktop Applications',
+              title: 'Descktop Apps',
               subtitle:
-                  'Responsive and fast web apppications for user expenrince',
+                  'Responsive and fast web\napppications for user expenrince',
               icon: MdiIcons.laptopChromebook,
             ),
           ],
@@ -64,29 +62,27 @@ class _SkillsState extends State<Skills> {
             RoundMan(
               color: Colors.greenAccent,
               title: 'UI?UX design',
-              subtitle: '''Beautiful user friendly\n
-                  applications for moble and web\n
-                  applications''',
+              subtitle:
+                  '''Beautiful user friendly\napplications for moble and web\napplications''',
               icon: MdiIcons.pictureInPictureBottomRight,
             ),
             RoundMan(
               color: Colors.grey[700],
               title: "Mobile application",
-              subtitle: '''Engage in developing\n
-              cross platform fast and beautiful\n
-              native apps for easy user\n
-              experiences''',
+              subtitle:
+                  '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
+              icon: Icons.phone_android,
             ),
             RoundMan(
               color: Colors.yellowAccent,
-              title: 'Descktop Applications',
+              title: 'Descktop Apps',
               subtitle:
-                  'Responsive and fast web apppications for user expenrince',
+                  'Responsive and fast web\napppications for user expenrince',
               icon: MdiIcons.laptopChromebook,
             ),
           ],
         ),
-        SizedBox(height: 40),
+        SizedBox(height: 80),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -99,7 +95,7 @@ class _SkillsState extends State<Skills> {
                 Slid('Python', Colors.blue, 70.0, 0.7),
               ],
             ),
-            SizedBox(width: 60),
+            SizedBox(width: 80),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -129,40 +125,46 @@ class RoundMan extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          height: 70.0,
-          width: 70.0,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
-            color: color,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                title,
-                style: GoogleFonts.varelaRound(
-                  textStyle: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 100),
+          child: Container(
+            height: 70.0,
+            width: 70.0,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: color,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.varelaRound(
+                    textStyle: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 5),
-              Icon(
-                icon,
-                size: 10.0,
-                color: Colors.white,
-              ),
-            ],
+                SizedBox(height: 5),
+                Icon(
+                  icon,
+                  size: 10.0,
+                  color: Colors.white,
+                ),
+              ],
+            ),
           ),
         ),
         Text(
           subtitle,
+          textAlign: TextAlign.center,
           style: GoogleFonts.varelaRound(
             textStyle: TextStyle(
               fontSize: 10,
               fontWeight: FontWeight.bold,
+              color: Colors.black45,
             ),
           ),
         ),
@@ -194,6 +196,7 @@ class Slid extends StatelessWidget {
                   textStyle: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.bold,
+                    color: Colors.black87,
                   ),
                 ),
               ),

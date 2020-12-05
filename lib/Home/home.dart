@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Color color = Color(0xFFF4FAFD);
+    Color _color = Color(0xFFF4FAFD);
     return Scaffold(
-      backgroundColor: color,
+      backgroundColor: _color,
       body: CenteredView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,10 +28,12 @@ class Home extends StatelessWidget {
   }
 }
 
-var text = TextStyle(
-  fontFamily: 'ProximaSoft-SemiBold.ttf',
-  fontSize: 12,
-  color: Colors.black87,
+TextStyle text = GoogleFonts.varelaRound(
+  textStyle: TextStyle(
+    fontSize: 8,
+    fontWeight: FontWeight.w600,
+    color: Colors.black87,
+  ),
 );
 
 class CenteredView extends StatelessWidget {
@@ -56,16 +59,16 @@ class NavBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('Portfolio', style: text),
-        SizedBox(width: 80),
-        Text('Resume', style: text),
-        SizedBox(width: 80),
-        Text('Contact', style: text),
-        SizedBox(width: 80),
+        Text('PORTFOLIO', style: text),
+        SizedBox(width: 70),
+        Text('RESUME', style: text),
+        SizedBox(width: 70),
+        Text('CONTACT', style: text),
+        SizedBox(width: 70),
         Icon(
           MdiIcons.moonWaxingCrescent,
           color: Colors.black54,
-          size: 20,
+          size: 17,
         ),
       ],
     );
@@ -89,22 +92,22 @@ class Hody extends StatelessWidget {
                   children: <TextSpan>[
                     TextSpan(
                       text: 'Hi,\n',
-                      style: TextStyle(
-                        fontFamily: 'ProximaSoft-Bold.ttf',
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black87,
-                        fontSize: 45,
-                        letterSpacing: 0.5,
+                      style: GoogleFonts.varelaRound(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 45,
+                          letterSpacing: 0.5,
+                        ),
                       ),
                     ),
                     TextSpan(
                       text: "i'm Travis Okonicha\n\n",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: 45,
-                        letterSpacing: 0.8,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'ProximaSoft-Bold.ttf',
+                      style: GoogleFonts.varelaRound(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 45,
+                          letterSpacing: 0.5,
+                        ),
                       ),
                     ),
                   ],
@@ -113,12 +116,13 @@ class Hody extends StatelessWidget {
               Text(
                 '''i  design and build beautiful mobile and \ndesktop for users''',
                 textAlign: TextAlign.left,
-                style: TextStyle(
-                  color: Colors.grey[800].withOpacity(0.9),
-                  fontSize: 16,
-                  letterSpacing: 0.8,
-                  fontWeight: FontWeight.w100,
-                  fontFamily: 'ProximaSoft-Thin.ttf',
+                style: GoogleFonts.varelaRound(
+                  textStyle: TextStyle(
+                    fontWeight: FontWeight.w100,
+                    fontSize: 16,
+                    letterSpacing: 0.8,
+                    color: Colors.grey[800].withOpacity(0.9),
+                  ),
                 ),
               ),
               SizedBox(height: 30),
