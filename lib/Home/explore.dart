@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:travis_ugo/Home/home.dart';
@@ -7,7 +9,7 @@ class Explore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF4FAFD),
+      backgroundColor: color,
       body: CenteredView(
         child: Column(
           children: [
@@ -17,6 +19,7 @@ class Explore extends StatelessWidget {
             ),
             SizedBox(height: 20),
             AppBar(
+              automaticallyImplyLeading: false,
               backgroundColor: Colors.transparent,
               elevation: 0.0,
               title: Row(
@@ -28,26 +31,32 @@ class Explore extends StatelessWidget {
                   SizedBox(width: 50),
                   Text('CONTACT', style: text),
                   SizedBox(width: 50),
-                  Icon(
-                    MdiIcons.moonWaxingCrescent,
-                    color: Colors.black54,
-                    size: 17,
+                  IconButton(
+                    icon: Icon(
+                      MdiIcons.moonWaxingCrescent,
+                      color: Colors.black54,
+                      size: 17,
+                    ),
+                    onPressed: () {},
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(100.0),
+              padding: EdgeInsets.all(90.0),
               child: Column(
                 children: [
-                  Text(
-                    'Projects',
-                    style: GoogleFonts.varelaRound(
-                      textStyle: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 18,
-                        letterSpacing: 0.5,
-                        color: Colors.black54,
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, '/projects'),
+                    child: Text(
+                      'Projects',
+                      style: GoogleFonts.varelaRound(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 18,
+                          letterSpacing: 0.5,
+                          color: Colors.black54,
+                        ),
                       ),
                     ),
                   ),
@@ -64,14 +73,17 @@ class Explore extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 30),
-                  Text(
-                    'Skills',
-                    style: GoogleFonts.varelaRound(
-                      textStyle: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        letterSpacing: 0.5,
-                        color: Colors.black54,
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, '/skills'),
+                    child: Text(
+                      'Skills',
+                      style: GoogleFonts.varelaRound(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          letterSpacing: 0.5,
+                          color: Colors.black54,
+                        ),
                       ),
                     ),
                   ),
@@ -80,24 +92,19 @@ class Explore extends StatelessWidget {
               ),
             ),
             IconButton(
-              icon: Icon(MdiIcons.accountCancel),
-              onPressed: () {},
+              mouseCursor: SystemMouseCursors.click,
+              icon: Icon(
+                CupertinoIcons.xmark,
+                size: 45,
+                color: Colors.black87,
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
           ],
         ),
       ),
     );
-  }
-}
-
-class Details extends StatefulWidget {
-  @override
-  _DetailsState createState() => _DetailsState();
-}
-
-class _DetailsState extends State<Details> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

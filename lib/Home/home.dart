@@ -3,12 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
+Color color = Color(0xFFF4FAFD);
+TextStyle text = GoogleFonts.varelaRound(
+  textStyle: TextStyle(
+    fontSize: 8,
+    fontWeight: FontWeight.w600,
+    color: Colors.black87,
+  ),
+);
+
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Color _color = Color(0xFFF4FAFD);
     return Scaffold(
-      backgroundColor: _color,
+      backgroundColor: color,
       body: CenteredView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,14 +35,6 @@ class Home extends StatelessWidget {
     );
   }
 }
-
-TextStyle text = GoogleFonts.varelaRound(
-  textStyle: TextStyle(
-    fontSize: 8,
-    fontWeight: FontWeight.w600,
-    color: Colors.black87,
-  ),
-);
 
 class CenteredView extends StatelessWidget {
   final Widget child;
@@ -97,6 +97,7 @@ class Hody extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 45,
                           letterSpacing: 0.5,
+                          color: Colors.black87,
                         ),
                       ),
                     ),
@@ -107,6 +108,7 @@ class Hody extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 45,
                           letterSpacing: 0.5,
+                          color: Colors.black87,
                         ),
                       ),
                     ),
@@ -119,9 +121,9 @@ class Hody extends StatelessWidget {
                 style: GoogleFonts.varelaRound(
                   textStyle: TextStyle(
                     fontWeight: FontWeight.w100,
-                    fontSize: 16,
+                    fontSize: 14,
                     letterSpacing: 0.8,
-                    color: Colors.grey[800].withOpacity(0.9),
+                    color: Colors.grey[500],
                   ),
                 ),
               ),
@@ -143,22 +145,25 @@ class Hody extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 40),
-                  Container(
-                    width: 125,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Colors.blue),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Explore",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'ProximaSoft-SemiBold.ttf',
-                          color: Colors.blue[400],
-                          fontSize: 12,
-                          letterSpacing: 0.5,
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, '/explore'),
+                    child: Container(
+                      width: 120,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFE8F6FD),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "EXPLORE",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'ProximaSoft-SemiBold.ttf',
+                            color: Colors.blue[400],
+                            fontSize: 9,
+                            letterSpacing: 0.5,
+                          ),
                         ),
                       ),
                     ),

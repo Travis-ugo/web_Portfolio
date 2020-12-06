@@ -8,10 +8,7 @@ import 'package:travis_ugo/Home/home.dart';
 class Land extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFFF4FAFD),
-      body: CenteredView(child: Skills()),
-    );
+    return CenteredView(child: Skills());
   }
 }
 
@@ -23,91 +20,94 @@ class Skills extends StatefulWidget {
 class _SkillsState extends State<Skills> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            RoundMan(
-              color: Colors.blueAccent,
-              title: 'UI?UX design',
-              subtitle:
-                  '''Beautiful user friendly\napplications for moble and web\napplications''',
-              icon: MdiIcons.pictureInPictureBottomRight,
-            ),
-            RoundMan(
-              color: Colors.grey,
-              title: "Mobile application",
-              subtitle:
-                  '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
-              icon: Icons.phone_android,
-            ),
-            RoundMan(
-              color: Colors.redAccent,
-              title: 'Descktop Apps',
-              subtitle:
-                  'Responsive and fast web\napppications for user expenrince',
-              icon: MdiIcons.laptopChromebook,
-            ),
-          ],
-        ),
-        SizedBox(height: 30),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            RoundMan(
-              color: Colors.greenAccent,
-              title: 'UI?UX design',
-              subtitle:
-                  '''Beautiful user friendly\napplications for moble and web\napplications''',
-              icon: MdiIcons.pictureInPictureBottomRight,
-            ),
-            RoundMan(
-              color: Colors.grey[700],
-              title: "Mobile application",
-              subtitle:
-                  '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
-              icon: Icons.phone_android,
-            ),
-            RoundMan(
-              color: Colors.yellowAccent,
-              title: 'Descktop Apps',
-              subtitle:
-                  'Responsive and fast web\napppications for user expenrince',
-              icon: MdiIcons.laptopChromebook,
-            ),
-          ],
-        ),
-        SizedBox(height: 80),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Slid('Flutter', Colors.cyanAccent, 60.0, 0.6),
-                Slid('Dart', Colors.black, 80.0, 0.8),
-                Slid('C', Colors.brown, 40.0, 0.4),
-                Slid('Python', Colors.blue, 70.0, 0.7),
-              ],
-            ),
-            SizedBox(width: 80),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Slid('HTLM', Colors.redAccent, 60.0, 0.6),
-                Slid('CSS', Colors.greenAccent, 80.0, 0.8),
-                Slid('Java', Colors.yellowAccent, 40.0, 0.4),
-                Slid('JavaScript', Colors.brown[400], 70.0, 0.7),
-              ],
-            ),
-          ],
-        ),
-      ],
+    return Scaffold(
+      backgroundColor: Color(0xFFF4FAFD),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              RoundMan(
+                color: Colors.blueAccent,
+                title: 'UI?UX design',
+                subtitle:
+                    '''Beautiful user friendly\napplications for moble and web\napplications''',
+                icon: MdiIcons.pictureInPictureBottomRight,
+              ),
+              RoundMan(
+                color: Colors.grey,
+                title: "Mobile application",
+                subtitle:
+                    '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
+                icon: Icons.phone_android,
+              ),
+              RoundMan(
+                color: Colors.redAccent,
+                title: 'Descktop Apps',
+                subtitle:
+                    'Responsive and fast web\napppications for user expenrince',
+                icon: MdiIcons.laptopChromebook,
+              ),
+            ],
+          ),
+          SizedBox(height: 30),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              RoundMan(
+                color: Colors.greenAccent,
+                title: 'UI?UX design',
+                subtitle:
+                    '''Beautiful user friendly\napplications for moble and web\napplications''',
+                icon: MdiIcons.pictureInPictureBottomRight,
+              ),
+              RoundMan(
+                color: Colors.grey[700],
+                title: "Mobile application",
+                subtitle:
+                    '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
+                icon: Icons.phone_android,
+              ),
+              RoundMan(
+                color: Colors.yellowAccent,
+                title: 'Descktop Apps',
+                subtitle:
+                    'Responsive and fast web\napppications for user expenrince',
+                icon: MdiIcons.laptopChromebook,
+              ),
+            ],
+          ),
+          SizedBox(height: 80),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Slid('Flutter', Colors.cyanAccent, 60.0, 0.6),
+                  Slid('Dart', Colors.black, 80.0, 0.8),
+                  Slid('C', Colors.brown, 40.0, 0.4),
+                  Slid('Python', Colors.blue, 70.0, 0.7),
+                ],
+              ),
+              SizedBox(width: 80),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Slid('HTLM', Colors.redAccent, 60.0, 0.6),
+                  Slid('CSS', Colors.greenAccent, 80.0, 0.8),
+                  Slid('Java', Colors.yellowAccent, 40.0, 0.4),
+                  Slid('JavaScript', Colors.brown[400], 70.0, 0.7),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
