@@ -1,45 +1,46 @@
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:travis_ugo/Home/home.dart';
+import 'package:travis_ugo/Home/exports.dart';
 
 class Projects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: color,
-      body: CenteredView(
-        child: Column(
-          children: [
-            CircleAvatar(
-              radius: 20,
-              backgroundImage: AssetImage('assets/black..jpg'),
-            ),
-            SizedBox(height: 20),
-            AppBar(
-              automaticallyImplyLeading: false,
-              backgroundColor: Colors.transparent,
-              elevation: 0.0,
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+      backgroundColor: Colors.blue[300],
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.only(right: 250),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  color: Colors.white,
+                  height: 200,
+                  width: 540,
+                ),
+              ),
+              SizedBox(height: 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text('PORTFOLIO', style: text),
-                  SizedBox(width: 50),
-                  Text('RESUME', style: text),
-                  SizedBox(width: 50),
-                  Text('CONTACT', style: text),
-                  SizedBox(width: 50),
-                  IconButton(
-                    icon: Icon(
-                      MdiIcons.moonWaxingCrescent,
-                      color: Colors.black54,
-                      size: 17,
-                    ),
-                    onPressed: () {},
+                  Container(
+                    color: Colors.white,
+                    height: 200,
+                    width: 250,
                   ),
+                  SizedBox(width: 40),
+                  Container(
+                    color: Colors.white,
+                    height: 200,
+                    width: 250,
+                  ),
+                  Dialog()
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

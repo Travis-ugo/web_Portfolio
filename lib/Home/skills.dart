@@ -1,14 +1,29 @@
-import 'package:countup/countup.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:travis_ugo/Home/home.dart';
+import 'package:travis_ugo/Home/exports.dart';
 
 class Land extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CenteredView(child: Skills());
+    return Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            children: [
+              SizedBox(width: 200, height: 100),
+              CircleAvatar(
+                radius: 20,
+                backgroundImage: AssetImage('assets/black..jpg'),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 180),
+            child: Skills(),
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -21,91 +36,98 @@ class _SkillsState extends State<Skills> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF4FAFD),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              RoundMan(
-                color: Colors.blueAccent,
-                title: 'UI?UX design',
-                subtitle:
-                    '''Beautiful user friendly\napplications for moble and web\napplications''',
-                icon: MdiIcons.pictureInPictureBottomRight,
-              ),
-              RoundMan(
-                color: Colors.grey,
-                title: "Mobile application",
-                subtitle:
-                    '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
-                icon: Icons.phone_android,
-              ),
-              RoundMan(
-                color: Colors.redAccent,
-                title: 'Descktop Apps',
-                subtitle:
-                    'Responsive and fast web\napppications for user expenrince',
-                icon: MdiIcons.laptopChromebook,
-              ),
-            ],
+          Text('Skills'),
+          SizedBox(height: 70),
+          Padding(
+            padding: const EdgeInsets.only(right: 120),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                RoundMan(
+                  color: Colors.blueAccent,
+                  title: 'UI?UX design',
+                  subtitle:
+                      '''Beautiful user friendly\napplications for moble and web\napplications''',
+                  icon: MdiIcons.pictureInPictureBottomRight,
+                ),
+                RoundMan(
+                  color: Colors.grey,
+                  title: "Mobile application",
+                  subtitle:
+                      '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
+                  icon: Icons.phone_android,
+                ),
+                RoundMan(
+                  color: Colors.redAccent,
+                  title: 'Descktop Apps',
+                  subtitle:
+                      'Responsive and fast web\napppications for user expenrince',
+                  icon: MdiIcons.laptopChromebook,
+                ),
+              ],
+            ),
           ),
-          SizedBox(height: 30),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              RoundMan(
-                color: Colors.greenAccent,
-                title: 'UI?UX design',
-                subtitle:
-                    '''Beautiful user friendly\napplications for moble and web\napplications''',
-                icon: MdiIcons.pictureInPictureBottomRight,
-              ),
-              RoundMan(
-                color: Colors.grey[700],
-                title: "Mobile application",
-                subtitle:
-                    '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
-                icon: Icons.phone_android,
-              ),
-              RoundMan(
-                color: Colors.yellowAccent,
-                title: 'Descktop Apps',
-                subtitle:
-                    'Responsive and fast web\napppications for user expenrince',
-                icon: MdiIcons.laptopChromebook,
-              ),
-            ],
+          SizedBox(height: 100),
+          Padding(
+            padding: const EdgeInsets.only(right: 120),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                RoundMan(
+                  color: Colors.green[600],
+                  title: 'UI/UX design',
+                  subtitle:
+                      '''Beautiful user friendly\napplications for moble and web\napplications''',
+                  icon: MdiIcons.pictureInPictureBottomRight,
+                ),
+                RoundMan(
+                  color: Colors.purple[700],
+                  title: "Mobile application",
+                  subtitle:
+                      '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
+                  icon: Icons.phone_android,
+                ),
+                RoundMan(
+                  color: Colors.yellow[600],
+                  title: 'Descktop Apps',
+                  subtitle:
+                      'Responsive and fast web\napppications for user expenrince',
+                  icon: MdiIcons.laptopChromebook,
+                ),
+              ],
+            ),
           ),
-          SizedBox(height: 80),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Slid('Flutter', Colors.cyanAccent, 60.0, 0.6),
-                  Slid('Dart', Colors.black, 80.0, 0.8),
-                  Slid('C', Colors.brown, 40.0, 0.4),
-                  Slid('Python', Colors.blue, 70.0, 0.7),
-                ],
-              ),
-              SizedBox(width: 80),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Slid('HTLM', Colors.redAccent, 60.0, 0.6),
-                  Slid('CSS', Colors.greenAccent, 80.0, 0.8),
-                  Slid('Java', Colors.yellowAccent, 40.0, 0.4),
-                  Slid('JavaScript', Colors.brown[400], 70.0, 0.7),
-                ],
-              ),
-            ],
-          ),
+          //SizedBox(height: 80),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [
+          //     Column(
+          //       crossAxisAlignment: CrossAxisAlignment.start,
+          //       children: [
+          //         Slid('Flutter', Colors.cyanAccent, 60.0, 0.6),
+          //         Slid('Dart', Colors.black, 80.0, 0.8),
+          //         Slid('C', Colors.brown, 40.0, 0.4),
+          //         Slid('Python', Colors.blue, 70.0, 0.7),
+          //       ],
+          //     ),
+          //     SizedBox(width: 80),
+          //     Column(
+          //       crossAxisAlignment: CrossAxisAlignment.start,
+          //       children: [
+          //         Slid('HTLM', Colors.redAccent, 60.0, 0.6),
+          //         Slid('CSS', Colors.greenAccent, 80.0, 0.8),
+          //         Slid('Java', Colors.yellowAccent, 40.0, 0.4),
+          //         Slid('JavaScript', Colors.brown[400], 70.0, 0.7),
+          //       ],
+          //     ),
+          //   ],
+          //),
         ],
       ),
     );
@@ -127,33 +149,31 @@ class RoundMan extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 100),
-          child: Container(
-            height: 70.0,
-            width: 70.0,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50),
-              color: color,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+              height: 40.0,
+              width: 40.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: color,
+              ),
+              child: Icon(
+                icon,
+                size: 15.0,
+                color: Colors.white,
+              ),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  title,
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.varelaRound(
-                    textStyle: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 5),
-                Icon(
-                  icon,
-                  size: 10.0,
-                  color: Colors.white,
-                ),
-              ],
+          ),
+        ),
+        Text(
+          title,
+          textAlign: TextAlign.center,
+          style: GoogleFonts.varelaRound(
+            textStyle: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.bold,
+              color: Colors.black54,
             ),
           ),
         ),
@@ -163,8 +183,8 @@ class RoundMan extends StatelessWidget {
           style: GoogleFonts.varelaRound(
             textStyle: TextStyle(
               fontSize: 10,
-              fontWeight: FontWeight.bold,
-              color: Colors.black45,
+              fontWeight: FontWeight.w400,
+              color: Colors.black26,
             ),
           ),
         ),
