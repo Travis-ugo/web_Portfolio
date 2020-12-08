@@ -36,7 +36,6 @@ class Projects extends StatelessWidget {
                     height: 200,
                     width: 250,
                   ),
-                  Dialog()
                 ],
               ),
             ],
