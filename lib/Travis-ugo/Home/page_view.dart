@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Home/exports.dart';
+import 'package:travis_ugo/Travis-ugo/widgets.dart';
 
 class Views extends StatefulWidget {
   @override

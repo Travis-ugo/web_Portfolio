@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Home/exports.dart';
-import 'package:travis_ugo/test/lines.dart';
+import 'package:travis_ugo/Travis-ugo/widgets.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,13 +11,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // routes: {
-      //   '/': (context) => Home(),
-      //   '/explore': (conext) => Explore(),
-      //   '/skills': (context) => Views(),
-      //   '/projects': (context) => Projects(),
-      // },
-      home: Lines(),
+      routes: <String, WidgetBuilder>{
+        '/': (BuildContext context) => Home(),
+        '/explore': (BuildContext conext) => Explore(),
+        '/skills': (BuildContext context) => Views(),
+        '/projects': (BuildContext context) => Views(),
+      },
+      //home: Views(),
     );
   }
 }

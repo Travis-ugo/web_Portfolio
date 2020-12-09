@@ -1,79 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Home/exports.dart';
+import '../widgets.dart';
 
-Color color = Color(0xFFF4FAFD);
-TextStyle text = GoogleFonts.varelaRound(
-  textStyle: TextStyle(
-    fontSize: 8,
-    fontWeight: FontWeight.w600,
-    color: Colors.black87,
-  ),
-);
-
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: color,
-      body: CenteredView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            AppBar(
-              title: NavBar(),
-              backgroundColor: Colors.transparent,
-              elevation: 0.0,
-            ),
-            //NavBar(),
-            SizedBox(height: 130),
-            Hody(),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class CenteredView extends StatelessWidget {
-  final Widget child;
-  const CenteredView({Key key, this.child}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 80, horizontal: 80),
-      alignment: Alignment.topCenter,
-      child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 1200),
-        child: child,
-      ),
-    );
-  }
-}
-
-class NavBar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text('PORTFOLIO', style: text),
-        SizedBox(width: 70),
-        Text('RESUME', style: text),
-        SizedBox(width: 70),
-        Text('CONTACT', style: text),
-        SizedBox(width: 70),
-        Icon(
-          MdiIcons.moonWaxingCrescent,
-          color: Colors.black54,
-          size: 17,
-        ),
-      ],
-    );
-  }
-}
-
-class Hody extends StatelessWidget {
+class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -173,10 +101,13 @@ class Hody extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(right: 80, bottom: 50),
-          child: CircleAvatar(
-            backgroundColor: Colors.transparent,
-            backgroundImage: AssetImage('assets/black..jpg'),
-            radius: 120,
+          child: Hero(
+            tag: Text('love'),
+            child: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              backgroundImage: AssetImage('assets/black..jpg'),
+              radius: 120,
+            ),
           ),
         ),
       ],

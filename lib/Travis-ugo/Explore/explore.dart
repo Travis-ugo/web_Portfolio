@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Home/exports.dart';
+import 'package:travis_ugo/Travis-ugo/widgets.dart';
 
 class Explore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: color,
+      backgroundColor: Pallets.color,
       body: CenteredView(
         child: Column(
           children: [
-            CircleAvatar(
-              radius: 20,
-              backgroundImage: AssetImage('assets/black..jpg'),
+            Hero(
+              tag: Text('love'),
+              child: CircleAvatar(
+                radius: 20,
+                backgroundImage: AssetImage('assets/black..jpg'),
+              ),
             ),
             SizedBox(height: 20),
             AppBar(
@@ -49,7 +52,7 @@ class Explore extends StatelessWidget {
                       style: GoogleFonts.varelaRound(
                         textStyle: TextStyle(
                           fontWeight: FontWeight.w500,
-                          fontSize: 18,
+                          fontSize: 16,
                           letterSpacing: 0.5,
                           color: Colors.black54,
                         ),
