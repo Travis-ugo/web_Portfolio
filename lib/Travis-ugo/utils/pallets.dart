@@ -8,7 +8,8 @@ class Pallets {
 final TextStyle text = GoogleFonts.varelaRound(
   textStyle: TextStyle(
     fontSize: 8,
-    fontWeight: FontWeight.w600,
-    color: Colors.black87,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+    letterSpacing: 0.5,
   ),
 );
