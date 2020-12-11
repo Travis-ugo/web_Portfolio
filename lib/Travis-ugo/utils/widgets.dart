@@ -8,7 +8,7 @@ export 'package:travis_ugo/Travis-ugo/Home/home.dart';
 export 'package:travis_ugo/Travis-ugo/Project/projects.dart';
 export 'package:travis_ugo/Travis-ugo/Skills/skills.dart';
 export 'package:travis_ugo/Travis-ugo/utils/data.dart';
-export 'Home/page_view.dart';
+export '../Home/page_view.dart';
 export 'package:travis_ugo/Travis-ugo/Home/navbar_home.dart';
 export 'package:travis_ugo/Travis-ugo/Home/body.dart';
 export 'package:travis_ugo/Travis-ugo/Home/centered_view.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../widgets.dart';
+import 'package:widget_circular_animator/widget_circular_animator.dart';
+import '../utils/widgets.dart';
 
 class RoundMan extends StatelessWidget {
   final String title;

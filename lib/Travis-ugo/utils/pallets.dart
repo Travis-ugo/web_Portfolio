@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Travis-ugo/widgets.dart';
+import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
 class Pallets {
   static const Color color = Color(0xFFF4FAFD);

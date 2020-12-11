@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Travis-ugo/widgets.dart';
+import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
 class Explore extends StatelessWidget {
   @override
@@ -10,7 +10,7 @@ class Explore extends StatelessWidget {
         child: Column(
           children: [
             Hero(
-              tag: Text('love'),
+              tag: 'love',
               child: CircleAvatar(
                 radius: 20,
                 backgroundImage: AssetImage('assets/black..jpg'),

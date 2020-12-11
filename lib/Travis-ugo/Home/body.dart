@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import '../widgets.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:widget_circular_animator/widget_circular_animator.dart';
+import '../../main.dart';
+import '../utils/widgets.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -47,7 +50,7 @@ class Body extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    '''i  design and build beautiful mobile and \ndesktop for users''',
+                    '''i  design and build beautiful mobile and desktop\nfor users design and build beautiful''',
                     textAlign: TextAlign.left,
                     style: GoogleFonts.varelaRound(
                       textStyle: TextStyle(
@@ -68,18 +71,44 @@ class Body extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Icon(MdiIcons.twitter, color: Colors.blue[500], size: 20),
-                      SizedBox(width: 15),
-                      Icon(MdiIcons.github, color: Colors.black54, size: 20),
-                      SizedBox(width: 15),
-                      Icon(MdiIcons.linkedin,
-                          color: Colors.blue[400], size: 20),
-                      SizedBox(width: 15),
-                      Icon(MdiIcons.linkedin, color: Colors.black54, size: 20),
+                      IconButton(
+                        icon: Icon(MdiIcons.twitter),
+                        color: Colors.blue[500],
+                        iconSize: 18,
+                        onPressed: () async {
+                          await launch(
+                              Uri.parse('https://twitter.com/Travis86622225')
+                                  .toString());
+                        },
+                      ),
+                      //SizedBox(width: 15),
+                      IconButton(
+                        icon: Icon(MdiIcons.github),
+                        color: Colors.blue[500],
+                        iconSize: 18,
+                        onPressed: () async {
+                          await launch(
+                              Uri.parse('https://github.com/Travis-ugo')
+                                  .toString());
+                        },
+                      ),
+                      //SizedBox(width: 15),
+                      IconButton(
+                        icon: Icon(MdiIcons.linkedin),
+                        color: Colors.blue[400],
+                        iconSize: 18,
+                        onPressed: () async {
+                          await launch(Uri.parse(
+                                  'https://www.linkedin.com/in/travis-okonicha-66a15b1b8/')
+                              .toString());
+                        },
+                      ),
+                      // SizedBox(width: 15),
+                      // Icon(MdiIcons.linkedin, color: Colors.black54, size: 20),
                     ],
                   ),
                   SizedBox(height: 40),
-                  GestureDetector(
+                  InkWell(
                     onTap: () => Navigator.pushNamed(context, '/explore'),
                     child: Container(
                       width: 110,
@@ -108,18 +137,22 @@ class Body extends StatelessWidget {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(left: 0),
-          child: Hero(
-            tag: Text('love'),
-            child: CircleAvatar(
-              backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage('assets/black..jpg'),
-              radius: 125,
-            ),
+        Hero(
+          tag: 'love',
+          child: CircleAvatar(
+            backgroundColor: Colors.transparent,
+            backgroundImage: AssetImage('assets/black..jpg'),
+            radius: 125,
           ),
         ),
       ],
     );
   }
 }
+// Center(
+//           child: CircleAvatar(
+//             backgroundColor: Colors.transparent,
+//             backgroundImage: AssetImage('assets/black..jpg'),
+//             radius: 125,
+//           ),
+//         ),

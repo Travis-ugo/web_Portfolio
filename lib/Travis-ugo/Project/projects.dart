@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Travis-ugo/widgets.dart';
+import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
+import 'package:widget_circular_animator/widget_circular_animator.dart';
 
 class Projects extends StatelessWidget {
   @override
@@ -12,6 +13,18 @@ class Projects extends StatelessWidget {
             child: Text('goat'),
           ),
           Hover(),
+          Center(
+              child: WidgetCircularAnimator(
+            child: Container(
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle, color: Colors.grey[200]),
+              child: Icon(
+                Icons.person_outline,
+                color: Colors.deepOrange[200],
+                size: 60,
+              ),
+            ),
+          )),
         ],
       ),
     );

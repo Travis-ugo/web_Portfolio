@@ -33,6 +33,10 @@ dependencies:
   percent_indicator: ^2.1.8
   countup: ^0.1.3
   google_fonts: ^1.1.1
+  responsive_builder: ^0.3.0
+  menu: ^0.1.4
+  url_launcher: ^5.7.10
+  widget_circular_animator: ^0.1.5+1
 
 
 dev_dependencies:

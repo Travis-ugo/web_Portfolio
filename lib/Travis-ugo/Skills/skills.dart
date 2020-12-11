@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Travis-ugo/widgets.dart';
+import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
 class Skills extends StatefulWidget {
   @override
@@ -78,6 +78,11 @@ class _SkillsState extends State<Skills> {
                 ),
               ],
             ),
+          ),
+          Container(
+            height: 50,
+            width: double.infinity,
+            color: Colors.green,
           ),
         ],
       ),
