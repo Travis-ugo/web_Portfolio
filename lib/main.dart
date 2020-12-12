@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       //   '/skills': (BuildContext context) => Views(),
       //   '/projects': (BuildContext context) => Views(),
       // },
-      home: Tablee(),
+      home: Views(),
     );
   }
 }

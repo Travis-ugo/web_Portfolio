@@ -32,15 +32,17 @@ class _SkillsState extends State<Skills> {
                   icon: MdiIcons.pictureInPictureBottomRight,
                 ),
                 RoundMan(
+                  percent: 0.8,
                   color: Colors.grey,
-                  title: "Mobile application",
+                  title: "Flutter",
                   subtitle:
                       '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
                   icon: Icons.phone_android,
                 ),
                 RoundMan(
-                  color: Colors.redAccent,
-                  title: 'Descktop Apps',
+                  percent: 0.75,
+                  color: Colors.lightBlue,
+                  title: 'Dart',
                   subtitle:
                       'Responsive and fast web\napppications for user expenrince',
                   icon: MdiIcons.laptopChromebook,
@@ -56,33 +58,31 @@ class _SkillsState extends State<Skills> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 RoundMan(
+                  percent: 0.7,
                   color: Colors.green[600],
-                  title: 'UI/UX design',
+                  title: 'HTML',
                   subtitle:
                       '''Beautiful user friendly\napplications for moble and web\napplications''',
                   icon: MdiIcons.pictureInPictureBottomRight,
                 ),
                 RoundMan(
-                  color: Colors.purple[700],
-                  title: "Mobile application",
+                  percent: 0.5,
+                  color: Colors.yellow[900],
+                  title: "Java",
                   subtitle:
                       '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
                   icon: Icons.phone_android,
                 ),
                 RoundMan(
-                  color: Colors.yellow[600],
-                  title: 'Descktop Apps',
+                  percent: 0.6,
+                  color: Colors.blue[600],
+                  title: 'Python',
                   subtitle:
                       'Responsive and fast web\napppications for user expenrince',
                   icon: MdiIcons.laptopChromebook,
                 ),
               ],
             ),
-          ),
-          Container(
-            height: 50,
-            width: double.infinity,
-            color: Colors.green,
           ),
         ],
       ),
