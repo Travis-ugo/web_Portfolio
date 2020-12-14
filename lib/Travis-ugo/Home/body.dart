@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:widget_circular_animator/widget_circular_animator.dart';
-import '../../main.dart';
 import '../utils/widgets.dart';
 
 class Body extends StatelessWidget {

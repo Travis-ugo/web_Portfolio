@@ -12,33 +12,36 @@ class _HoverState extends State<Hover> {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      child: AnimatedContainer(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: InkWell(
+        child: AnimatedContainer(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
           ),
+          child: Image.asset(
+            tracker.imageurl,
+          ),
+          height: _heigh,
+          width: _widgth,
+          duration: Duration(milliseconds: 200),
         ),
-        child: Image.asset(
-          tracker.imageurl,
-        ),
-        height: _heigh,
-        width: _widgth,
-        duration: Duration(milliseconds: 200),
+        onTap: () {
+          showDialog(
+            context: context,
+            builder: (context) => Dialog(),
+          );
+        },
+        onHover: (value) {
+          setState(() {
+            _heigh = 200;
+            _widgth = value ? 400 : 200;
+          });
+        },
       ),
-      onTap: () {
-        showDialog(
-          context: context,
-          builder: (context) => Dialog(),
-        );
-      },
-      onHover: (value) {
-        setState(() {
-          _heigh = 200;
-          _widgth = value ? 400 : 200;
-        });
-      },
     );
   }
 }

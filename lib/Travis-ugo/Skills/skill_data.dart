@@ -1,21 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:widget_circular_animator/widget_circular_animator.dart';
 import '../utils/widgets.dart';
 
-class RoundMan extends StatelessWidget {
+class RoundMan extends StatefulWidget {
   final String title;
   final String subtitle;
   final Color color;
   final IconData icon;
   final double percent;
-
-  const RoundMan(
-      {Key key, this.title, this.subtitle, this.color, this.icon, this.percent})
-      : super(key: key);
+  //final double cloud;
+  const RoundMan({
+    Key key,
+    @required this.title,
+    @required this.subtitle,
+    @required this.color,
+    @required this.icon,
+    @required this.percent,
+    // @required this.cloud,
+  }) : super(key: key);
 
   @override
+  _RoundManState createState() => _RoundManState();
+}
+
+class _RoundManState extends State<RoundMan> {
+  @override
   Widget build(BuildContext context) {
+    double _heigh = 50;
+    // double _widgth = widget.cloud;
     return Column(
       children: [
         Padding(
@@ -26,28 +38,40 @@ class RoundMan extends StatelessWidget {
               animation: true,
               animationDuration: 12000,
               curve: Curves.bounceIn,
-              percent: 0.8,
-              radius: 60.0,
+              percent: widget.percent,
+              radius: 60,
               lineWidth: 5.0,
-              progressColor: color.withOpacity(0.8),
-              center: Container(
-                height: 40.0,
-                width: 40.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: color,
+              progressColor: widget.color.withOpacity(0.8),
+              center: InkWell(
+                child: AnimatedContainer(
+                  height: _heigh,
+                  width: _heigh,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: widget.color,
+                  ),
+                  duration: Duration(milliseconds: 2500),
+                  child: Icon(
+                    widget.icon,
+                    size: 15.0,
+                    color: Colors.white,
+                  ),
                 ),
-                child: Icon(
-                  icon,
-                  size: 15.0,
-                  color: Colors.white,
-                ),
+                onTap: () {
+                  //setState(() {
+                  setState(() {
+                    _heigh = _heigh + 110;
+                    //_widgth = widget.cloud ? _widgth + 110 : _widgth;
+                    //});
+                  });
+                },
+                onHover: (value) {},
               ),
             ),
           ),
         ),
         Text(
-          title,
+          widget.title,
           textAlign: TextAlign.center,
           style: GoogleFonts.varelaRound(
             textStyle: TextStyle(
@@ -58,7 +82,7 @@ class RoundMan extends StatelessWidget {
           ),
         ),
         Text(
-          subtitle,
+          widget.subtitle,
           textAlign: TextAlign.center,
           style: GoogleFonts.varelaRound(
             textStyle: TextStyle(
@@ -72,10 +96,17 @@ class RoundMan extends StatelessWidget {
     );
   }
 }
-// new CircularPercentIndicator(
-//                   radius: 60.0,
-//                   lineWidth: 5.0,
-//                   percent: 1.0,
-//                   center: new Text("100%"),
-//                   progressColor: Colors.green,
-//                 )
+// double _heigh = 150;
+//   double _widgth = 200;
+//         height: _heigh,
+//         width: _widgth,
+//         duration: Duration(milliseconds: 200),
+//       ),
+//
+//       onHover: (value) {
+//         setState(() {
+//           _heigh = 200;
+//           _widgth = value ? 400 : 200;
+//         });
+//       },
+//     );
