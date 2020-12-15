@@ -8,7 +8,7 @@ class RoundMan extends StatefulWidget {
   final Color color;
   final IconData icon;
   final double percent;
-  //final double cloud;
+  final double cloud;
   const RoundMan({
     Key key,
     @required this.title,
@@ -16,7 +16,7 @@ class RoundMan extends StatefulWidget {
     @required this.color,
     @required this.icon,
     @required this.percent,
-    // @required this.cloud,
+    @required this.cloud,
   }) : super(key: key);
 
   @override
@@ -24,10 +24,23 @@ class RoundMan extends StatefulWidget {
 }
 
 class _RoundManState extends State<RoundMan> {
+  void loco() {
+    Future.delayed(Duration(milliseconds: 12400), () {
+      setState(() {
+        _heigh = widget.cloud;
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loco();
+  }
+
+  double _heigh = 60;
   @override
   Widget build(BuildContext context) {
-    double _heigh = 50;
-    // double _widgth = widget.cloud;
     return Column(
       children: [
         Padding(
@@ -39,7 +52,7 @@ class _RoundManState extends State<RoundMan> {
               animationDuration: 12000,
               curve: Curves.bounceIn,
               percent: widget.percent,
-              radius: 60,
+              radius: _heigh + 10,
               lineWidth: 5.0,
               progressColor: widget.color.withOpacity(0.8),
               center: InkWell(
@@ -47,25 +60,16 @@ class _RoundManState extends State<RoundMan> {
                   height: _heigh,
                   width: _heigh,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
+                    borderRadius: BorderRadius.circular(150),
                     color: widget.color,
                   ),
-                  duration: Duration(milliseconds: 2500),
+                  duration: Duration(milliseconds: 350),
                   child: Icon(
                     widget.icon,
                     size: 15.0,
                     color: Colors.white,
                   ),
                 ),
-                onTap: () {
-                  //setState(() {
-                  setState(() {
-                    _heigh = _heigh + 110;
-                    //_widgth = widget.cloud ? _widgth + 110 : _widgth;
-                    //});
-                  });
-                },
-                onHover: (value) {},
               ),
             ),
           ),
@@ -96,17 +100,3 @@ class _RoundManState extends State<RoundMan> {
     );
   }
 }
-// double _heigh = 150;
-//   double _widgth = 200;
-//         height: _heigh,
-//         width: _widgth,
-//         duration: Duration(milliseconds: 200),
-//       ),
-//
-//       onHover: (value) {
-//         setState(() {
-//           _heigh = 200;
-//           _widgth = value ? 400 : 200;
-//         });
-//       },
-//     );

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 import 'package:widget_circular_animator/widget_circular_animator.dart';
 
+import 'Travis-ugo/Project/table.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       //   '/skills': (BuildContext context) => Views(),
       //   '/projects': (BuildContext context) => Views(),
       // },
-      home: Projects(),
+      home: Screen1(),
     );
   }
 }

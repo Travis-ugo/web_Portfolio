@@ -31,13 +31,20 @@ class _SkillsState extends State<Skills> {
           children: [
             Text(
               'Skills',
+              style: GoogleFonts.varelaRound(
+                textStyle: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black54,
+                ),
+              ),
             ),
             SizedBox(height: 70),
             Padding(
-              padding: const EdgeInsets.only(right: 120),
+              padding: const EdgeInsets.only(bottom: 50),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   RoundMan(
                     color: Colors.blueAccent,
@@ -45,11 +52,11 @@ class _SkillsState extends State<Skills> {
                     subtitle:
                         '''Beautiful user friendly\napplications for moble and web\napplications''',
                     icon: MdiIcons.pictureInPictureBottomRight,
-                    // cloud: 50,
+                    cloud: 170,
                     percent: 0.8,
                   ),
                   RoundMan(
-                    // cloud: 80,
+                    cloud: 50,
                     percent: 0.8,
                     color: Colors.grey,
                     title: "Flutter",
@@ -58,7 +65,7 @@ class _SkillsState extends State<Skills> {
                     icon: Icons.phone_android,
                   ),
                   RoundMan(
-                    // cloud: 100,
+                    cloud: 80,
                     percent: 0.75,
                     color: Colors.lightBlue,
                     title: 'Dart',
@@ -69,15 +76,15 @@ class _SkillsState extends State<Skills> {
                 ],
               ),
             ),
-            SizedBox(height: 100),
+            SizedBox(height: 50),
             Padding(
-              padding: const EdgeInsets.only(right: 120),
+              padding: const EdgeInsets.only(right: 0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   RoundMan(
-                    // cloud: 70,
+                    cloud: 70,
                     percent: 0.7,
                     color: Colors.green[600],
                     title: 'HTML',
@@ -86,7 +93,7 @@ class _SkillsState extends State<Skills> {
                     icon: MdiIcons.pictureInPictureBottomRight,
                   ),
                   RoundMan(
-                    //  cloud: 40,
+                    cloud: 40,
                     percent: 0.5,
                     color: Colors.yellow[900],
                     title: "Java",
@@ -95,7 +102,7 @@ class _SkillsState extends State<Skills> {
                     icon: Icons.phone_android,
                   ),
                   RoundMan(
-                    //   cloud: 50,
+                    cloud: 60,
                     percent: 0.6,
                     color: Colors.blue[600],
                     title: 'Python',
