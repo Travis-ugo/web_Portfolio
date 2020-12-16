@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../utils/widgets.dart';
+import '../../utils/widgets.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -90,7 +90,7 @@ class Body extends StatelessWidget {
                                   .toString());
                         },
                       ),
-                      //SizedBox(width: 15),
+
                       IconButton(
                         icon: Icon(MdiIcons.linkedin),
                         color: Colors.blue[400],
@@ -101,8 +101,6 @@ class Body extends StatelessWidget {
                               .toString());
                         },
                       ),
-                      // SizedBox(width: 15),
-                      // Icon(MdiIcons.linkedin, color: Colors.black54, size: 20),
                     ],
                   ),
                   SizedBox(height: 40),
@@ -140,17 +138,10 @@ class Body extends StatelessWidget {
           child: CircleAvatar(
             backgroundColor: Colors.transparent,
             backgroundImage: AssetImage('assets/black..jpg'),
-            radius: 125,
+            radius: 120,
           ),
         ),
       ],
     );
   }
 }
-// Center(
-//           child: CircleAvatar(
-//             backgroundColor: Colors.transparent,
-//             backgroundImage: AssetImage('assets/black..jpg'),
-//             radius: 125,
-//           ),
-//         ),

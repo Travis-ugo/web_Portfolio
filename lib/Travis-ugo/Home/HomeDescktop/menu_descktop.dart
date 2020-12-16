@@ -2,15 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class NavBar extends StatelessWidget {
+class MenuDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 200),
+      padding: const EdgeInsets.only(left: 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          //SizedBox(width: 200),
+          Spacer(flex: 3),
+          Text(
+            'Travis-ugo',
+            style: GoogleFonts.varelaRound(
+              textStyle: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: Colors.black87,
+                letterSpacing: 0.5,
+              ),
+            ),
+          ),
+          Spacer(flex: 4),
           FlatButton(
               onPressed: () async {
                 await launch(Uri.parse('').toString());
@@ -45,6 +57,7 @@ class NavBar extends StatelessWidget {
             iconSize: 17,
             onPressed: () {},
           ),
+          Spacer(flex: 40),
         ],
       ),
     );

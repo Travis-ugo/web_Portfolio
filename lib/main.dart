@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 import 'package:widget_circular_animator/widget_circular_animator.dart';
-
-import 'Travis-ugo/Project/table.dart';
+import 'Travis-ugo/Home/HomeMobile/home_mobile.dart';
+import 'Travis-ugo/utils/responsive.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       //   '/skills': (BuildContext context) => Views(),
       //   '/projects': (BuildContext context) => Views(),
       // },
-      home: Screen1(),
+      home: Response(),
     );
   }
 }
@@ -30,18 +30,20 @@ class Ani extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: WidgetCircularAnimator(
-        child: Container(
-          decoration:
-              BoxDecoration(shape: BoxShape.circle, color: Colors.grey[200]),
-          // child: Icon(
-          //   Icons.person_outline,
-          //   color: Colors.deepOrange[200],
-          //   size: 60,
-          // ),
-          child: Container(child: Image.asset('assets/black..jpg')),
+        child: WidgetCircularAnimator(
+          child: Container(
+            height: 100,
+            width: 100,
+            decoration:
+                BoxDecoration(shape: BoxShape.circle, color: Colors.grey[200]),
+            child: Icon(
+              Icons.person_outline,
+              color: Colors.deepOrange[200],
+              size: 60,
+            ),
+          ),
         ),
-      )),
+      ),
     );
   }
 }
