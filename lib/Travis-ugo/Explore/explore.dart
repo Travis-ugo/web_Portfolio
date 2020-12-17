@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travis_ugo/Travis-ugo/utils/centered_view.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
 class Explore extends StatelessWidget {

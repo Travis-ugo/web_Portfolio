@@ -23,7 +23,7 @@ class _HoverState extends State<Hover> {
             ),
           ),
           child: Image.asset(
-            tracker.imageurl,
+            teleBot.imageurl,
           ),
           height: _heigh,
           width: _widgth,
@@ -57,13 +57,9 @@ class Dialog extends StatelessWidget {
         title: Text(teleBot.title),
         content: Column(
           children: [
-            Text(teleBot.subtitle),
-            Image.asset(tracker.imageurl),
-            Image.asset(tracker.imageurl),
-            Image.asset(tracker.imageurl),
-            Image.asset(tracker.imageurl),
-            Image.asset(tracker.imageurl),
-            Image.asset(tracker.imageurl),
+            Text(teleBot.info),
+            Text(teleBot.info),
+            Image.asset(soccer.imageurl),
           ],
         ),
       ),
@@ -73,11 +69,86 @@ class Dialog extends StatelessWidget {
 
 final Data teleBot = Data(
   title: 'First wave',
-  subtitle: 'the first class of the first wave and math',
+  info:
+      '''they are very important to comply with our animation. `SingleTickerProviderStateMixin`
+   manages our animation time, `AnimationController`
+   will manage our animation, such as start, stop.''',
   imageurl: 'assets/black..jpg',
 );
-final Data tracker = Data(
+final Data soccer = Data(
   title: 'third wave',
-  subtitle: 'the first class of the first wave and math',
+  info: 'the first class of the first wave and math',
   imageurl: 'assets/net.jpg',
 );
+final Data portfolio = Data(
+  title: 'third wave',
+  info: 'the first class of the first wave and math',
+  imageurl: 'assets/net.jpg',
+);
+final Data ethics = Data(
+  title: 'third wave',
+  info: 'the first class of the first wave and math',
+  imageurl: 'assets/net.jpg',
+);
+
+class Asteroids extends StatefulWidget {
+  @override
+  _AsteroidsState createState() => _AsteroidsState();
+}
+
+class _AsteroidsState extends State<Asteroids> {
+  Map data = {};
+
+  @override
+  Widget build(BuildContext context) {
+    data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
+    print(data);
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black54,
+        elevation: 0.0,
+        centerTitle: true,
+        title: Text(
+          data['title'],
+          style: TextStyle(
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.normal,
+            fontSize: 24,
+          ),
+        ),
+        leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
+      ),
+      body: Column(
+        children: [
+          Container(
+            height: 350,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/${data['imageurl']}'),
+                fit: BoxFit.fitWidth,
+              ),
+            ),
+          ),
+          Center(
+            child: Text(
+              data['info'],
+              style: TextStyle(
+                // fontFamily: 'Montserrat',
+                fontWeight: FontWeight.normal,
+                fontSize: 24,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

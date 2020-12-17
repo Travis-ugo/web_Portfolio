@@ -11,7 +11,6 @@ export 'package:travis_ugo/Travis-ugo/utils/data.dart';
 export 'page_view.dart';
 export 'package:travis_ugo/Travis-ugo/Home/HomeDescktop/menu_descktop.dart';
 export 'package:travis_ugo/Travis-ugo/Home/HomeDescktop/body.dart';
-export 'package:travis_ugo/Travis-ugo/utils/centered_view.dart';
 export 'package:travis_ugo/Travis-ugo/utils/pallets.dart';
 export 'package:travis_ugo/Travis-ugo/Project/hover.dart';
 export 'package:travis_ugo/Travis-ugo/Skills/skill_data.dart';

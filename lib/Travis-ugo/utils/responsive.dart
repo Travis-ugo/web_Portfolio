@@ -13,10 +13,3 @@ class Response extends StatelessWidget {
     );
   }
 }
-
-class HomeTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}

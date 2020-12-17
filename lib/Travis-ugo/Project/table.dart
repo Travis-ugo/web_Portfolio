@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class Screen1 extends StatelessWidget {
   @override
@@ -46,14 +47,13 @@ class _BuyButtonState extends State<BuyButton> with TickerProviderStateMixin {
       });
 
     _controller.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) {
-            return Screen2();
-          }),
-        );
-      }
+      //if (status == AnimationStatus.completed) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) {
+          return Screen2();
+        }),
+      );
     });
 
     _roundnessAnimation = Tween(begin: 10.0, end: 25.0).animate(CurvedAnimation(
@@ -69,6 +69,7 @@ class _BuyButtonState extends State<BuyButton> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    timeDilation = 4.0;
     return Material(
       child: GestureDetector(
         onTap: () {
@@ -76,6 +77,12 @@ class _BuyButtonState extends State<BuyButton> with TickerProviderStateMixin {
             _buttonText = '';
             //Starts animation
             _controller.forward();
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return Screen2();
+              }),
+            );
           });
         },
         child: Hero(
