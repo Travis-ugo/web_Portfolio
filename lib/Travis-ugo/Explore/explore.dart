@@ -5,8 +5,15 @@ import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 class Explore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var text = GoogleFonts.varelaRound(
+      textStyle: TextStyle(
+        fontWeight: FontWeight.w500,
+        color: Color(0xFFF4FAFD),
+        letterSpacing: 0.5,
+      ),
+    );
     return Scaffold(
-      backgroundColor: Pallets.color,
+      backgroundColor: color,
       body: CenteredView(
         child: Column(
           children: [

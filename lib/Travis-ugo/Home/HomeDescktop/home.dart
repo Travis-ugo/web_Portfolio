@@ -10,7 +10,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Pallets.color,
+      backgroundColor: Color(0xFFFFFFF6),
       body: Padding(
         padding: const EdgeInsets.only(bottom: 85),
         child: Column(
@@ -19,10 +19,10 @@ class _HomeDesktopState extends State<HomeDesktop> {
           children: [
             AppBar(
               title: MenuDesktop(),
-              backgroundColor: Colors.transparent,
+              backgroundColor: Colors.black54,
               elevation: 0.0,
             ),
-            SizedBox(height: 25),
+            SizedBox(height: MediaQuery.of(context).size.height / 50),
             Body(),
           ],
         ),

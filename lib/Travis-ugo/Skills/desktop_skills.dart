@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:simple_animations/simple_animations.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
 class Skills extends StatefulWidget {
@@ -12,19 +11,6 @@ class _SkillsState extends State<Skills> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(children: [
-        Plasma(
-          particles: 6,
-          foregroundColor: Color(0xADFFFFFF),
-          backgroundColor: Color(0xff386fc5),
-          size: 1.00,
-          speed: 10.00,
-          offset: 6.11,
-          blendMode: BlendMode.colorDodge,
-          child: Container(
-            width: double.infinity,
-            height: double.infinity,
-          ),
-        ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,7 +20,7 @@ class _SkillsState extends State<Skills> {
               style: GoogleFonts.varelaRound(
                 textStyle: TextStyle(
                   fontSize: 16,
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.w800,
                   color: Colors.black54,
                 ),
               ),
@@ -54,12 +40,16 @@ class _SkillsState extends State<Skills> {
                     icon: MdiIcons.pictureInPictureBottomRight,
                     cloud: 170,
                     percent: 0.8,
+                    animatedTop: 0,
+                    animatedBottom: 0,
+                    animatedLeft: 0,
+                    animatedRight: 0,
                   ),
                   RoundMan(
                     cloud: 50,
                     percent: 0.8,
                     color: Colors.grey,
-                    title: "Flutter",
+                    title: "Mobile Dev",
                     subtitle:
                         '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
                     icon: Icons.phone_android,
@@ -68,7 +58,7 @@ class _SkillsState extends State<Skills> {
                     cloud: 80,
                     percent: 0.75,
                     color: Colors.lightBlue,
-                    title: 'Dart',
+                    title: 'Web Dev',
                     subtitle:
                         'Responsive and fast web\napppications for user expenrince',
                     icon: MdiIcons.laptopChromebook,
@@ -84,19 +74,10 @@ class _SkillsState extends State<Skills> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   RoundMan(
-                    cloud: 70,
-                    percent: 0.7,
-                    color: Colors.green[600],
-                    title: 'HTML',
-                    subtitle:
-                        '''Beautiful user friendly\napplications for moble and web\napplications''',
-                    icon: MdiIcons.pictureInPictureBottomRight,
-                  ),
-                  RoundMan(
                     cloud: 40,
                     percent: 0.5,
                     color: Colors.yellow[900],
-                    title: "Java",
+                    title: "Cloud Store",
                     subtitle:
                         '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
                     icon: Icons.phone_android,
@@ -119,3 +100,16 @@ class _SkillsState extends State<Skills> {
     );
   }
 }
+// Plasma(
+//   particles: 6,
+//   foregroundColor: Color(0xADFFFFFF),
+//   backgroundColor: Color(0xff386fc5),
+//   size: 1.00,
+//   speed: 10.00,
+//   offset: 6.11,
+//   blendMode: BlendMode.colorDodge,
+//   child: Container(
+//     width: MediaQuery.of(context).size.width,
+//     height: MediaQuery.of(context).size.height,
+//   ),
+// ),

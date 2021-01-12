@@ -7,9 +7,10 @@ class HomeMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black87,
       body: Column(
         children: [
-          SizedBox(height: 30),
+          SizedBox(height: MediaQuery.of(context).size.width / 20),
           MenuMobile(),
           Spacer(flex: 1),
           Hero(
@@ -17,28 +18,28 @@ class HomeMobile extends StatelessWidget {
             child: CircleAvatar(
               backgroundColor: Colors.transparent,
               backgroundImage: AssetImage('assets/black..jpg'),
-              radius: 95,
+              radius: MediaQuery.of(context).size.width / 5.7,
             ),
           ),
           Spacer(flex: 1),
           Text(
             "Hi, i'm Travis Okonicha\n",
-            style: GoogleFonts.varelaRound(
+            style: GoogleFonts.montserrat(
               textStyle: TextStyle(
                 fontWeight: FontWeight.w600,
-                fontSize: 24,
+                fontSize: MediaQuery.of(context).size.width / 20,
                 letterSpacing: 0.3,
-                color: Colors.black87,
+                color: Colors.white,
               ),
             ),
           ),
           Text(
             '''i  design and build beautiful mobile and desktop\nfor users design and build beautiful''',
             textAlign: TextAlign.center,
-            style: GoogleFonts.varelaRound(
+            style: GoogleFonts.montserrat(
               textStyle: TextStyle(
                 fontWeight: FontWeight.w100,
-                fontSize: 14,
+                fontSize: MediaQuery.of(context).size.width / 43,
                 letterSpacing: 0.3,
                 color: Colors.grey[500],
               ),
@@ -48,8 +49,8 @@ class HomeMobile extends StatelessWidget {
           InkWell(
             onTap: () => Navigator.pushNamed(context, '/explore'),
             child: Container(
-              width: 95,
-              height: 35,
+              width: MediaQuery.of(context).size.width / 6.5,
+              height: MediaQuery.of(context).size.width / 16.9,
               decoration: BoxDecoration(
                 color: Color(0xFFE8F6FD),
                 borderRadius: BorderRadius.circular(5.5),
@@ -57,7 +58,7 @@ class HomeMobile extends StatelessWidget {
               child: Center(
                 child: Text(
                   "EXPLORE",
-                  style: GoogleFonts.varelaRound(
+                  style: GoogleFonts.montserrat(
                     textStyle: TextStyle(
                       fontWeight: FontWeight.w100,
                       fontSize: 9,
@@ -69,13 +70,13 @@ class HomeMobile extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: MediaQuery.of(context).size.width / 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
                 icon: Icon(MdiIcons.twitter),
-                color: Colors.blue[500],
+                color: Colors.white,
                 iconSize: 14,
                 onPressed: () async {
                   await launch(Uri.parse('https://twitter.com/Travis86622225')
@@ -84,7 +85,7 @@ class HomeMobile extends StatelessWidget {
               ),
               IconButton(
                 icon: Icon(MdiIcons.github),
-                color: Colors.blue[500],
+                color: Colors.white,
                 iconSize: 14,
                 onPressed: () async {
                   await launch(
@@ -93,7 +94,7 @@ class HomeMobile extends StatelessWidget {
               ),
               IconButton(
                 icon: Icon(MdiIcons.linkedin),
-                color: Colors.blue[400],
+                color: Colors.white,
                 iconSize: 14,
                 onPressed: () async {
                   await launch(Uri.parse(

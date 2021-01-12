@@ -5,6 +5,14 @@ import 'package:url_launcher/url_launcher.dart';
 class MenuDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var text = GoogleFonts.montserrat(
+      textStyle: TextStyle(
+        fontSize: MediaQuery.of(context).size.height / 78,
+        fontWeight: FontWeight.w500,
+        color: Color(0xFFF4FAFD),
+        letterSpacing: 0.5,
+      ),
+    );
     return Padding(
       padding: const EdgeInsets.only(left: 0),
       child: Row(
@@ -13,9 +21,9 @@ class MenuDesktop extends StatelessWidget {
           Spacer(flex: 3),
           Text(
             'Travis-ugo',
-            style: GoogleFonts.varelaRound(
+            style: GoogleFonts.montserrat(
               textStyle: TextStyle(
-                fontSize: 12,
+                fontSize: MediaQuery.of(context).size.height / 50,
                 fontWeight: FontWeight.w600,
                 color: Colors.black87,
                 letterSpacing: 0.5,
@@ -28,10 +36,10 @@ class MenuDesktop extends StatelessWidget {
                 await launch(Uri.parse('').toString());
               },
               child: Text(
-                'PORTFOLIO',
+                '  PORTFOLIO',
                 style: text,
               )),
-          SizedBox(width: 30),
+          SizedBox(width: MediaQuery.of(context).size.height / 20),
           FlatButton(
               onPressed: () async {
                 await launch(Uri.parse('').toString());
@@ -40,7 +48,8 @@ class MenuDesktop extends StatelessWidget {
                 'RESUME',
                 style: text,
               )),
-          SizedBox(width: 30),
+          //SizedBox(width: 30),
+          SizedBox(width: MediaQuery.of(context).size.height / 20),
           FlatButton(
               onPressed: () async {
                 await launch(
@@ -50,7 +59,8 @@ class MenuDesktop extends StatelessWidget {
                 'CONTACT',
                 style: text,
               )),
-          SizedBox(width: 30),
+          //SizedBox(width: 30),
+          SizedBox(width: MediaQuery.of(context).size.height / 20),
           IconButton(
             icon: Icon(MdiIcons.moonWaxingCrescent),
             color: Colors.black54,

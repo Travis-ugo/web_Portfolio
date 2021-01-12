@@ -36,7 +36,6 @@ dependencies:
   responsive_builder: ^0.3.0
   menu: ^0.1.4
   url_launcher: ^5.7.10
-  widget_circular_animator: ^0.1.5+1
   simple_animations: ^2.4.2
 
 

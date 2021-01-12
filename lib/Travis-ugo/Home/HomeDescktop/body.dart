@@ -23,45 +23,48 @@ class Body extends StatelessWidget {
                       children: <TextSpan>[
                         TextSpan(
                           text: 'Hi,\n',
-                          style: GoogleFonts.varelaRound(
+                          style: GoogleFonts.montserrat(
                             textStyle: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 45,
-                              letterSpacing: 0.5,
+                              fontWeight: FontWeight.w800,
+                              fontSize: MediaQuery.of(context).size.height / 16,
+                              //fontSize: 44,
+                              letterSpacing: 1.2,
                               color: Colors.black87,
                             ),
                           ),
                         ),
                         TextSpan(
                           text: "i'm Travis Okonicha\n\n",
-                          style: GoogleFonts.varelaRound(
+                          style: GoogleFonts.montserrat(
                             textStyle: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 47,
+                              fontSize:
+                                  MediaQuery.of(context).size.height / 15.999,
                               letterSpacing: 0.5,
-                              color: Colors.black87,
+                              color: Color(0xFF424344),
                             ),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: MediaQuery.of(context).size.height / 400),
                   Text(
                     '''i  design and build beautiful mobile and desktop\nfor users design and build beautiful''',
                     textAlign: TextAlign.left,
-                    style: GoogleFonts.varelaRound(
+                    style: GoogleFonts.montserrat(
                       textStyle: TextStyle(
-                        fontWeight: FontWeight.w100,
-                        fontSize: 16,
-                        letterSpacing: 0.8,
+                        fontWeight: FontWeight.w300,
+                        fontSize: MediaQuery.of(context).size.height / 39,
+                        //fontSize: 19,
+                        letterSpacing: 1.1,
                         color: Colors.grey[500],
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 30),
+              SizedBox(height: MediaQuery.of(context).size.height / 20),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -103,12 +106,12 @@ class Body extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: MediaQuery.of(context).size.height / 20),
                   InkWell(
                     onTap: () => Navigator.pushNamed(context, '/explore'),
                     child: Container(
-                      width: 110,
-                      height: 40,
+                      width: MediaQuery.of(context).size.height / 6.5,
+                      height: MediaQuery.of(context).size.height / 16.9,
                       decoration: BoxDecoration(
                         color: Color(0xFFE8F6FD),
                         borderRadius: BorderRadius.circular(5.5),
@@ -116,11 +119,11 @@ class Body extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "EXPLORE",
-                          style: GoogleFonts.varelaRound(
+                          style: GoogleFonts.montserrat(
                             textStyle: TextStyle(
-                              fontWeight: FontWeight.w100,
-                              fontSize: 9,
-                              letterSpacing: 0.5,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 8,
+                              letterSpacing: 1,
                               color: Colors.blue[400],
                             ),
                           ),
@@ -138,7 +141,7 @@ class Body extends StatelessWidget {
           child: CircleAvatar(
             backgroundColor: Colors.transparent,
             backgroundImage: AssetImage('assets/black..jpg'),
-            radius: 120,
+            radius: MediaQuery.of(context).size.height / 5.7,
           ),
         ),
       ],

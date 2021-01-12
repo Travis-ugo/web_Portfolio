@@ -1,44 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
-class Projects extends StatefulWidget {
+class ProjectsMobile extends StatefulWidget {
   @override
-  _ProjectsState createState() => _ProjectsState();
+  _ProjectsMobileState createState() => _ProjectsMobileState();
 }
 
-class _ProjectsState extends State<Projects> {
+class _ProjectsMobileState extends State<ProjectsMobile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: color,
+      backgroundColor: Colors.black87,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(
-            left: 80,
-            right: 80,
+            left: 8,
+            right: 8,
           ),
           child: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ProjectData(
-                  love: port,
-                  right: 'port loco_',
-                  imageurl: 'download.jpg',
-                  left: '',
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    MobileData(
+                      love: port,
+                      right: 'loco_   ',
+                      imageurl: 'download.jpg',
+                      left: '',
+                    ),
+                  ],
                 ),
-                ProjectData(
-                  love: klaws,
-                  left: '_Portfolio  webApp',
-                  imageurl: 'agro.jpg',
-                  right: '',
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    MobileData(
+                      love: klaws,
+                      left: '   Portfolio_',
+                      imageurl: 'agro.jpg',
+                      right: '',
+                    ),
+                  ],
                 ),
-                ProjectData(
-                  love: world,
-                  right: 'world of flutter_',
-                  imageurl: 'black..jpg',
-                  left: '',
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    MobileData(
+                      love: world,
+                      right: 'flutter_   ',
+                      imageurl: 'black..jpg',
+                      left: '',
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -49,13 +64,13 @@ class _ProjectsState extends State<Projects> {
   }
 }
 
-class ProjectData extends StatelessWidget {
+class MobileData extends StatelessWidget {
   final String right;
   final String imageurl;
   final String left;
   final Data love;
 
-  const ProjectData({
+  const MobileData({
     Key key,
     this.right,
     this.imageurl,
@@ -66,13 +81,13 @@ class ProjectData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(28.0),
+      padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 30),
       child: Row(
-        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             right,
             style: TextStyle(
+              color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: MediaQuery.of(context).size.width / 23,
             ),
@@ -103,6 +118,7 @@ class ProjectData extends StatelessWidget {
           Text(
             left,
             style: TextStyle(
+              color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: MediaQuery.of(context).size.width / 23,
             ),
@@ -113,12 +129,12 @@ class ProjectData extends StatelessWidget {
   }
 }
 
-class Views extends StatefulWidget {
+class InfoMobile extends StatefulWidget {
   @override
-  _ViewsState createState() => _ViewsState();
+  _InfoMobileState createState() => _InfoMobileState();
 }
 
-class _ViewsState extends State<Views> {
+class _InfoMobileState extends State<InfoMobile> {
   Map data = {};
 
   @override
@@ -150,18 +166,20 @@ class _ViewsState extends State<Views> {
                 child: Column(
                   children: [
                     Container(
-                      height: MediaQuery.of(context).size.height,
-                      width: MediaQuery.of(context).size.width / 3,
+                      height: MediaQuery.of(context).size.height / 2,
+                      width: MediaQuery.of(context).size.width,
                       color: Colors.white,
                       child: Image.asset(
                         'assets/${data['imageurl']}',
                         fit: BoxFit.fitWidth,
                       ),
                     ),
-                    Text(data['title']),
                     Text(data['subtitle']),
-                    SizedBox(height: 30),
-                    Text(data['info']),
+                    SizedBox(height: 5),
+                    Text(
+                      data['info'],
+                      textAlign: TextAlign.center,
+                    ),
                     IconButton(
                       icon: Icon(MdiIcons.github),
                       onPressed: () {},
@@ -170,8 +188,8 @@ class _ViewsState extends State<Views> {
                 ),
               ),
               Positioned(
-                right: 30.0,
-                top: 30,
+                right: 5.0,
+                top: 5,
                 child: GestureDetector(
                   onTap: () {
                     Navigator.pop(context);
@@ -181,7 +199,7 @@ class _ViewsState extends State<Views> {
                     style: GoogleFonts.varelaRound(
                       textStyle: TextStyle(
                         fontWeight: FontWeight.w500,
-                        fontSize: 16,
+                        fontSize: 12,
                         letterSpacing: 0.5,
                         color: Colors.black54,
                       ),
@@ -193,36 +211,6 @@ class _ViewsState extends State<Views> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class ScreenTitle extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return TweenAnimationBuilder(
-      child: Text(
-        'holy molly',
-        style: GoogleFonts.varelaRound(
-          textStyle: TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 32,
-            letterSpacing: 0.5,
-            color: Colors.black54,
-          ),
-        ),
-      ),
-      duration: Duration(microseconds: 500),
-      tween: Tween<double>(begin: 0, end: 1),
-      builder: (BuildContext context, double value, Widget child) {
-        return Opacity(
-          opacity: value,
-          child: Padding(
-            padding: EdgeInsets.only(top: value * 30),
-            child: child,
-          ),
-        );
-      },
     );
   }
 }

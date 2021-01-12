@@ -1,45 +1,52 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class Work extends StatefulWidget {
-  final String mage;
-  const Work({Key key, this.mage}) : super(key: key);
-  @override
-  _WorkState createState() => _WorkState();
-}
+// class Work extends StatefulWidget {
+//   final String mage;
+//   const Work({Key key, this.mage}) : super(key: key);
+//   @override
+//   _WorkState createState() => _WorkState();
+// }
 
-class _WorkState extends State<Work> {
-  double _height = 200;
-  double _width = 700;
+// class _WorkState extends State<Work> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.blue,
+//       body: TweenAnimationBuilder(
+//         tween: Tween<double>(
+//           begin: 0,
+//           end: 1,
+//         ),
+//         child: Text(
+//           'Honcho',
+//           style: TextStyle(
+//               fontSize: 42, color: Colors.white, fontWeight: FontWeight.bold),
+//         ),
+//         duration: Duration(milliseconds: 500),
+//         builder: (BuildContext context, double val, Widget child) {
+//           return Opacity(
+//             opacity: val,
+//             child: Padding(padding: EdgeInsets.only(top: val * 30)),
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(28.0),
-      child: Container(
-        child: Stack(
-          children: [
-            InkWell(
-              child: AnimatedContainer(
-                duration: Duration(milliseconds: 250),
-                height: _height,
-                width: _width,
-                color: Colors.black,
-              ),
-              onTap: () {
-                setState(() {});
-              },
-            ),
-            Positioned(
-              top: 3.0,
-              right: 3.0,
-              child: Text(
-                'My Work Ethics',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+// boeck() {
+//   return Scaffold(
+//     body: Hero(
+//       tag: 'olelele',
+//       flightShuttleBuilder: (
+//         BuildContext flightContext,
+//         Animation<double> animation,
+//         HeroFlightDirection flightDirection,
+//         fromHeroContext,
+//         toHeroContext,
+//       ) =>
+//           Work(),
+//       child: Text('Ola'),
+//     ),
+//   );
+// }

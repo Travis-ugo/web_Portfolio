@@ -5,6 +5,14 @@ import 'package:url_launcher/url_launcher.dart';
 class MenuMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var _text = GoogleFonts.montserrat(
+      textStyle: TextStyle(
+        fontSize: MediaQuery.of(context).size.width / 67,
+        fontWeight: FontWeight.w500,
+        color: Color(0xFFF4FAFD),
+        letterSpacing: 0.5,
+      ),
+    );
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -13,19 +21,20 @@ class MenuMobile extends StatelessWidget {
               await launch(Uri.parse('').toString());
             },
             child: Text(
-              'PORTFOLIO',
-              style: text,
+              '  PORTFOLIO',
+              style: _text,
             )),
-        SizedBox(width: 20),
+        SizedBox(width: MediaQuery.of(context).size.width / 35),
         FlatButton(
             onPressed: () async {
               await launch(Uri.parse('').toString());
             },
             child: Text(
               'RESUME',
-              style: text,
+              style: _text,
             )),
-        SizedBox(width: 20),
+        //SizedBox(width: 30),
+        SizedBox(width: MediaQuery.of(context).size.width / 35),
         FlatButton(
             onPressed: () async {
               await launch(
@@ -33,15 +42,16 @@ class MenuMobile extends StatelessWidget {
             },
             child: Text(
               'CONTACT',
-              style: text,
+              style: _text,
             )),
-        SizedBox(width: 20),
-        IconButton(
-          icon: Icon(MdiIcons.moonWaxingCrescent),
-          color: Colors.black54,
-          iconSize: 17,
-          onPressed: () {},
-        ),
+        //SizedBox(width: 30),
+        // SizedBox(width: MediaQuery.of(context).size.width / 20),
+        // IconButton(
+        //   icon: Icon(MdiIcons.moonWaxingCrescent),
+        //   color: Colors.black54,
+        //   iconSize: 17,
+        //   onPressed: () {},
+        // ),
       ],
     );
   }

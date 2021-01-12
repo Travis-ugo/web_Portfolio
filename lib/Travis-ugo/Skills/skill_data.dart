@@ -9,6 +9,10 @@ class RoundMan extends StatefulWidget {
   final IconData icon;
   final double percent;
   final double cloud;
+  final double animatedTop;
+  final double animatedBottom;
+  final double animatedRight;
+  final double animatedLeft;
   const RoundMan({
     Key key,
     @required this.title,
@@ -17,6 +21,10 @@ class RoundMan extends StatefulWidget {
     @required this.icon,
     @required this.percent,
     @required this.cloud,
+    this.animatedTop,
+    this.animatedBottom,
+    this.animatedRight,
+    this.animatedLeft,
   }) : super(key: key);
 
   @override
@@ -38,7 +46,7 @@ class _RoundManState extends State<RoundMan> {
     loco();
   }
 
-  double _heigh = 60;
+  double _heigh = 40;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -50,24 +58,33 @@ class _RoundManState extends State<RoundMan> {
             child: CircularPercentIndicator(
               animation: true,
               animationDuration: 12000,
-              curve: Curves.bounceIn,
+              curve: Curves.bounceOut,
               percent: widget.percent,
               radius: _heigh + 10,
               lineWidth: 5.0,
               progressColor: widget.color.withOpacity(0.8),
               center: InkWell(
-                child: AnimatedContainer(
-                  height: _heigh,
-                  width: _heigh,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(150),
-                    color: widget.color,
-                  ),
+                child: AnimatedPositioned(
+                  curve: Curves.bounceInOut,
+                  top: widget.animatedTop,
+                  bottom: widget.animatedBottom,
+                  left: widget.animatedRight,
+                  right: widget.animatedLeft,
                   duration: Duration(milliseconds: 350),
-                  child: Icon(
-                    widget.icon,
-                    size: 15.0,
-                    color: Colors.white,
+                  child: AnimatedContainer(
+                    curve: Curves.bounceInOut,
+                    height: _heigh,
+                    width: _heigh,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(150),
+                      color: widget.color,
+                    ),
+                    duration: Duration(milliseconds: 350),
+                    child: Icon(
+                      widget.icon,
+                      size: 15.0,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -77,7 +94,7 @@ class _RoundManState extends State<RoundMan> {
         Text(
           widget.title,
           textAlign: TextAlign.center,
-          style: GoogleFonts.varelaRound(
+          style: GoogleFonts.montserrat(
             textStyle: TextStyle(
               fontSize: 10,
               fontWeight: FontWeight.bold,
@@ -88,7 +105,7 @@ class _RoundManState extends State<RoundMan> {
         Text(
           widget.subtitle,
           textAlign: TextAlign.center,
-          style: GoogleFonts.varelaRound(
+          style: GoogleFonts.montserrat(
             textStyle: TextStyle(
               fontSize: 10,
               fontWeight: FontWeight.w400,
