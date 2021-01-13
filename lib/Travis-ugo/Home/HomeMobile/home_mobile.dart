@@ -7,7 +7,7 @@ class HomeMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: mainColor,
       body: Column(
         children: [
           SizedBox(height: MediaQuery.of(context).size.width / 20),
@@ -29,7 +29,7 @@ class HomeMobile extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 fontSize: MediaQuery.of(context).size.width / 20,
                 letterSpacing: 0.3,
-                color: Colors.white,
+                color: Color(0xFF41413F),
               ),
             ),
           ),
@@ -41,7 +41,7 @@ class HomeMobile extends StatelessWidget {
                 fontWeight: FontWeight.w100,
                 fontSize: MediaQuery.of(context).size.width / 43,
                 letterSpacing: 0.3,
-                color: Colors.grey[500],
+                color: Color(0xFF41413F),
               ),
             ),
           ),

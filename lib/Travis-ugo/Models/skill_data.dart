@@ -33,9 +33,13 @@ class RoundMan extends StatefulWidget {
 
 class _RoundManState extends State<RoundMan> {
   void loco() {
-    Future.delayed(Duration(milliseconds: 12400), () {
+    Future.delayed(Duration(milliseconds: 250), () {
       setState(() {
         _heigh = widget.cloud;
+        top = widget.animatedTop;
+        bottom = widget.animatedBottom;
+        right = widget.animatedRight;
+        left = widget.animatedLeft;
       });
     });
   }
@@ -46,6 +50,10 @@ class _RoundManState extends State<RoundMan> {
     loco();
   }
 
+  double top = 0;
+  double bottom = 0;
+  double right = 0;
+  double left = 0;
   double _heigh = 40;
   @override
   Widget build(BuildContext context) {
@@ -60,16 +68,16 @@ class _RoundManState extends State<RoundMan> {
               animationDuration: 12000,
               curve: Curves.bounceOut,
               percent: widget.percent,
-              radius: _heigh + 10,
+              radius: _heigh + 5,
               lineWidth: 5.0,
               progressColor: widget.color.withOpacity(0.8),
               center: InkWell(
                 child: AnimatedPositioned(
                   curve: Curves.bounceInOut,
-                  top: widget.animatedTop,
-                  bottom: widget.animatedBottom,
-                  left: widget.animatedRight,
-                  right: widget.animatedLeft,
+                  top: top,
+                  bottom: bottom,
+                  left: left,
+                  right: right,
                   duration: Duration(milliseconds: 350),
                   child: AnimatedContainer(
                     curve: Curves.bounceInOut,

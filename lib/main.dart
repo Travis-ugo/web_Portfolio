@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
-import 'Travis-ugo/Explore/freeze.dart';
 import 'Travis-ugo/Home/HomeMobile/home_mobile.dart';
-import 'Travis-ugo/Project/ProjectMobile/project_mobile.dart';
+import 'Travis-ugo/Project/project_mobile.dart';
 import 'Travis-ugo/utils/animation.dart';
 
 void main() {
@@ -22,7 +21,22 @@ class MyApp extends StatelessWidget {
         // '/': (BuildContext context) => ProjectsMobile(),
         // '/views': (BuildContext context) => InfoMobile(),
       },
-      home: Skills(),
+      home: HomeMobile(),
     );
+  }
+}
+
+var smooth;
+
+class Molor {
+  var lo = Text('cool');
+  Color mainColor = Color(0xFFFFFFF6);
+  void colorSwitch() {
+    // mainColor = Color(0xFF20201F);
+    if (mainColor == Color(0xFFFFFFF6)) {
+      mainColor = Color(0xFF20201F);
+    } else {
+      mainColor = Color(0xFFFFFFF6);
+    }
   }
 }

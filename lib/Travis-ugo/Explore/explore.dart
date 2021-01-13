@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Travis-ugo/utils/centered_view.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
 class Explore extends StatelessWidget {
@@ -111,6 +110,23 @@ class Explore extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CenteredView extends StatelessWidget {
+  final Widget child;
+  const CenteredView({Key key, this.child}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 80, horizontal: 80),
+      alignment: Alignment.topCenter,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: 1200),
+        child: child,
       ),
     );
   }

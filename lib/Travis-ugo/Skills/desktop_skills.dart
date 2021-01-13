@@ -25,12 +25,10 @@ class _SkillsState extends State<Skills> {
                 ),
               ),
             ),
-            SizedBox(height: 70),
+            SizedBox(height: MediaQuery.of(context).size.height / 15),
             Padding(
               padding: const EdgeInsets.only(bottom: 50),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Stack(
                 children: [
                   RoundMan(
                     color: Colors.blueAccent,
@@ -40,9 +38,9 @@ class _SkillsState extends State<Skills> {
                     icon: MdiIcons.pictureInPictureBottomRight,
                     cloud: 170,
                     percent: 0.8,
-                    animatedTop: 0,
+                    animatedTop: 15,
                     animatedBottom: 0,
-                    animatedLeft: 0,
+                    animatedLeft: 30,
                     animatedRight: 0,
                   ),
                   RoundMan(
@@ -51,8 +49,12 @@ class _SkillsState extends State<Skills> {
                     color: Colors.grey,
                     title: "Mobile Dev",
                     subtitle:
-                        '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
+                        '''develope\ncross platform native apps\nfor easy user experiences''',
                     icon: Icons.phone_android,
+                    animatedTop: 18,
+                    animatedBottom: 0,
+                    animatedLeft: 0,
+                    animatedRight: 60,
                   ),
                   RoundMan(
                     cloud: 80,
@@ -62,34 +64,10 @@ class _SkillsState extends State<Skills> {
                     subtitle:
                         'Responsive and fast web\napppications for user expenrince',
                     icon: MdiIcons.laptopChromebook,
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 50),
-            Padding(
-              padding: const EdgeInsets.only(right: 0),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  RoundMan(
-                    cloud: 40,
-                    percent: 0.5,
-                    color: Colors.yellow[900],
-                    title: "Cloud Store",
-                    subtitle:
-                        '''Engage in developing\ncross platform fast and beautiful\nnative apps for easy user\nexperiences''',
-                    icon: Icons.phone_android,
-                  ),
-                  RoundMan(
-                    cloud: 60,
-                    percent: 0.6,
-                    color: Colors.blue[600],
-                    title: 'Python',
-                    subtitle:
-                        'Responsive and fast web\napppications for user expenrince',
-                    icon: MdiIcons.laptopChromebook,
+                    animatedTop: 0,
+                    animatedBottom: 30,
+                    animatedLeft: 30,
+                    animatedRight: 20,
                   ),
                 ],
               ),
@@ -100,16 +78,3 @@ class _SkillsState extends State<Skills> {
     );
   }
 }
-// Plasma(
-//   particles: 6,
-//   foregroundColor: Color(0xADFFFFFF),
-//   backgroundColor: Color(0xff386fc5),
-//   size: 1.00,
-//   speed: 10.00,
-//   offset: 6.11,
-//   blendMode: BlendMode.colorDodge,
-//   child: Container(
-//     width: MediaQuery.of(context).size.width,
-//     height: MediaQuery.of(context).size.height,
-//   ),
-// ),

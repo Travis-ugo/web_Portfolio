@@ -65,7 +65,9 @@ class MenuDesktop extends StatelessWidget {
             icon: Icon(MdiIcons.moonWaxingCrescent),
             color: Colors.black54,
             iconSize: 17,
-            onPressed: () {},
+            onPressed: () {
+              mainColor = Color(0xFF141414);
+            },
           ),
           Spacer(flex: 40),
         ],

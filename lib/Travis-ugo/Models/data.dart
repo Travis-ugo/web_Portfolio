@@ -17,8 +17,8 @@ class Data {
 }
 
 final Data port = Data(
-  title: 'Portfolio  webApp',
-  subtitle: 'Travis_ugo Portfolio',
+  title: 'Travis_ugo',
+  subtitle: 'Travis_ugo Portfolio webApp',
   info:
       'this is a personal portfolio webapp developed with flutter to show case my develpomebt skills',
   imageurl: 'download.jpg',
@@ -27,7 +27,7 @@ final Data port = Data(
 final Data klaws = Data(
   title: 'Telegram Bot',
   subtitle: 'Telegram FX forwarder',
-  info: 'this is a telegram FX forwarder',
+  info: 'A telegram forex signal forwarder',
   imageurl: 'agro.jpg',
   backgroundImage: 'agro.jpg',
 );
@@ -36,7 +36,7 @@ final Data world = Data(
   title: 'World News App',
   subtitle: 'World News app',
   info:
-      'this is a world new app developed woth flutter and uses the new api to get news information from all over  the world',
+      'A world new app developed woth flutter\nuses the new api to get news information from\nall over  the world',
   imageurl: 'black..jpg',
   backgroundImage: 'black..jpg',
 );
@@ -45,7 +45,7 @@ final Data soccer = Data(
   title: 'Sport News App',
   subtitle: 'Sport News app',
   info:
-      'this app is app is made to get sport new from all over the world and it makes use of the sky news sport API',
+      'Sport news app to get sport news using the sky news sport API to get data',
   imageurl: 'net.jpg',
   backgroundImage: 'net.jpg',
 );
