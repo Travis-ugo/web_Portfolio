@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
-import 'package:travis_ugo/Travis-ugo/Models/project_data.dart';
 
 class Cold extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class _ColdState extends State<Cold> with SingleTickerProviderStateMixin {
     super.initState();
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 300),
+      duration: Duration(milliseconds: 500),
     );
   }
   // void _onDragStart(DragStartDetails details) {
@@ -29,9 +29,6 @@ class _ColdState extends State<Cold> with SingleTickerProviderStateMixin {
     animationController.isDismissed
         ? animationController.forward()
         : animationController.reverse();
-    setState(() {
-      _width = 25;
-    });
   }
 
   @override
@@ -40,102 +37,44 @@ class _ColdState extends State<Cold> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 
-  double _width = 0;
+  var extraPage = Container(
+    color: Colors.greenAccent,
+    height: 100,
+    width: 100,
+  );
+  var topPage = Container(
+    color: Colors.blue,
+    height: 100,
+    width: 100,
+  );
+  var bottomPage = Container(
+    color: Colors.yellow,
+  );
+  final double maxSlide = 340.0;
   @override
   Widget build(BuildContext context) {
-    //final double maxSlide = 1340.0;
-    final double maxSlide = 1340.0;
-    var loco = Stack(
-      children: [
-        Scaffold(
-          backgroundColor: color,
-          body: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                left: 80,
-                right: 80,
-              ),
-              child: Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        ProjectData(
-                          love: port,
-                          right: 'port loco_',
-                          imageurl: 'download.jpg',
-                          left: '',
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        ProjectData(
-                          love: klaws,
-                          left: '_Portfolio  webApp',
-                          imageurl: 'agro.jpg',
-                          right: '',
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        ProjectData(
-                          love: world,
-                          right: 'world of flutter_',
-                          imageurl: 'black..jpg',
-                          left: '',
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            AnimatedContainer(
-              color: Colors.black,
-              height: MediaQuery.of(context).size.height / 2,
-              width: _width,
-              duration: Duration(milliseconds: 200),
-            ),
-            AnimatedContainer(
-              color: Colors.black,
-              height: MediaQuery.of(context).size.height / 2,
-              width: _width,
-              duration: Duration(milliseconds: 200),
-            ),
-          ],
-        ),
-      ],
-    );
-
     return GestureDetector(
       onTap: toggle,
       child: AnimatedBuilder(
         animation: animationController,
         builder: (BuildContext context, Widget child) {
           double slide = maxSlide * animationController.value;
-          double scale = 1 - (animationController.value * 0.3);
+          double scale = 1 - (animationController.value);
           return Stack(children: [
-            //Projects(),
-            loco,
+            bottomPage,
             Transform(
               transform: Matrix4.identity()
                 ..translate(slide)
                 ..scale(scale),
-              alignment: Alignment.centerLeft,
-              child: HomeDesktop(),
+              alignment: Alignment.bottomRight,
+              child: topPage,
+            ),
+            Transform(
+              transform: Matrix4.identity()
+                ..translate(slide)
+                ..scale(scale),
+              alignment: Alignment.bottomLeft,
+              child: extraPage,
             ),
           ]);
         },

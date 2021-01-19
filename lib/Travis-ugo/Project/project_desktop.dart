@@ -2,164 +2,135 @@ import 'package:flutter/material.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 import 'package:travis_ugo/Travis-ugo/Models/project_data.dart';
 
-class Projects extends StatefulWidget {
-  @override
-  _ProjectsState createState() => _ProjectsState();
-}
+var mainStyle = TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.w700,
+);
+var subStyle = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w200,
+);
 
-class _ProjectsState extends State<Projects> {
+class DesktopProject extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: color,
+      backgroundColor: mainColor,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(
-            left: 80,
-            right: 80,
+            left: 90,
+            right: 90,
           ),
           child: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ProjectData(
-                  love: port,
-                  right: 'port loco_',
-                  imageurl: 'download.jpg',
-                  left: '',
+                MenuDesktop(),
+                Padding(
+                  padding: const EdgeInsets.only(top: 120, bottom: 80),
+                  child: Text(
+                    'Projects.',
+                    style: TextStyle(
+                      fontSize: 140,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
-                ProjectData(
-                  love: klaws,
-                  left: '_Portfolio  webApp',
-                  imageurl: 'agro.jpg',
-                  right: '',
+                SizedBox(height: MediaQuery.of(context).size.height / 5.7),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Travs-ugo_\n.com',
+                          textAlign: TextAlign.start,
+                          style: mainStyle,
+                        ),
+                        Text(
+                          'Dektop web App\nand mobile for this website',
+                          style: subStyle,
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 90),
+                    DesktopData(
+                      love: port,
+                      imageurl: 'download.jpg',
+                    ),
+                  ],
                 ),
-                ProjectData(
-                  love: world,
-                  right: 'world of flutter_',
-                  imageurl: 'black..jpg',
-                  left: '',
+                SizedBox(height: MediaQuery.of(context).size.height / 4),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    DesktopData(
+                      love: klaws,
+                      imageurl: 'agro.jpg',
+                    ),
+                    SizedBox(width: 90),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Telegram_\nBot', style: mainStyle),
+                        Text(
+                          'Forex forwarder\ntelegram bot',
+                          style: subStyle,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height / 4),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Votonic_', style: mainStyle),
+                        Text(
+                          'voting App\naccesed from the web',
+                          style: subStyle,
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 90),
+                    DesktopData(
+                      love: world,
+                      imageurl: 'black..jpg',
+                    ),
+                  ],
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height / 4),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    DesktopData(
+                      love: world,
+                      imageurl: 'net.jpg',
+                    ),
+                    SizedBox(width: 70),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Football_\nlive', style: mainStyle),
+                        Text(
+                          '    Live stream\nsport application',
+                          style: subStyle,
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ],
             ),
           ),
         ),
       ),
-    );
-  }
-}
-
-class Views extends StatefulWidget {
-  @override
-  _ViewsState createState() => _ViewsState();
-}
-
-class _ViewsState extends State<Views> {
-  Map data = {};
-
-  @override
-  Widget build(BuildContext context) {
-    data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
-    print(data);
-
-    return Scaffold(
-      body: Column(
-        children: [
-          Stack(
-            children: [
-              Hero(
-                tag: data['imageurl'],
-                child: Container(
-                  height: MediaQuery.of(context).size.height,
-                  // decoration: BoxDecoration(
-                  //   image: DecorationImage(
-                  //     image: AssetImage('assets/${data['imageurl']}'),
-                  //
-                  //   ),
-                  // ),
-                  color: Colors.blue,
-                ),
-              ),
-              Container(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                child: Column(
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height,
-                      width: MediaQuery.of(context).size.width / 3,
-                      color: Colors.white,
-                      child: Image.asset(
-                        'assets/${data['imageurl']}',
-                        fit: BoxFit.fitWidth,
-                      ),
-                    ),
-                    Text(data['title']),
-                    Text(data['subtitle']),
-                    SizedBox(height: 30),
-                    Text(data['info']),
-                    IconButton(
-                      icon: Icon(MdiIcons.github),
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                right: 30.0,
-                top: 30,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text(
-                    'Close',
-                    style: GoogleFonts.varelaRound(
-                      textStyle: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        letterSpacing: 0.5,
-                        color: Colors.black54,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class ScreenTitle extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return TweenAnimationBuilder(
-      child: Text(
-        'holy molly',
-        style: GoogleFonts.varelaRound(
-          textStyle: TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 32,
-            letterSpacing: 0.5,
-            color: Colors.black54,
-          ),
-        ),
-      ),
-      duration: Duration(microseconds: 500),
-      tween: Tween<double>(begin: 0, end: 1),
-      builder: (BuildContext context, double value, Widget child) {
-        return Opacity(
-          opacity: value,
-          child: Padding(
-            padding: EdgeInsets.only(top: value * 30),
-            child: child,
-          ),
-        );
-      },
     );
   }
 }

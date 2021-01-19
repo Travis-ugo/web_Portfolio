@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
+import 'package:travis_ugo/Travis-ugo/Project/project_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
-import 'Travis-ugo/Home/HomeMobile/home_mobile.dart';
-import 'Travis-ugo/Project/project_mobile.dart';
-import 'Travis-ugo/utils/animation.dart';
+import 'Travis-ugo/Footer/mobile_footer.dart';
+import 'Travis-ugo/Project/viewModel.dart';
+import 'Travis-ugo/Skills/mobile_skills.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,28 +17,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
-        //   '/': (BuildContext context) => HomeDesktop(),
-        //   //'/explore': (BuildContext conext) => Explore(),
-        //   '/skills': (BuildContext context) => Views(),
-        // '/': (BuildContext context) => ProjectsMobile(),
-        // '/views': (BuildContext context) => InfoMobile(),
+        '/': (BuildContext context) => HomeMobile(),
+        '/mobileskills': (BuildContext context) => Pagination(),
+        '/mobileproject': (BuildContext context) => MobileProject(),
+        '/mobileInfo': (BuildContext context) => InfoMobile(),
+        '/mobilefooter': (BuildContext context) => MobileFooter(),
       },
-      home: HomeMobile(),
+      // home: Pagination(),
     );
-  }
-}
-
-var smooth;
-
-class Molor {
-  var lo = Text('cool');
-  Color mainColor = Color(0xFFFFFFF6);
-  void colorSwitch() {
-    // mainColor = Color(0xFF20201F);
-    if (mainColor == Color(0xFFFFFFF6)) {
-      mainColor = Color(0xFF20201F);
-    } else {
-      mainColor = Color(0xFFFFFFF6);
-    }
   }
 }

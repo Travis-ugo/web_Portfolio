@@ -1,80 +1,102 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:travis_ugo/Travis-ugo/Home/HomeDescktop/menu_descktop.dart';
+import 'package:travis_ugo/Travis-ugo/Models/skill_data.dart';
 
-class Skills extends StatefulWidget {
+class DesktopSkills extends StatefulWidget {
   @override
-  _SkillsState createState() => _SkillsState();
+  _DesktopSkillsState createState() => _DesktopSkillsState();
 }
 
-class _SkillsState extends State<Skills> {
+class _DesktopSkillsState extends State<DesktopSkills> {
+  void mood() {
+    Future.delayed(Duration(milliseconds: 1600), () {
+      setState(() {
+        space = 150;
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    mood();
+  }
+
+  double space = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: [
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'Skills',
-              style: GoogleFonts.varelaRound(
-                textStyle: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w800,
-                  color: Colors.black54,
-                ),
-              ),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height / 15),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 50),
-              child: Stack(
+      backgroundColor: mainColor,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  RoundMan(
-                    color: Colors.blueAccent,
-                    title: 'UI?UX design',
-                    subtitle:
-                        '''Beautiful user friendly\napplications for moble and web\napplications''',
-                    icon: MdiIcons.pictureInPictureBottomRight,
-                    cloud: 170,
-                    percent: 0.8,
-                    animatedTop: 15,
-                    animatedBottom: 0,
-                    animatedLeft: 30,
-                    animatedRight: 0,
+                  SizedBox(height: MediaQuery.of(context).size.height / 18),
+                  new Padding(
+                    padding: EdgeInsets.only(
+                      right: space,
+                    ),
+                    child: RoundMan(
+                      color: Colors.blueAccent,
+                      title: 'UI/UX design',
+                      subtitle:
+                          '''Beautiful user friendly\napplications for moble and web\napplications''',
+                      icon: MdiIcons.pictureInPictureBottomRight,
+                      cloud: 250,
+                      x: -0.9,
+                      y: 0.3,
+                    ),
                   ),
                   RoundMan(
-                    cloud: 50,
-                    percent: 0.8,
-                    color: Colors.grey,
-                    title: "Mobile Dev",
-                    subtitle:
-                        '''develope\ncross platform native apps\nfor easy user experiences''',
-                    icon: Icons.phone_android,
-                    animatedTop: 18,
-                    animatedBottom: 0,
-                    animatedLeft: 0,
-                    animatedRight: 60,
-                  ),
-                  RoundMan(
-                    cloud: 80,
-                    percent: 0.75,
-                    color: Colors.lightBlue,
+                    cloud: 90,
+                    color: Colors.red,
                     title: 'Web Dev',
                     subtitle:
                         'Responsive and fast web\napppications for user expenrince',
                     icon: MdiIcons.laptopChromebook,
-                    animatedTop: 0,
-                    animatedBottom: 30,
-                    animatedLeft: 30,
-                    animatedRight: 20,
+                    x: 0.5,
+                    y: -0.2,
                   ),
                 ],
               ),
-            ),
-          ],
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  RoundMan(
+                    cloud: 150,
+                    color: Colors.yellowAccent,
+                    title: 'Web Dev',
+                    subtitle:
+                        'Responsive and fast web\napppications for user expenrince',
+                    icon: MdiIcons.laptopChromebook,
+                    x: -0.0,
+                    y: 0.1,
+                  ),
+                  SizedBox(width: space),
+                  RoundMan(
+                    cloud: 60,
+                    color: Colors.greenAccent,
+                    title: "Mobile Dev",
+                    subtitle:
+                        '''develope\ncross platform native apps\nfor easy user experiences''',
+                    icon: Icons.phone_android,
+                    x: -0.0,
+                    y: -0.9,
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
-      ]),
+      ),
     );
   }
 }

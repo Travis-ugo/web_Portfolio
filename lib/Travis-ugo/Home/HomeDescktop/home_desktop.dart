@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -7,27 +8,31 @@ class HomeDesktop extends StatefulWidget {
   _HomeDesktopState createState() => _HomeDesktopState();
 }
 
-Color mainColor = Color(0xFFFFFFF6);
+ScrollController controller;
 
 class _HomeDesktopState extends State<HomeDesktop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mainColor,
-      body: Padding(
-        padding: const EdgeInsets.only(bottom: 85),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            AppBar(
-              title: MenuDesktop(),
-              backgroundColor: Colors.black54,
-              elevation: 0.0,
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height / 50),
-            Body(),
-          ],
+      backgroundColor: Colors.blueAccent,
+      body: SingleChildScrollView(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          child: Stack(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(''),
+                  MenuDesktop(),
+                  Body(),
+                ],
+              ),
+              Contact(),
+            ],
+          ),
         ),
       ),
     );
@@ -39,7 +44,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 80),
@@ -47,66 +52,39 @@ class Body extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  RichText(
-                    text: TextSpan(
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: 'Hi,\n',
-                          style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
-                              fontWeight: FontWeight.w800,
-                              fontSize: MediaQuery.of(context).size.height / 16,
-                              //fontSize: 44,
-                              letterSpacing: 1.2,
-                              color: Colors.black87,
-                            ),
-                          ),
-                        ),
-                        TextSpan(
-                          text: "i'm Travis Okonicha\n\n",
-                          style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize:
-                                  MediaQuery.of(context).size.height / 15.999,
-                              letterSpacing: 0.5,
-                              color: Color(0xFF424344),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+              Text(
+                "Hi,\ni'm Travis Okonicha",
+                style: GoogleFonts.varelaRound(
+                  textStyle: TextStyle(
+                    fontWeight: FontWeight.w800,
+                    fontSize: MediaQuery.of(context).size.height / 11.5,
+                    letterSpacing: 1.2,
+                    color: Colors.black,
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height / 400),
-                  Text(
-                    '''i  design and build beautiful mobile and desktop\nfor users design and build beautiful''',
-                    textAlign: TextAlign.left,
-                    style: GoogleFonts.montserrat(
-                      textStyle: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: MediaQuery.of(context).size.height / 39,
-                        //fontSize: 19,
-                        letterSpacing: 1.1,
-                        color: Colors.grey[500],
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height / 20),
+              Text(
+                '''\ni design and build beautiful mobile\nand desktop for users design and build beautiful''',
+                textAlign: TextAlign.left,
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    fontWeight: FontWeight.w200,
+                    fontSize: MediaQuery.of(context).size.height / 35,
+                    letterSpacing: 1.1,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              SizedBox(height: 15),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       IconButton(
                         icon: Icon(MdiIcons.twitter),
-                        color: Colors.blue[500],
+                        color: Color(0xFF424344),
                         iconSize: 18,
                         onPressed: () async {
                           await launch(
@@ -114,10 +92,9 @@ class Body extends StatelessWidget {
                                   .toString());
                         },
                       ),
-                      //SizedBox(width: 15),
                       IconButton(
                         icon: Icon(MdiIcons.github),
-                        color: Colors.blue[500],
+                        color: Color(0xFF424344),
                         iconSize: 18,
                         onPressed: () async {
                           await launch(
@@ -125,10 +102,9 @@ class Body extends StatelessWidget {
                                   .toString());
                         },
                       ),
-
                       IconButton(
                         icon: Icon(MdiIcons.linkedin),
-                        color: Colors.blue[400],
+                        color: Color(0xFF424344),
                         iconSize: 18,
                         onPressed: () async {
                           await launch(Uri.parse(
@@ -156,7 +132,7 @@ class Body extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                               fontSize: 8,
                               letterSpacing: 1,
-                              color: Colors.blue[400],
+                              color: Colors.blue[700],
                             ),
                           ),
                         ),
@@ -173,7 +149,7 @@ class Body extends StatelessWidget {
           child: CircleAvatar(
             backgroundColor: Colors.transparent,
             backgroundImage: AssetImage('assets/black..jpg'),
-            radius: MediaQuery.of(context).size.height / 5.7,
+            radius: MediaQuery.of(context).size.height / 5,
           ),
         ),
       ],

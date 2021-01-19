@@ -50,13 +50,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.1"
-  countup:
-    dependency: "direct main"
-    description:
-      name: countup
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.3"
   crypto:
     dependency: transitive
     description:
@@ -128,13 +121,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.4"
-  image_slider:
-    dependency: "direct main"
-    description:
-      name: image_slider
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.2"
   intl:
     dependency: transitive
     description:
@@ -280,6 +266,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  smooth_scroll_web:
+    dependency: "direct main"
+    description:
+      name: smooth_scroll_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   source_span:
     dependency: transitive
     description:

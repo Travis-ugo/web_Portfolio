@@ -12,7 +12,7 @@ class Explore extends StatelessWidget {
       ),
     );
     return Scaffold(
-      backgroundColor: color,
+      backgroundColor: Color(0xFFF4FAFD),
       body: CenteredView(
         child: Column(
           children: [

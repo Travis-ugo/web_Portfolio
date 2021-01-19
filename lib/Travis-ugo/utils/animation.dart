@@ -15,7 +15,7 @@ class FadeInUi extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                FadeIn(2, CirclePlaceholder()),
+                FadeIn(2, Container(height: 50, width: 50, color: Colors.blue)),
                 FadeIn(2.33, CirclePlaceholder()),
                 FadeIn(2.66, CirclePlaceholder())
               ],
@@ -23,7 +23,7 @@ class FadeInUi extends StatelessWidget {
             WhitespaceSeparator(),
             FadeIn(4, CardPlaceholder()),
             FadeIn(4.5, CardPlaceholder()),
-            FadeIn(5, CardPlaceholder()),
+            FadeIn(5, Container(height: 50, width: 50, color: Colors.blue)),
             FadeIn(5.5, CardPlaceholder())
           ],
         ),
