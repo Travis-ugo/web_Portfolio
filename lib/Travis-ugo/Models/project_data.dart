@@ -2,61 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
 class DesktopData extends StatelessWidget {
-  // final String rightTitle;
-  // final String leftTitle;
   final String imageurl;
   final Data love;
-  // final String rightSubtitle;
-  // final String leftSubtitle;
 
   const DesktopData({
     Key key,
-    // this.rightTitle,
-    // this.rightSubtitle,
     @required this.imageurl,
     @required this.love,
-    // this.leftTitle,
-    // this.leftSubtitle,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        // Column(
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   children: [
-        //     Text(
-        //       rightTitle,
-        //       style: TextStyle(
-        //         color: Colors.black,
-        //         fontWeight: FontWeight.w700,
-        //         fontSize: 18,
-        //         //fontSize: MediaQuery.of(context).size.width / 40,
-        //       ),
-        //     ),
-        //     Text(
-        //       rightSubtitle,
-        //       style: TextStyle(
-        //         color: Colors.black,
-        //         fontWeight: FontWeight.w200,
-        //         fontSize: 14,
-        //         //fontSize: MediaQuery.of(context).size.width / 40,
-        //       ),
-        //     ),
-        //   ],
-        // ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: GestureDetector(
             onTap: () {
               Data instance = love;
-              Navigator.pushNamed(context, '/views', arguments: {
+              Navigator.pushNamed(context, '/mobileInfo', arguments: {
                 'title': instance.title,
                 'subtitle': instance.subtitle,
                 'info': instance.info,
                 'imageurl': instance.imageurl,
-                'backgroundimage': instance.backgroundImage,
+                'whiteImage': instance.whiteImage,
               });
             },
             child: Hero(
@@ -72,29 +41,6 @@ class DesktopData extends StatelessWidget {
             ),
           ),
         ),
-        // Column(
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   children: [
-        //     Text(
-        //       leftTitle,
-        //       style: TextStyle(
-        //         color: Colors.black,
-        //         fontWeight: FontWeight.w700,
-        //         fontSize: 24,
-        //         //fontSize: MediaQuery.of(context).size.width / 40,
-        //       ),
-        //     ),
-        //     Text(
-        //       leftSubtitle,
-        //       style: TextStyle(
-        //         color: Colors.black,
-        //         fontWeight: FontWeight.w200,
-        //         fontSize: 16,
-        //         //fontSize: MediaQuery.of(context).size.width / 40,
-        //       ),
-        //     ),
-        //   ],
-        // ),
       ],
     );
   }
@@ -132,7 +78,7 @@ class MobileData extends StatelessWidget {
                     'subtitle': instance.subtitle,
                     'info': instance.info,
                     'imageurl': instance.imageurl,
-                    'backgroundimage': instance.backgroundImage,
+                    'whiteImage': instance.whiteImage,
                   });
                 },
                 child: ClipRRect(
@@ -157,7 +103,6 @@ class MobileData extends StatelessWidget {
                 color: Colors.black,
                 fontWeight: FontWeight.w600,
                 fontSize: 26,
-                //fontSize: MediaQuery.of(context).size.width / 23,
               ),
             ),
             Text(
@@ -166,7 +111,6 @@ class MobileData extends StatelessWidget {
                 color: Colors.black,
                 fontWeight: FontWeight.w100,
                 fontSize: 18,
-                //fontSize: MediaQuery.of(context).size.width / 23
               ),
             ),
           ],

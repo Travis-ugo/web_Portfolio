@@ -1,7 +1,11 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
+import 'package:travis_ugo/Travis-ugo/Footer/desktop_footer.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/material.dart';
+import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
+import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
+
+import 'home_desktop.dart';
 
 class MenuDesktop extends StatefulWidget {
   final double height = 100;
@@ -15,73 +19,195 @@ Color darkMood = Color(0xFF24262c);
 Color secondary = Color(0xFF303030);
 IconData moonIcon = MdiIcons.moonWaxingCrescent;
 IconData sunIcon = MdiIcons.starFace;
+double height = 0;
 
 class _MenuDesktopState extends State<MenuDesktop> {
+  void open() {
+    setState(() {
+      height = height == 0.0 ? MediaQuery.of(context).size.height - 70 : 0.0;
+    });
+  }
+
+  PageController pageController = PageController();
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    var text = GoogleFonts.montserrat(
+    var text = GoogleFonts.varelaRound(
       textStyle: TextStyle(
-        fontSize: MediaQuery.of(context).size.height / 75,
-        fontWeight: FontWeight.w400,
+        fontSize: MediaQuery.of(context).size.height / 38,
+        fontWeight: FontWeight.w300,
         color: Color(0xFF242525),
         letterSpacing: 0.5,
       ),
     );
 
-    return Padding(
-      padding: const EdgeInsets.only(left: 0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Scaffold(
+      body: Stack(
         children: [
-          Text(
-            'Travis-ugo',
-            style: GoogleFonts.montserrat(
-              textStyle: TextStyle(
-                fontSize: MediaQuery.of(context).size.height / 43,
-                fontWeight: FontWeight.w500,
-                color: Colors.black87,
-                letterSpacing: 0.5,
-              ),
-            ),
-          ),
-          Row(
+          PageView(
+            controller: pageController,
             children: [
-              FlatButton(
-                  onPressed: () async {
-                    await launch(Uri.parse('').toString());
-                  },
-                  child: Text(
-                    '  PORTFOLIO',
-                    style: text,
-                  )),
-              SizedBox(width: MediaQuery.of(context).size.height / 20),
-              FlatButton(
-                onPressed: () async {
-                  await launch(Uri.parse('').toString());
-                },
-                child: Text(
-                  'RESUME',
-                  style: text,
-                ),
-              ),
-              SizedBox(width: MediaQuery.of(context).size.height / 20),
-              IconButton(
-                  icon: Icon(moonIcon),
-                  color: Colors.black54,
-                  iconSize: 17,
-                  onPressed: () {}),
+              HomeDesktop(),
+              DesktopProject(),
+              DesktopSkills(),
+              //DesktopFooter(),
             ],
           ),
-          FlatButton(
-            onPressed: () {
-              setState(() {
-                isOpen = false;
-                //  height = MediaQuery.of(context).size.height - 70;
-              });
-            },
-            child: Text(
-              'CONTACT',
-              style: text,
+          Padding(
+            padding: const EdgeInsets.only(top: 50),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  'T/U',
+                  style: GoogleFonts.montserrat(
+                    textStyle: TextStyle(
+                      fontSize: MediaQuery.of(context).size.height / 43,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black87,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  FlatButton(
+                      onPressed: () {
+                        currentIndex = 0;
+                        pageController.animateToPage(0,
+                            curve: Curves.linear,
+                            duration: Duration(
+                              milliseconds: 350,
+                            ));
+                      },
+                      child: Text(
+                        'Home',
+                        style: text,
+                      )),
+                  SizedBox(width: MediaQuery.of(context).size.height / 20),
+                  FlatButton(
+                    onPressed: () {
+                      setState(() {
+                        currentIndex = 1;
+                      });
+                      pageController.animateToPage(
+                        1,
+                        curve: Curves.linear,
+                        duration: Duration(
+                          milliseconds: 350,
+                        ),
+                      );
+                    },
+                    child: Text(
+                      'Project',
+                      style: text,
+                    ),
+                  ),
+                  SizedBox(width: MediaQuery.of(context).size.height / 20),
+                  FlatButton(
+                    onPressed: () {
+                      currentIndex = 2;
+                      pageController.animateToPage(2,
+                          curve: Curves.linear,
+                          duration: Duration(
+                            milliseconds: 350,
+                          ));
+                    },
+                    child: Text(
+                      'Skills',
+                      style: text,
+                    ),
+                  ),
+                  // SizedBox(width: MediaQuery.of(context).size.height / 20),
+                  // FlatButton(
+                  //   onPressed: () async {
+                  //     await launch(Uri.parse('').toString());
+                  //   },
+                  //   child: Text(
+                  //     'Resume',
+                  //     style: text,
+                  //   ),
+                  // ),
+                ]),
+                FlatButton(
+                  onPressed: () => open(),
+                  child: Text(
+                    'CONTACT',
+                    style: text,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Center(
+              child: AnimatedContainer(
+                height: height,
+                width: MediaQuery.of(context).size.width - 70,
+                color: Colors.grey[700],
+                duration: Duration(milliseconds: 250),
+                child: Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          IconButton(
+                            mouseCursor: SystemMouseCursors.click,
+                            icon: Icon(
+                              CupertinoIcons.xmark,
+                              size: 45,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {
+                              open();
+                            },
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: MediaQuery.of(context).size.height / 50),
+                      FlatButton(
+                        onPressed: () {
+                          setState(() {
+                            textColor = textColor == Colors.pink
+                                ? Colors.white
+                                : Colors.pink;
+                          });
+                        },
+                        child: Text('mood'),
+                      ),
+                      Text(
+                        'Resume',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: textColor,
+                        ),
+                      ),
+
+                      // SizedBox(height: MediaQuery.of(context).size.height / 6),
+                      Text(
+                        'Contact Me',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      // SizedBox(height: 10),
+                      Center(
+                        child: Text('Thrinitee@gmail.com', style: largeText),
+                      ),
+                      SizedBox(height: 7),
+                      Text('socils',
+                          style: TextStyle(
+                            color: Colors.white,
+                          )),
+                      MyIcon()
+                    ],
+                  ),
+                ),
+              ),
             ),
           ),
         ],
@@ -90,205 +216,20 @@ class _MenuDesktopState extends State<MenuDesktop> {
   }
 }
 
-void open() {
-  isOpen = false;
-  //  height = MediaQuery.of(context).size.height - 70;
-}
-
-class Contact extends StatefulWidget {
+class PageScroll extends StatefulWidget {
   @override
-  _ContactState createState() => _ContactState();
+  _PageScrollState createState() => _PageScrollState();
 }
 
-class _ContactState extends State<Contact> {
-  double height = 0;
-
-  final number = new ValueNotifier(0);
-
+class _PageScrollState extends State<PageScroll> {
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<int>(
-        valueListenable: number,
-        builder: (context, value, child) {
-          return Center(
-            child: AnimatedContainer(
-              height: height,
-              width: MediaQuery.of(context).size.width - 70,
-              color: Colors.pink,
-              duration: Duration(milliseconds: 250),
-              child: Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: Text(
-                            'Close',
-                            style: GoogleFonts.varelaRound(
-                              textStyle: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 18,
-                                letterSpacing: 0.5,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: MediaQuery.of(context).size.height / 4),
-                    Text('Contact Me'),
-                    SizedBox(height: MediaQuery.of(context).size.height / 30),
-                    Center(child: Text('Thrinitee@gmail.com')),
-                    SizedBox(height: MediaQuery.of(context).size.height / 7),
-                    Text('socils'),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                          icon: Icon(MdiIcons.twitter),
-                          color: Colors.black,
-                          iconSize: 16,
-                          onPressed: () async {
-                            await launch(
-                                Uri.parse('https://twitter.com/Travis86622225')
-                                    .toString());
-                          },
-                        ),
-                        SizedBox(width: MediaQuery.of(context).size.width / 65),
-                        IconButton(
-                          icon: Icon(MdiIcons.github),
-                          color: Colors.black,
-                          iconSize: 16,
-                          onPressed: () async {
-                            await launch(
-                                Uri.parse('https://github.com/Travis-ugo')
-                                    .toString());
-                          },
-                        ),
-                        SizedBox(width: MediaQuery.of(context).size.width / 65),
-                        IconButton(
-                          icon: Icon(MdiIcons.linkedin),
-                          color: Colors.black,
-                          iconSize: 16,
-                          onPressed: () async {
-                            await launch(Uri.parse(
-                                    'https://www.linkedin.com/in/travis-okonicha-66a15b1b8/')
-                                .toString());
-                          },
-                        ),
-                        SizedBox(width: MediaQuery.of(context).size.width / 65),
-                        IconButton(
-                          icon: Icon(MdiIcons.linkedin),
-                          color: Colors.black,
-                          iconSize: 16,
-                          onPressed: () async {
-                            await launch(Uri.parse(
-                                    'https://www.linkedin.com/in/travis-okonicha-66a15b1b8/')
-                                .toString());
-                          },
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          );
-        });
+    return Scaffold(
+      body: Stack(
+        children: [
+          MenuDesktop(),
+        ],
+      ),
+    );
   }
 }
-
-// showDialog(
-//   context: context,
-//   barrierColor: Colors.transparent,
-//   builder: (context) => AlertDialog(
-//     elevation: 0.0,
-//     contentPadding: EdgeInsets.zero,
-//     content: Container(
-//       height: MediaQuery.of(context).size.height - 100,
-//       width: MediaQuery.of(context).size.width - 100,
-//       child: Column(
-//         crossAxisAlignment: CrossAxisAlignment.center,
-//         mainAxisAlignment: MainAxisAlignment.end,
-//         children: [
-//           Text(
-//             'Blog',
-//             style: TextStyle(
-//               fontSize: 16,
-//               fontWeight: FontWeight.w600,
-//             ),
-//           ),
-//           SizedBox(
-//             height: MediaQuery.of(context).size.height / 20,
-//           ),
-//           Text(
-//             'About',
-//             style: TextStyle(
-//               fontSize: 16,
-//               fontWeight: FontWeight.w600,
-//             ),
-//           ),
-//           SizedBox(
-//             height: MediaQuery.of(context).size.height / 20,
-//           ),
-//           Text(
-//             'What',
-//             style: TextStyle(
-//               fontSize: 16,
-//               fontWeight: FontWeight.w600,
-//             ),
-//           ),
-//           SizedBox(
-//             height: MediaQuery.of(context).size.height / 10,
-//           ),
-//           Container(
-//             height: MediaQuery.of(context).size.height / 3 - 10,
-//             width: MediaQuery.of(context).size.width,
-//             color: Colors.black12,
-//             child: Row(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               children: [
-//                 IconButton(
-//                   icon: Icon(MdiIcons.twitter),
-//                   color: Colors.black,
-//                   iconSize: 16,
-//                   onPressed: () async {
-//                     await launch(Uri.parse(
-//                             'https://twitter.com/Travis86622225')
-//                         .toString());
-//                   },
-//                 ),
-//                 IconButton(
-//                   icon: Icon(MdiIcons.github),
-//                   color: Colors.black,
-//                   iconSize: 16,
-//                   onPressed: () async {
-//                     await launch(
-//                         Uri.parse('https://github.com/Travis-ugo')
-//                             .toString());
-//                   },
-//                 ),
-//                 IconButton(
-//                   icon: Icon(MdiIcons.linkedin),
-//                   color: Colors.black,
-//                   iconSize: 16,
-//                   onPressed: () async {
-//                     await launch(Uri.parse(
-//                             'https://www.linkedin.com/in/travis-okonicha-66a15b1b8/')
-//                         .toString());
-//                   },
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ],
-//       ),
-//     ),
-//   ),

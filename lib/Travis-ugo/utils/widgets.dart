@@ -9,3 +9,5 @@ export 'package:travis_ugo/Travis-ugo/Models/data.dart';
 export 'package:travis_ugo/Travis-ugo/Home/HomeDescktop/menu_descktop.dart';
 export 'package:travis_ugo/Travis-ugo/Models/skill_data.dart';
 export 'package:travis_ugo/Travis-ugo/Explore/explore.dart';
+export 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
+export 'package:travis_ugo/Travis-ugo/Project/project_mobile.dart';

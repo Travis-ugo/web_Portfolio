@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:smooth_scroll_web/smooth_scroll_web.dart';
+import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -8,151 +10,179 @@ class HomeDesktop extends StatefulWidget {
   _HomeDesktopState createState() => _HomeDesktopState();
 }
 
-ScrollController controller;
+var largeText = GoogleFonts.varelaRound(
+  textStyle: TextStyle(
+    fontSize: 75,
+    fontWeight: FontWeight.w700,
+  ),
+);
+ScrollController scrollController;
 
 class _HomeDesktopState extends State<HomeDesktop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
       body: SingleChildScrollView(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: Stack(
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(''),
-                  MenuDesktop(),
-                  Body(),
-                ],
+        child: Column(
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              child: Padding(
+                padding: const EdgeInsets.all(0.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 0),
+                    Stack(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 80),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Hi,\ni'm Travis Okonicha",
+                                    style: GoogleFonts.varelaRound(
+                                      textStyle: TextStyle(
+                                        fontWeight: FontWeight.w800,
+                                        fontSize:
+                                            MediaQuery.of(context).size.height /
+                                                11.5,
+                                        letterSpacing: 1.2,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    '''\ni design and build beautiful mobile\nand desktop for users design and build beautiful''',
+                                    textAlign: TextAlign.left,
+                                    style: GoogleFonts.varelaRound(
+                                      textStyle: TextStyle(
+                                        fontWeight: FontWeight.w100,
+                                        fontSize:
+                                            MediaQuery.of(context).size.height /
+                                                35,
+                                        letterSpacing: 1.1,
+                                        color: Colors.black54,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height:
+                                        MediaQuery.of(context).size.height / 20,
+                                  ),
+                                  MyIcon(),
+                                  SizedBox(height: 15),
+                                ],
+                              ),
+                            ),
+                            Hero(
+                              tag: 'love',
+                              child: CircleAvatar(
+                                backgroundColor: Colors.transparent,
+                                backgroundImage:
+                                    AssetImage('assets/black..jpg'),
+                                radius:
+                                    MediaQuery.of(context).size.height / 5.5,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Icon(MdiIcons.arrowDown),
+                  ],
+                ),
               ),
-              Contact(),
-            ],
-          ),
+            ),
+            Recent(),
+            PoolKit(),
+          ],
         ),
       ),
     );
   }
 }
 
-class Body extends StatelessWidget {
+class Recent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 80),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Hi,\ni'm Travis Okonicha",
-                style: GoogleFonts.varelaRound(
-                  textStyle: TextStyle(
-                    fontWeight: FontWeight.w800,
-                    fontSize: MediaQuery.of(context).size.height / 11.5,
-                    letterSpacing: 1.2,
-                    color: Colors.black,
-                  ),
-                ),
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'Recent\nWork',
+            textAlign: TextAlign.center,
+            style: largeText,
+          ),
+          const SizedBox(height: 20),
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, '/mobileproject'),
+            child: Container(
+              width: MediaQuery.of(context).size.width / 7,
+              height: MediaQuery.of(context).size.height / 14,
+              decoration: BoxDecoration(
+                border:
+                    Border.all(color: Colors.black, style: BorderStyle.solid),
               ),
-              Text(
-                '''\ni design and build beautiful mobile\nand desktop for users design and build beautiful''',
-                textAlign: TextAlign.left,
-                style: GoogleFonts.montserrat(
-                  textStyle: TextStyle(
-                    fontWeight: FontWeight.w200,
-                    fontSize: MediaQuery.of(context).size.height / 35,
-                    letterSpacing: 1.1,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-              SizedBox(height: 15),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      IconButton(
-                        icon: Icon(MdiIcons.twitter),
-                        color: Color(0xFF424344),
-                        iconSize: 18,
-                        onPressed: () async {
-                          await launch(
-                              Uri.parse('https://twitter.com/Travis86622225')
-                                  .toString());
-                        },
-                      ),
-                      IconButton(
-                        icon: Icon(MdiIcons.github),
-                        color: Color(0xFF424344),
-                        iconSize: 18,
-                        onPressed: () async {
-                          await launch(
-                              Uri.parse('https://github.com/Travis-ugo')
-                                  .toString());
-                        },
-                      ),
-                      IconButton(
-                        icon: Icon(MdiIcons.linkedin),
-                        color: Color(0xFF424344),
-                        iconSize: 18,
-                        onPressed: () async {
-                          await launch(Uri.parse(
-                                  'https://www.linkedin.com/in/travis-okonicha-66a15b1b8/')
-                              .toString());
-                        },
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: MediaQuery.of(context).size.height / 20),
-                  InkWell(
-                    onTap: () => Navigator.pushNamed(context, '/explore'),
-                    child: Container(
-                      width: MediaQuery.of(context).size.height / 6.5,
-                      height: MediaQuery.of(context).size.height / 16.9,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFE8F6FD),
-                        borderRadius: BorderRadius.circular(5.5),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "EXPLORE",
-                          style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 8,
-                              letterSpacing: 1,
-                              color: Colors.blue[700],
-                            ),
-                          ),
-                        ),
+                  Text(
+                    'View all work',
+                    style: GoogleFonts.varelaRound(
+                      textStyle: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
+                  Container(
+                    height: 17,
+                    width: 1,
+                    color: Colors.black,
+                  ),
+                  const Icon(Icons.arrow_forward, size: 18),
                 ],
               ),
-            ],
+            ),
           ),
-        ),
-        Hero(
-          tag: 'love',
-          child: CircleAvatar(
-            backgroundColor: Colors.transparent,
-            backgroundImage: AssetImage('assets/black..jpg'),
-            radius: MediaQuery.of(context).size.height / 5,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
+
+class PoolKit extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height - 100,
+      width: MediaQuery.of(context).size.width,
+      color: Colors.white,
+      child: Center(
+        child: Text(
+          'Whats good HombeBoy',
+          style: largeText,
+        ),
+      ),
+    );
+  }
+}
+// class Body extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return
+//   }
+// }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:travis_ugo/Travis-ugo/Home/HomeDescktop/menu_descktop.dart';
+import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/menu_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/Models/skill_data.dart';
 
 class MobileSkills extends StatefulWidget {
@@ -88,14 +89,28 @@ class SkillPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple,
-      body: Center(
-        child: Text(
-          'Skills',
-          style: TextStyle(
-            fontSize: 45,
-            fontWeight: FontWeight.w700,
-            color: Colors.white,
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 50),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              MenuMobile(),
+              Center(
+                child: Text(
+                  'Skills',
+                  style: TextStyle(
+                    fontSize: 75,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              Icon(MdiIcons.arrowDown),
+            ],
           ),
         ),
       ),
