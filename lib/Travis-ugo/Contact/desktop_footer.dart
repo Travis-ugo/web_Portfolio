@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:travis_ugo/Travis-ugo/Home/HomeDescktop/menu_descktop.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -8,7 +7,7 @@ class DesktopFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mainColor,
+      backgroundColor: Color(0xFF0F0F0F),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -21,7 +20,7 @@ class DesktopFooter extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width,
                     height: 1,
-                    color: Colors.black54,
+                    color: mainColor,
                   ),
                   SizedBox(height: 20),
                   Row(
@@ -33,6 +32,7 @@ class DesktopFooter extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'sans-serif',
                           fontWeight: FontWeight.w500,
+                          color: mainColor,
                           fontSize: MediaQuery.of(context).size.height / 5,
                         ),
                       ),
@@ -41,6 +41,7 @@ class DesktopFooter extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
+                          color: mainColor,
                         ),
                       ),
                     ],
@@ -52,7 +53,7 @@ class DesktopFooter extends StatelessWidget {
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
                         height: 1,
-                        color: Colors.black54,
+                        color: mainColor,
                       ),
                       SizedBox(height: MediaQuery.of(context).size.height / 15),
                       Text(
@@ -60,6 +61,7 @@ class DesktopFooter extends StatelessWidget {
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
+                          color: mainColor,
                           fontSize: 14,
                         ),
                       ),
@@ -73,6 +75,7 @@ class DesktopFooter extends StatelessWidget {
                         child: Text(
                           'thrinitee@gmail.com',
                           style: TextStyle(
+                            color: mainColor,
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                           ),
@@ -82,6 +85,7 @@ class DesktopFooter extends StatelessWidget {
                         '+234 9055758751',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
+                          color: mainColor,
                           fontSize: 14,
                         ),
                       ),
@@ -94,7 +98,7 @@ class DesktopFooter extends StatelessWidget {
                       SizedBox(height: MediaQuery.of(context).size.height / 15),
                       IconButton(
                         icon: Icon(MdiIcons.twitter),
-                        color: Colors.black,
+                        color: Colors.white,
                         iconSize: 16,
                         onPressed: () async {
                           await launch(
@@ -104,7 +108,7 @@ class DesktopFooter extends StatelessWidget {
                       ),
                       IconButton(
                         icon: Icon(MdiIcons.github),
-                        color: Colors.black,
+                        color: mainColor,
                         iconSize: 16,
                         onPressed: () async {
                           await launch(
@@ -114,7 +118,7 @@ class DesktopFooter extends StatelessWidget {
                       ),
                       IconButton(
                         icon: Icon(MdiIcons.linkedin),
-                        color: Colors.black,
+                        color: Colors.white,
                         iconSize: 16,
                         onPressed: () async {
                           await launch(Uri.parse(
@@ -124,7 +128,7 @@ class DesktopFooter extends StatelessWidget {
                       ),
                       IconButton(
                         icon: Icon(MdiIcons.twitter),
-                        color: Colors.black,
+                        color: mainColor,
                         iconSize: 16,
                         onPressed: () async {
                           await launch(
@@ -136,7 +140,7 @@ class DesktopFooter extends StatelessWidget {
                       Container(
                         width: MediaQuery.of(context).size.width,
                         height: 1,
-                        color: Colors.black54,
+                        color: mainColor,
                       ),
                       SizedBox(height: MediaQuery.of(context).size.height / 55),
                     ],
@@ -145,7 +149,7 @@ class DesktopFooter extends StatelessWidget {
               ),
             ),
             Container(
-              color: darkMood,
+              color: mainColor,
               height: 150,
               width: MediaQuery.of(context).size.width,
               child: Padding(

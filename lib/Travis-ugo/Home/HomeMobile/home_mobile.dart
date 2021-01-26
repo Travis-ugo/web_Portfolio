@@ -1,88 +1,144 @@
 import 'package:flutter/material.dart';
+import 'package:travis_ugo/Travis-ugo/Home/HomeDescktop/menu_descktop.dart';
+import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'menu_mobile.dart';
 
-class HomeMobile extends StatelessWidget {
+class HomeMobileRedesign extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    print('built again');
-    return Scaffold(
-      backgroundColor: mainColor,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            MobileBody(),
-            RecentWork(),
-            MobilePin(),
-          ],
-        ),
-      ),
-    );
-  }
+  _HomeMobileRedesignState createState() => _HomeMobileRedesignState();
 }
 
-class MobileBody extends StatelessWidget {
+class _HomeMobileRedesignState extends State<HomeMobileRedesign> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          SizedBox(height: 1),
-          MenuMobile(),
-          Hero(
-            tag: 'love',
-            child: CircleAvatar(
-              backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage('assets/black..jpg'),
-              radius: MediaQuery.of(context).size.width / 4.7,
-            ),
-          ),
-          Text(
-            "Hi, i'm Travis Okonicha",
-            style: GoogleFonts.montserrat(
-              textStyle: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: MediaQuery.of(context).size.width / 15,
-                letterSpacing: 0.5,
-                color: Colors.black,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: mainColor,
+        body: Stack(
+          children: [
+            SingleChildScrollView(
+              child: Container(
+                // decoration: BoxDecoration(
+                //   image: DecorationImage(
+                //     image: AssetImage('assets/backdrop.jpeg'),
+                //     fit: BoxFit.fill,
+                //   ),
+                //),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: MediaQuery.of(context).size.height,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/backdrop.jpeg'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 50),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            SizedBox(height: 100),
+                            Text(
+                              'Hello.\nI am\nTravis',
+                              style: GoogleFonts.montserrat(
+                                textStyle: TextStyle(
+                                  fontSize: 82,
+                                  color: mainColor,
+                                  letterSpacing: 1.5,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  height: 50,
+                                  width: 50,
+                                  color: Colors.white,
+                                ),
+                                Text(
+                                  'Mobile Developer\nUX/UI Designer\nWebDeveloper',
+                                  textAlign: TextAlign.left,
+                                  style: GoogleFonts.montserrat(
+                                    textStyle: TextStyle(
+                                      fontSize: 18,
+                                      color: Color(0xFFEBEBEB),
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 35),
+                            Container(
+                              height: 260,
+                              width: 260,
+                              child: Center(
+                                child: Text(
+                                  'Contact',
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(160),
+                                border:
+                                    Border.all(color: Colors.white, width: 0.2),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/backdrop.jpeg'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Consistency is all i need to succed\nHard work and Practice will do the magic\nHard work and Practice will do the magic hold molly',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                                color: Color(0xFFEBEBEB),
+                                fontWeight: FontWeight.w300,
+                                letterSpacing: 0.5,
+                                fontSize: 16),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height / 10,
+                          ),
+                          RecentWork(),
+                          SizedBox(height: 70),
+                          MobilePin(),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          Text(
-            'i design and build beautiful mobile and desktop\nfor users design and build',
-            textAlign: TextAlign.center,
-            style: GoogleFonts.montserrat(
-              textStyle: TextStyle(
-                fontWeight: FontWeight.w200,
-                fontSize: MediaQuery.of(context).size.width / 30,
-                letterSpacing: 0.3,
-                color: Colors.black,
-              ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: MenuMobile(),
             ),
-          ),
-          MyIcon(),
-          SizedBox(),
-          Text(
-            "Travis-Ugo",
-            style: GoogleFonts.montserrat(
-              textStyle: TextStyle(
-                fontWeight: FontWeight.w200,
-                fontSize: 14,
-                letterSpacing: 0.5,
-                color: Colors.black,
-              ),
-            ),
-          ),
-          Icon(
-            MdiIcons.arrowDown,
-            color: Colors.black,
-            size: 20,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -134,14 +190,25 @@ class RecentWork extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/backdrop.jpeg'),
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text(
+          Text(
             'Recent\nWork',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 48, fontWeight: FontWeight.w700),
+            style: GoogleFonts.varelaRound(
+              textStyle: TextStyle(
+                fontSize: 42,
+                color: Color(0xFFEBEBEB),
+                fontWeight: FontWeight.w600,
+              ),
+            ),
           ),
           const SizedBox(height: 20),
           InkWell(
@@ -149,29 +216,32 @@ class RecentWork extends StatelessWidget {
               Navigator.pushNamed(context, '/mobileproject');
             },
             child: Container(
-              width: MediaQuery.of(context).size.height / 5,
-              height: MediaQuery.of(context).size.height / 16.9,
+              width: MediaQuery.of(context).size.width / 2.3,
+              height: MediaQuery.of(context).size.height / 16,
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.black87),
+                border: Border.all(color: Colors.white),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const Text(
+                  Text(
                     'View Recent work',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
+                    style: GoogleFonts.varelaRound(
+                      textStyle: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFFEBEBEB),
+                      ),
                     ),
                   ),
                   VerticalDivider(
-                    color: Colors.black,
+                    color: Colors.white,
                     thickness: 2,
                   ),
                   const Icon(
-                    Icons.arrow_forward,
+                    Icons.arrow_forward_ios,
                     size: 18,
-                    color: Colors.red,
+                    color: Colors.white,
                   ),
                 ],
               ),
@@ -188,7 +258,7 @@ class MobilePin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      height: MediaQuery.of(context).size.height / 4,
+      height: MediaQuery.of(context).size.height / 4.5,
       width: MediaQuery.of(context).size.width,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

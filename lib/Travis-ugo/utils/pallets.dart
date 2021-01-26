@@ -1,30 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Travis-ugo/Footer/desktop_footer.dart';
-import 'package:travis_ugo/Travis-ugo/Footer/mobile_footer.dart';
-import 'package:travis_ugo/Travis-ugo/Home/HomeDescktop/home_desktop.dart';
+import 'package:travis_ugo/Travis-ugo/Contact/desktop_footer.dart';
+import 'package:travis_ugo/Travis-ugo/Contact/mobile_footer.dart';
 import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
-import 'package:travis_ugo/Travis-ugo/Project/project_mobile.dart';
-import 'package:travis_ugo/Travis-ugo/Skills/mobile_skills.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
-
-// bool isDarkMood;
-// Color mainColor = Color(0xFFf6f6f6);
-// Color darkMood = Color(0xFF24262c);
-// Color secondary = Color(0xFF303030);
-// IconData moonIcon = MdiIcons.moonWaxingCrescent;
-// IconData sunIcon = MdiIcons.starFace;
 
 class MobilePageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView(
       scrollDirection: Axis.vertical,
-      children: [
-        HomeMobile(),
-        MobileProject(),
-        MobileSkills(),
-        MobileFooter(),
-      ],
+      children: [],
     );
   }
 }
@@ -34,12 +19,73 @@ class DesktopPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView(
       scrollDirection: Axis.vertical,
-      children: [
-        HomeDesktop(),
-        DesktopProject(),
-        DesktopSkills(),
-        DesktopFooter(),
-      ],
+      children: [],
     );
   }
 }
+
+class Mobi extends StatefulWidget {
+  @override
+  _MobiState createState() => _MobiState();
+}
+
+bool isLight = true;
+
+class _MobiState extends State<Mobi> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class Changer extends StatefulWidget {
+  @override
+  _ChangerState createState() => _ChangerState();
+}
+
+bool isColored = true;
+
+Icon moon = Icon(MdiIcons.moonFirstQuarter);
+Icon sun = Icon(Icons.lightbulb);
+
+class _ChangerState extends State<Changer> {
+  void toggleColor() {
+    setState(() {
+      if (isColored) {
+      } else {}
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton.icon(
+      icon: (isColored ? moon : sun),
+      label: Text('Love'),
+      onPressed: () {
+        setState(() {
+          isLight = isLight == true ? false : true;
+        });
+      },
+    );
+  }
+}
+
+//icon: (_isFavorited ? Icon(Icons.star) : Icon(Icons.star_border)),
+// void _toggleFavorite() {
+//   setState(() {
+//     if (_isFavorited) {
+//       _favoriteCount -= 1;
+//       _isFavorited = false;
+//     } else {
+//       _favoriteCount += 1;
+//       _isFavorited = true;
+//     }
+//   });
+// }
+// bool _active = false;
+
+// void _handleTap() {
+//   setState(() {
+//     _active = !_active;
+//   });
+// }

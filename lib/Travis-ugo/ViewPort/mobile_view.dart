@@ -1,167 +1,166 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:travis_ugo/Travis-ugo/Utils/widgets.dart';
+import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
 
-class MobileView extends StatefulWidget {
-  @override
-  _InfoMobileState createState() => _InfoMobileState();
-}
-
-class _InfoMobileState extends State<MobileView> {
-  Map data = {};
-
+class MobileRiri extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Map data = {};
     data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
     print(data);
 
     return Scaffold(
-      body: Column(
-        children: [
-          Stack(
-            children: [
-              Column(
+      body: SafeArea(
+        child: Stack(
+          children: [
+            SingleChildScrollView(
+              child: Column(
                 children: [
-                  Center(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height,
-                      width: MediaQuery.of(context).size.width - 50,
-                      color: Colors.white,
+                  SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 50),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Center(
-                            child: Container(
-                              height: MediaQuery.of(context).size.height / 2.3,
-                              width: MediaQuery.of(context).size.width / 1.5,
-                              child: Hero(
-                                  tag: data['imageurl'],
-                                  child: Image.asset(
-                                    'assets/${data['imageurl']}',
-                                    fit: BoxFit.fill,
-                                  )),
-                            ),
-                          ),
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height / 15,
-                          ),
-                          Center(
-                            child: IconButton(
-                              icon: Icon(MdiIcons.github),
-                              color: Colors.black,
-                              iconSize: 32,
-                              onPressed: () {},
-                            ),
-                          ),
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height / 15,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: 35,
-                              bottom: 20,
-                            ),
-                            child: Text(
-                              data['title'],
-                              style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 34,
-                                  letterSpacing: 0.5,
-                                  color: Colors.black,
-                                ),
+                          SizedBox(height: 200),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Column(
+                                children: [
+                                  Text(
+                                    'Year',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w600),
+                                  ),
+                                  Text(
+                                    data['year'],
+                                    style: GoogleFonts.varelaRound(
+                                      textStyle: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w300,
+                                        color: Colors.black,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              textAlign: TextAlign.start,
-                            ),
+                              SizedBox(width: 50),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Tools',
+                                    textAlign: TextAlign.start,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  Text(
+                                    data['tool'],
+                                    style: GoogleFonts.varelaRound(
+                                      textStyle: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w300,
+                                        color: Colors.black,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ],
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: 35,
+                          SizedBox(height: 40),
+                          Text(
+                            data['title'],
+                            style: GoogleFonts.varelaRound(
+                              textStyle: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 24,
+                                letterSpacing: 0.5,
+                                color: Color(0xFF3D68DF),
+                              ),
                             ),
-                            child: Text(
-                              data['info'],
-                              style: TextStyle(
-                                fontSize: 18,
+                            textAlign: TextAlign.start,
+                          ),
+                          SizedBox(height: 20),
+                          Text(
+                            data['subtitle'],
+                            style: GoogleFonts.varelaRound(
+                              textStyle: TextStyle(
+                                fontSize: 20,
+                                letterSpacing: 0.5,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            textAlign: TextAlign.start,
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            data['info'],
+                            style: GoogleFonts.varelaRound(
+                              textStyle: TextStyle(
+                                fontSize: 16,
                                 fontWeight: FontWeight.w300,
+                                color: Colors.black,
+                                letterSpacing: 0.5,
                               ),
-                              textAlign: TextAlign.start,
                             ),
+                            textAlign: TextAlign.start,
                           ),
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height / 15,
-                          ),
-                          Center(
-                            child: IconButton(
-                              mouseCursor: SystemMouseCursors.click,
-                              icon: Icon(
-                                CupertinoIcons.xmark,
-                                size: 45,
-                                color: Colors.black87,
-                              ),
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                            ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              MyIcon(),
+                            ],
                           ),
                         ],
                       ),
                     ),
                   ),
+                  //MobileFooter(),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 200,
+                    width: MediaQuery.of(context).size.width,
+                    child: Image.asset(
+                      data['imageurl'],
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  MobilePin(),
                 ],
               ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class ScreenTitle extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: TweenAnimationBuilder(
-        child: Column(
-          children: [
-            AnimatedOpacity(
-              duration: Duration(seconds: 1),
-              opacity: 1,
-              child: Text(
-                'holy molly',
-                style: GoogleFonts.varelaRound(
-                  textStyle: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 32,
-                    letterSpacing: 0.5,
-                    color: Colors.black54,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(Icons.email),
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Text(
+                      'BACK TO PROJETS',
+                      style: GoogleFonts.varelaRound(
+                        textStyle: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w300,
+                          color: Colors.black,
+                          letterSpacing: 0.5,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
           ],
         ),
-        duration: Duration(seconds: 1),
-        tween: Tween<double>(begin: 0, end: 1),
-        builder: (BuildContext context, double value, Widget child) {
-          return Opacity(
-            opacity: value,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  height: 1 + value * 250,
-                  width: 150,
-                  color: Colors.blue,
-                  child: child,
-                ),
-              ],
-            ),
-          );
-        },
       ),
     );
   }

@@ -1,6 +1,5 @@
-import 'package:flutter/foundation.dart';
-import 'package:travis_ugo/Travis-ugo/Footer/desktop_footer.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:travis_ugo/Travis-ugo/Dispatch/loos.dart';
+import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:flutter/material.dart';
 import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
@@ -8,11 +7,13 @@ import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 import 'home_desktop.dart';
 
 class MenuDesktop extends StatefulWidget {
-  final double height = 100;
+  //final double height = 100;
   @override
   _MenuDesktopState createState() => _MenuDesktopState();
 }
 
+Color day = Colors.white;
+Color night = Colors.black;
 bool isOpen = true;
 Color mainColor = Color(0xFFf6f6f6);
 Color darkMood = Color(0xFF24262c);
@@ -34,9 +35,9 @@ class _MenuDesktopState extends State<MenuDesktop> {
   Widget build(BuildContext context) {
     var text = GoogleFonts.varelaRound(
       textStyle: TextStyle(
-        fontSize: MediaQuery.of(context).size.height / 38,
-        fontWeight: FontWeight.w300,
-        color: Color(0xFF242525),
+        fontSize: MediaQuery.of(context).size.height / 40,
+        fontWeight: FontWeight.w800,
+        color: mainColor,
         letterSpacing: 0.5,
       ),
     );
@@ -47,48 +48,46 @@ class _MenuDesktopState extends State<MenuDesktop> {
           PageView(
             controller: pageController,
             children: [
-              HomeDesktop(),
-              DesktopProject(),
-              DesktopSkills(),
-              //DesktopFooter(),
+              HomeDesktopRedesign(),
+              ProjectDesktopRedesign(),
+              SkillDesktopRedesign(),
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   'T/U',
                   style: GoogleFonts.montserrat(
                     textStyle: TextStyle(
-                      fontSize: MediaQuery.of(context).size.height / 43,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black87,
+                      fontSize: MediaQuery.of(context).size.height / 35,
+                      fontWeight: FontWeight.bold,
+                      color: mainColor,
                       letterSpacing: 0.5,
                     ),
                   ),
                 ),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  FlatButton(
-                      onPressed: () {
+                  InkWell(
+                      onTap: () {
                         currentIndex = 0;
-                        pageController.animateToPage(0,
-                            curve: Curves.linear,
-                            duration: Duration(
-                              milliseconds: 350,
-                            ));
+                        pageController.animateToPage(
+                          0,
+                          curve: Curves.linear,
+                          duration: Duration(
+                            milliseconds: 350,
+                          ),
+                        );
                       },
                       child: Text(
                         'Home',
                         style: text,
                       )),
                   SizedBox(width: MediaQuery.of(context).size.height / 20),
-                  FlatButton(
-                    onPressed: () {
-                      setState(() {
-                        currentIndex = 1;
-                      });
+                  InkWell(
+                    onTap: () {
                       pageController.animateToPage(
                         1,
                         curve: Curves.linear,
@@ -103,30 +102,30 @@ class _MenuDesktopState extends State<MenuDesktop> {
                     ),
                   ),
                   SizedBox(width: MediaQuery.of(context).size.height / 20),
-                  FlatButton(
-                    onPressed: () {
+                  InkWell(
+                    onTap: () {
                       currentIndex = 2;
-                      pageController.animateToPage(2,
-                          curve: Curves.linear,
-                          duration: Duration(
-                            milliseconds: 350,
-                          ));
+                      pageController.animateToPage(
+                        2,
+                        curve: Curves.linear,
+                        duration: Duration(
+                          milliseconds: 350,
+                        ),
+                      );
                     },
                     child: Text(
                       'Skills',
                       style: text,
                     ),
                   ),
-                  // SizedBox(width: MediaQuery.of(context).size.height / 20),
-                  // FlatButton(
-                  //   onPressed: () async {
-                  //     await launch(Uri.parse('').toString());
-                  //   },
-                  //   child: Text(
-                  //     'Resume',
-                  //     style: text,
-                  //   ),
-                  // ),
+                  IconButton(
+                    icon: (isColored ? moon : sun),
+                    onPressed: () {
+                      setState(() {
+                        isColored = isColored == true ? false : true;
+                      });
+                    },
+                  ),
                 ]),
                 FlatButton(
                   onPressed: () => open(),
@@ -144,7 +143,7 @@ class _MenuDesktopState extends State<MenuDesktop> {
               child: AnimatedContainer(
                 height: height,
                 width: MediaQuery.of(context).size.width - 70,
-                color: Colors.grey[700],
+                color: mainColor,
                 duration: Duration(milliseconds: 250),
                 child: Padding(
                   padding: const EdgeInsets.all(30.0),
@@ -160,7 +159,7 @@ class _MenuDesktopState extends State<MenuDesktop> {
                             icon: Icon(
                               CupertinoIcons.xmark,
                               size: 45,
-                              color: Colors.white,
+                              color: Colors.black,
                             ),
                             onPressed: () {
                               open();
@@ -169,16 +168,6 @@ class _MenuDesktopState extends State<MenuDesktop> {
                         ],
                       ),
                       SizedBox(height: MediaQuery.of(context).size.height / 50),
-                      FlatButton(
-                        onPressed: () {
-                          setState(() {
-                            textColor = textColor == Colors.pink
-                                ? Colors.white
-                                : Colors.pink;
-                          });
-                        },
-                        child: Text('mood'),
-                      ),
                       Text(
                         'Resume',
                         style: TextStyle(
@@ -191,7 +180,7 @@ class _MenuDesktopState extends State<MenuDesktop> {
                       Text(
                         'Contact Me',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                       ),
                       // SizedBox(height: 10),
@@ -199,10 +188,6 @@ class _MenuDesktopState extends State<MenuDesktop> {
                         child: Text('Thrinitee@gmail.com', style: largeText),
                       ),
                       SizedBox(height: 7),
-                      Text('socils',
-                          style: TextStyle(
-                            color: Colors.white,
-                          )),
                       MyIcon()
                     ],
                   ),
@@ -210,24 +195,6 @@ class _MenuDesktopState extends State<MenuDesktop> {
               ),
             ),
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class PageScroll extends StatefulWidget {
-  @override
-  _PageScrollState createState() => _PageScrollState();
-}
-
-class _PageScrollState extends State<PageScroll> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          MenuDesktop(),
         ],
       ),
     );

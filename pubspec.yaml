@@ -72,12 +72,12 @@ flutter:
   fonts:
     - family: ProximaSoft
       fonts:
-        - asset: fonts/ProximaSoft-Regular.ttf
-        - asset: fonts/ProximaSoft-Bold.ttf
-        - asset: fonts/ProximaSoft-Regular.ttf
-        - asset: fonts/ProximaSoft-Medium.ttf
-        - asset: fonts/ProximaSoft-SemiBold.ttf
-          style: italic
+        # - asset: fonts/ProximaSoft-Regular.ttf
+        # - asset: fonts/ProximaSoft-Bold.ttf
+        # - asset: fonts/ProximaSoft-Regular.ttf
+        # - asset: fonts/ProximaSoft-Medium.ttf
+        # - asset: fonts/ProximaSoft-SemiBold.ttf
+          # style: italic
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

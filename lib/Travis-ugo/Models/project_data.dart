@@ -1,25 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
-class DesktopData extends StatelessWidget {
+class DesktopData extends StatefulWidget {
   final String imageurl;
+  final String white;
   final Data love;
 
   const DesktopData({
     Key key,
     @required this.imageurl,
     @required this.love,
+    @required this.white,
   }) : super(key: key);
 
+  @override
+  _DesktopDataState createState() => _DesktopDataState();
+}
+
+class _DesktopDataState extends State<DesktopData> {
+  bool _hover = false;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: GestureDetector(
+          child: InkWell(
             onTap: () {
-              Data instance = love;
+              Data instance = widget.love;
               Navigator.pushNamed(context, '/mobileInfo', arguments: {
                 'title': instance.title,
                 'subtitle': instance.subtitle,
@@ -28,11 +36,19 @@ class DesktopData extends StatelessWidget {
                 'whiteImage': instance.whiteImage,
               });
             },
+            onHover: (value) {
+              setState(() {
+                _hover = _hover == true ? false : true;
+              });
+            },
             child: Hero(
-              tag: imageurl,
+              tag: widget.imageurl,
               child: Container(
                 child: Image.asset(
-                  'assets/$imageurl',
+                  //'assets/${widget.imageurl}',
+                  (_hover
+                      ? 'assets/${widget.imageurl}'
+                      : 'assets/${widget.white}'),
                   fit: BoxFit.fitWidth,
                 ),
                 height: MediaQuery.of(context).size.width * 0.12,
@@ -46,74 +62,43 @@ class DesktopData extends StatelessWidget {
   }
 }
 
-class MobileData extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final String imageurl;
+class MobileRedesign extends StatelessWidget {
   final Data love;
+  final String title;
 
-  const MobileData({
+  const MobileRedesign({
     Key key,
-    @required this.title,
-    @required this.subtitle,
-    @required this.imageurl,
     @required this.love,
+    @required this.title,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
       child: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Hero(
-              tag: imageurl,
-              child: GestureDetector(
-                onTap: () {
-                  Data instance = love;
-                  Navigator.pushNamed(context, '/mobileInfo', arguments: {
-                    'title': instance.title,
-                    'subtitle': instance.subtitle,
-                    'info': instance.info,
-                    'imageurl': instance.imageurl,
-                    'whiteImage': instance.whiteImage,
-                  });
-                },
-                child: ClipRRect(
-                  child: Container(
-                    height: MediaQuery.of(context).size.height / 4.1,
-                    width: MediaQuery.of(context).size.width - 60,
-                    child: Card(
-                      elevation: 0.0,
-                      child: Image.asset(
-                        'assets/$imageurl',
-                        fit: BoxFit.fitWidth,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height / 80),
-            Text(
-              title,
-              style: TextStyle(
-                color: Colors.black,
+        child: GestureDetector(
+          onTap: () {
+            Data instance = love;
+            Navigator.pushNamed(context, '/mobileInfo', arguments: {
+              'title': instance.title,
+              'subtitle': instance.subtitle,
+              'info': instance.info,
+              'imageurl': instance.imageurl,
+              'whiteImage': instance.whiteImage,
+              'tool': instance.tool,
+              'year': instance.year,
+            });
+          },
+          child: Text(
+            title,
+            style: GoogleFonts.varelaRound(
+              textStyle: TextStyle(
+                color: Colors.white,
+                fontSize: 46,
                 fontWeight: FontWeight.w600,
-                fontSize: 26,
               ),
             ),
-            Text(
-              subtitle,
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w100,
-                fontSize: 18,
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );

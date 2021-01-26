@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travis_ugo/Travis-ugo/Home/HomeDescktop/menu_descktop.dart';
 import '../utils/widgets.dart';
 
 class RoundMan extends StatefulWidget {
@@ -87,7 +88,7 @@ class _RoundManState extends State<RoundMan> {
               child: Icon(
                 widget.icon,
                 size: _fonts + 15,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             SizedBox(height: 15),
@@ -98,7 +99,7 @@ class _RoundManState extends State<RoundMan> {
                 textStyle: TextStyle(
                   fontSize: _fonts,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black54,
+                  color: mainColor,
                 ),
               ),
             ),
@@ -109,7 +110,7 @@ class _RoundManState extends State<RoundMan> {
                 textStyle: TextStyle(
                   fontSize: _fonts,
                   fontWeight: FontWeight.w400,
-                  color: Colors.black26,
+                  color: mainColor,
                 ),
               ),
             ),
