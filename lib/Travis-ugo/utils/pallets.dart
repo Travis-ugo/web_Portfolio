@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Travis-ugo/Contact/desktop_footer.dart';
-import 'package:travis_ugo/Travis-ugo/Contact/mobile_footer.dart';
-import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
 class MobilePageView extends StatelessWidget {

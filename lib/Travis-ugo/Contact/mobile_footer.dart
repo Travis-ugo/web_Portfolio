@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Travis-ugo/Home/HomeDescktop/menu_descktop.dart';
+import 'package:travis_ugo/Travis-ugo/Desktop/menu_descktop.dart';
 import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -58,7 +58,7 @@ class MobileFooter extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Divider(indent: 160, color: Colors.black54, height: 1),
+                  Divider(indent: 160, color: Colors.white, height: 1),
                   SizedBox(height: MediaQuery.of(context).size.height / 40),
                   Text(
                     'lets talk,\nlets work,\nto create beauty',

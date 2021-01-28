@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travis_ugo/Travis-ugo/Dispatch/loos.dart';
-import 'package:travis_ugo/Travis-ugo/Home/HomeDescktop/home_desktop.dart';
-import 'package:travis_ugo/Travis-ugo/Home/HomeDescktop/menu_descktop.dart';
+import 'package:travis_ugo/Travis-ugo/Desktop/home_desktop.dart';
+import 'package:travis_ugo/Travis-ugo/Desktop/menu_descktop.dart';
 import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 import 'package:travis_ugo/Travis-ugo/Models/project_data.dart';

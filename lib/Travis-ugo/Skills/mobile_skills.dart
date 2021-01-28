@@ -4,7 +4,6 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/menu_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/Models/skill_data.dart';
-import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 
 class SKillsMobileRedesign extends StatefulWidget {
   @override

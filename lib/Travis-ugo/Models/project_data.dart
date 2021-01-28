@@ -86,7 +86,7 @@ class _DesktopRedesignState extends State<DesktopRedesign> {
         child: InkWell(
           onTap: () {
             Data instance = widget.love;
-            Navigator.pushNamed(context, '/mobileInfo', arguments: {
+            Navigator.pushNamed(context, '/DesktopInfo', arguments: {
               'title': instance.title,
               'subtitle': instance.subtitle,
               'info': instance.info,

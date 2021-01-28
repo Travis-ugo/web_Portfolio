@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Travis-ugo/Dispatch/loos.dart';
+import 'package:travis_ugo/Travis-ugo/Dispatch/correction.dart';
 import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
-import 'menu_descktop.dart';
+Color day = Colors.white;
+Color night = Colors.black;
+bool isOpen = true;
+Color mainColo = Color(0xFFf6f6f6);
+Color darkMood = Color(0xFF24262c);
+Color secondary = Color(0xFF303030);
+IconData moonIcon = MdiIcons.moonWaxingCrescent;
+IconData sunIcon = MdiIcons.starFace;
+double height = 0;
 
 class HomeDesktopRedesign extends StatelessWidget {
   @override
@@ -18,14 +26,6 @@ class HomeDesktopRedesign extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    // height: MediaQuery.of(context).size.height,
-                    // width: MediaQuery.of(context).size.width,
-                    // decoration: BoxDecoration(
-                    //   image: DecorationImage(
-                    //     image: AssetImage('assets/backdrop.jpeg'),
-                    //     fit: BoxFit.fill,
-                    //   ),
-                    // ),
                     color: Color(0xFF0F0F0F),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 70),
@@ -39,7 +39,7 @@ class HomeDesktopRedesign extends StatelessWidget {
                             style: GoogleFonts.montserrat(
                               textStyle: TextStyle(
                                 fontSize: 70,
-                                color: mainColor,
+                                color: mainColo,
                                 letterSpacing: 1.5,
                                 //fontFamily: 'MonumentExtened',
                                 fontWeight: FontWeight.bold,
@@ -98,12 +98,6 @@ class HomeDesktopRedesign extends StatelessWidget {
                   ),
                   //SizedBox(height: MediaQuery.of(context).size.height / 6),
                   Container(
-                    // decoration: BoxDecoration(
-                    //   image: DecorationImage(
-                    //     image: AssetImage('assets/backdrop.jpeg'),
-                    //     fit: BoxFit.fill,
-                    //   ),
-                    // ),
                     color: Color(0xFF0F0F0F),
                     child: Column(
                       children: [
@@ -116,16 +110,13 @@ class HomeDesktopRedesign extends StatelessWidget {
                               textStyle: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w300,
-                                color: mainColor,
+                                color: mainColo,
                               ),
                             ),
                           ),
                         ),
                         SizedBox(height: 200),
-                        // SizedBox(
-                        //   height: MediaQuery.of(context).size.height / 4,
-                        // ),
-                        //inport wiol
+
                         Recent(),
                         // SizedBox(height: 300),
                         DesktopFoot(),
@@ -152,13 +143,6 @@ class Recent extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      // decoration: BoxDecoration(
-      //   image: DecorationImage(
-      //     image: AssetImage('assets/backdrop.jpeg'),
-      //     fit: BoxFit.fill,
-      //   ),
-      // ),
-      color: Color(0xFF0F0F0F),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -169,13 +153,15 @@ class Recent extends StatelessWidget {
             style: largeText,
           ),
           const SizedBox(height: 20),
-          GestureDetector(
-            onTap: () => Navigator.pushNamed(context, '/mobileproject'),
+          InkWell(
+            onTap: () => Navigator.pushNamed(context, '/Desktopproject'),
             child: Container(
               width: MediaQuery.of(context).size.width / 7,
               height: MediaQuery.of(context).size.height / 14,
               decoration: BoxDecoration(
-                border: Border.all(color: mainColor, style: BorderStyle.solid),
+                border: Border.all(
+                    color: (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
+                    style: BorderStyle.solid),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -186,25 +172,22 @@ class Recent extends StatelessWidget {
                       textStyle: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: mainColor,
-                        // (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
+                        color:
+                            (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
                       ),
                     ),
                   ),
                   Container(
                     height: 17,
                     width: 1,
-                    color: mainColor,
+
+                    color: (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
+                    //color: mainColo,
                   ),
                   Icon(
                     Icons.arrow_forward,
                     size: 18,
-                    color: mainColor,
-                    // color: (isColored
-                    //     ? Color(0xFF303030)
-                    //     : Color(
-                    //         0xFFf6f6f6,
-                    //       )),
+                    color: (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
                   ),
                 ],
               ),
@@ -222,7 +205,7 @@ class DesktopFoot extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height - 100,
       width: MediaQuery.of(context).size.width,
-      color: mainColor,
+      color: mainColo,
       child: Center(
         child: Text(
           'Whats good HombeBoy',

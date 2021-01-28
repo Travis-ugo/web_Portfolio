@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 import 'home_mobile.dart';
 
@@ -12,7 +11,7 @@ class MenuMobile extends StatefulWidget {
 class _MenuMobileState extends State<MenuMobile> {
   void open() {
     setState(() {
-      height = height == 0.0 ? MediaQuery.of(context).size.height - 60 : 0.0;
+      height = height == 0.0 ? MediaQuery.of(context).size.height - 40 : 0.0;
       suplus = suplus == 0 ? 0 : 0;
     });
   }
@@ -122,27 +121,11 @@ class _MenuMobileState extends State<MenuMobile> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, '/mobileskills');
-                      open();
-                    },
-                    child: Text(
-                      'skills',
-                      style: TextStyle(
-                        fontSize: 18 - suplus,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 20,
-                  ),
-                  GestureDetector(
-                    onTap: () {
                       Navigator.pushNamed(context, '/mobilefooter');
                       open();
                     },
                     child: Text(
-                      'ABOUT',
+                      'WHO',
                       style: TextStyle(
                         fontSize: 18 - suplus,
                         fontWeight: FontWeight.w500,
@@ -175,7 +158,7 @@ class _MenuMobileState extends State<MenuMobile> {
                         Text(
                           'GET IN TOUCH',
                           style: TextStyle(
-                            fontSize: 12 - suplus,
+                            fontSize: 10 - suplus,
                             fontWeight: FontWeight.w400,
                             color: Colors.black,
                           ),

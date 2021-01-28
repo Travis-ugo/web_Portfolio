@@ -1,6 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
+import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
+
+import 'menu_mobile.dart';
 
 class MobileRiri extends StatelessWidget {
   @override
@@ -161,6 +165,124 @@ class MobileRiri extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Mobile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF0B0D0F),
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SizedBox(height: 30),
+                      CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        backgroundImage: AssetImage('assets/black..jpg'),
+                        radius: MediaQuery.of(context).size.width / 4.5,
+                      ),
+                      Text(
+                        "Hi, i'm Travis Okonicha",
+                        style: GoogleFonts.varelaRound(
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.w800,
+                            fontSize: MediaQuery.of(context).size.width / 15.5,
+                            letterSpacing: 1.2,
+                            color: Color(0xFFEBEBEB),
+                            // color: (isColored
+                            //     ? Color(0xFF0B0D0F)
+                            //     : Color(0xFFF6F6F6)),
+                          ),
+                        ),
+                      ),
+                      Text(
+                        '''\ni design and build beautiful mobile and desktop for users design\nand build beautiful''',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.varelaRound(
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.w100,
+                            fontSize: MediaQuery.of(context).size.width / 32,
+                            letterSpacing: 1.1,
+                            color: Color(0xFFEBEBEB),
+                            // color:// (isColored
+                            //     ? Color(0xFF3D3D3D)
+                            //     : Color(0xFFf6f6f6)),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height / 20,
+                      ),
+                      MyIcon(),
+                      SizedBox(height: 15),
+                      Icon(
+                        Icons.keyboard_arrow_down_sharp,
+                        size: 45,
+                        color: Color(0xFFEBEBEB),
+                      ),
+                    ],
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 50),
+                    Text(
+                      'YOUNG AND CREATIVE',
+                      style: TextStyle(
+                        color: Color(0xFFEBEBEB),
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: 0.5,
+                        fontSize: 12,
+                      ),
+                    ),
+                    SizedBox(height: 50),
+                    Text(
+                      'Consistency is all i need to Hard work\nwill do the magic and Practice',
+                      style: TextStyle(
+                        color: Color(0xFFEBEBEB),
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: 0.5,
+                        fontSize: 18,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'Consistency is all i need to succed\nHard work and Practice will do the magic\nHard work and Practice ',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color(0xFFEBEBEB),
+                        fontWeight: FontWeight.w300,
+                        letterSpacing: 0.3,
+                        fontSize: 14,
+                      ),
+                    ),
+                    // SizedBox(
+                    //   height: MediaQuery.of(context).size.height / 80,
+                    // ),
+                    SizedBox(height: 150),
+                    RecentWork(),
+                    SizedBox(height: 70),
+                    MobilePin(),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          MenuMobile(),
+        ],
       ),
     );
   }
