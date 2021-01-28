@@ -12,100 +12,122 @@ class HomeDesktopRedesign extends StatelessWidget {
       child: Scaffold(
         body: Stack(
           children: [
-            // Container(
-            //   height: MediaQuery.of(context).size.height,
-            //   color: Color(0xFF0F0F0F),
-            //   width: MediaQuery.of(context).size.width,
-            //   // color: (isColored ? Color(0xFFffd600) : Color(0xFF303030)),
-            //   child: Center(
-            //     child: Stack(
-            //       children: [
-            //         Stack(
-            //           children: [
-            //             Center(
-            //               child: Text(
-            //                 'Travis Ugo',
-            //                 style: GoogleFonts.varelaRound(
-            //                   textStyle: TextStyle(
-            //                     fontSize: 30,
-            //                     fontWeight: FontWeight.w800,
-            //                     color: mainColor,
-            //                     letterSpacing: 0.8,
-            //                   ),
-            //                 ),
-            //               ),
-            //             ),
-            //           ],
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // ),
             SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    height: MediaQuery.of(context).size.height,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/backdrop.jpeg'),
-                        fit: BoxFit.fill,
+                    // height: MediaQuery.of(context).size.height,
+                    // width: MediaQuery.of(context).size.width,
+                    // decoration: BoxDecoration(
+                    //   image: DecorationImage(
+                    //     image: AssetImage('assets/backdrop.jpeg'),
+                    //     fit: BoxFit.fill,
+                    //   ),
+                    // ),
+                    color: Color(0xFF0F0F0F),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 70),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          SizedBox(height: 100),
+                          Text(
+                            'Hello.\nI am Travis',
+                            style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
+                                fontSize: 70,
+                                color: mainColor,
+                                letterSpacing: 1.5,
+                                //fontFamily: 'MonumentExtened',
+                                fontWeight: FontWeight.bold,
+                                //fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 70),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 350,
+                                width: 350,
+                                child: Center(
+                                  child: Text(
+                                    'Contact',
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(300),
+                                  border:
+                                      Border.all(color: Colors.white, width: 1),
+                                ),
+                              ),
+                              SizedBox(width: 50),
+                              Container(
+                                height: 50,
+                                width: 50,
+                                color: Colors.white,
+                              ),
+                              SizedBox(width: 25),
+                              Text(
+                                'Mobile Developer\nUX/UI Designer\nWebDeveloper',
+                                textAlign: TextAlign.left,
+                                style: GoogleFonts.montserrat(
+                                  textStyle: TextStyle(
+                                    fontSize: 16,
+                                    color: Color(0xFFEBEBEB),
+                                    fontWeight: FontWeight.w300,
+                                    letterSpacing: 1.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                    ),
-                    child: Stack(
-                      children: [
-                        Container(
-                          height: MediaQuery.of(context).size.height,
-                          width: MediaQuery.of(context).size.width,
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Image.asset('assets/15.png'),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Icon(
-                            Icons.arrow_downward,
-                            size: 34,
-                            color: mainColor,
-                          ),
-                        ),
-                      ],
                     ),
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height / 6),
+                  //SizedBox(height: MediaQuery.of(context).size.height / 6),
                   Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/backdrop.jpeg'),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
+                    // decoration: BoxDecoration(
+                    //   image: DecorationImage(
+                    //     image: AssetImage('assets/backdrop.jpeg'),
+                    //     fit: BoxFit.fill,
+                    //   ),
+                    // ),
+                    color: Color(0xFF0F0F0F),
                     child: Column(
                       children: [
-                        SizedBox(height: 26),
+                        SizedBox(height: 200),
                         Center(
                           child: Text(
                             'Consistency is all i need to succed\nHard work and Practice will do the magic\nHard work and Practice will do the magic hold molly',
                             textAlign: TextAlign.center,
                             style: GoogleFonts.varelaRound(
                               textStyle: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w300,
+                                color: mainColor,
                               ),
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height / 6,
-                        ),
+                        SizedBox(height: 200),
+                        // SizedBox(
+                        //   height: MediaQuery.of(context).size.height / 4,
+                        // ),
                         //inport wiol
                         Recent(),
-                        SizedBox(height: 300),
+                        // SizedBox(height: 300),
                         DesktopFoot(),
                       ],
                     ),
@@ -130,12 +152,13 @@ class Recent extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/backdrop.jpeg'),
-          fit: BoxFit.fill,
-        ),
-      ),
+      // decoration: BoxDecoration(
+      //   image: DecorationImage(
+      //     image: AssetImage('assets/backdrop.jpeg'),
+      //     fit: BoxFit.fill,
+      //   ),
+      // ),
+      color: Color(0xFF0F0F0F),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -203,7 +226,7 @@ class DesktopFoot extends StatelessWidget {
       child: Center(
         child: Text(
           'Whats good HombeBoy',
-          style: largeText,
+          style: TextStyle(color: Colors.black, fontSize: 124),
         ),
       ),
     );

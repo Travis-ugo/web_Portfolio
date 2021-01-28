@@ -17,7 +17,7 @@ TextStyle largeText = GoogleFonts.varelaRound(
   textStyle: TextStyle(
     fontSize: 75,
     fontWeight: FontWeight.w700,
-    color: (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
+    color: Color(0xFFf6f6f6),
   ),
 );
 

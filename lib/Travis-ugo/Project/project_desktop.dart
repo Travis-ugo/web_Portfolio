@@ -16,20 +16,21 @@ class _ProjectDesktopRedesignState extends State<ProjectDesktopRedesign> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFF0B0D0F),
         body: Stack(
           children: [
-            Container(
-              height: MediaQuery.of(context).size.height,
-              //color: Color(0xFF0F0F0F),
-              width: MediaQuery.of(context).size.width,
-              //color: Colors.white,//(isColored ? Color(0xFF04A5F0) : Color(0xFF303030)),
-              child: Padding(
-                padding: const EdgeInsets.only(top: 50),
-                child: Center(
-                  child: Text(''),
-                ),
-              ),
-            ),
+            // Container(
+            //   height: MediaQuery.of(context).size.height,
+            //   //color: Color(0xFF0F0F0F),
+            //   width: MediaQuery.of(context).size.width,
+            //   //color: Colors.white,//(isColored ? Color(0xFF04A5F0) : Color(0xFF303030)),
+            //   child: Padding(
+            //     padding: const EdgeInsets.only(top: 50),
+            //     child: Center(
+            //       child: Text(''),
+            //     ),
+            //   ),
+            // ),
             SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,75 +44,74 @@ class _ProjectDesktopRedesignState extends State<ProjectDesktopRedesign> {
                         Container(
                           height: MediaQuery.of(context).size.height,
                           width: MediaQuery.of(context).size.width,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/backdrop.jpeg'),
-                              fit: BoxFit.fill,
-                            ),
-                          ),
+
+                          // color: Color(0xFF0F0F0F),
+                          // decoration: BoxDecoration(
+                          //   image: DecorationImage(
+                          //     image: AssetImage('assets/backdrop.jpeg'),
+                          //     fit: BoxFit.fill,
+                          //   ),
+                          // ),
                           child: Align(
                             alignment: Alignment.center,
                             child: Text(
-                              'work',
+                              'WORK.',
                               style: GoogleFonts.varelaRound(
                                 textStyle: TextStyle(
                                   // fontSize: 240,
                                   fontSize:
-                                      MediaQuery.of(context).size.width / 5,
-                                  fontWeight: FontWeight.bold,
+                                      MediaQuery.of(context).size.width / 5.5,
+                                  fontWeight: FontWeight.w600,
                                   color: mainColor,
                                 ),
                               ),
                             ),
                           ),
                         ),
-
-                        // Align(
-                        //   alignment: Alignment.bottomCenter,
-                        //   child: Icon(
-                        //     Icons.arrow_downward,
-                        //     size: 34,
-                        //     color: mainColor,
-                        //   ),
-                        //= ),
                       ],
                     ),
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height / 4),
+                  // SizedBox(height: MediaQuery.of(context).size.height / 4),
+                  // Container(
+                  //   child: Align(
+                  //     alignment: Alignment.center,
+                  //     child: Text(
+                  //       'work',
+                  //       style: GoogleFonts.varelaRound(
+                  //         textStyle: TextStyle(
+                  //           // fontSize: 240,
+                  //           fontSize: MediaQuery.of(context).size.width / 5,
+                  //           fontWeight: FontWeight.bold,
+                  //           color: mainColor,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  // SizedBox(height: 40),
                   Container(
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        'work',
-                        style: GoogleFonts.varelaRound(
-                          textStyle: TextStyle(
-                            // fontSize: 240,
-                            fontSize: MediaQuery.of(context).size.width / 5,
-                            fontWeight: FontWeight.bold,
-                            color: mainColor,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
+                    //color: Color(0xFF0F0F0F),
                     child: Column(
                       children: [
                         SizedBox(
-                          height: MediaQuery.of(context).size.height / 3,
+                          height: MediaQuery.of(context).size.height / 2,
                         ),
                         Center(
                           child: Text(
-                            'Select Project',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: mainColor,
+                            'SELECT PROJECT',
+                            style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
+                                // fontSize: 240,
+                                fontSize: 12,
+
+                                fontWeight: FontWeight.w600,
+                                color: mainColor,
+                              ),
                             ),
                           ),
                         ),
                         SizedBox(
-                          height: MediaQuery.of(context).size.height / 3,
+                          height: MediaQuery.of(context).size.height / 2,
                         ),
                         DesktopProject(),
                         SizedBox(height: 300),

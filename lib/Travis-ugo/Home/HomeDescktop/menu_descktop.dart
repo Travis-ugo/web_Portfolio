@@ -82,7 +82,7 @@ class _MenuDesktopState extends State<MenuDesktop> {
                         );
                       },
                       child: Text(
-                        'Home',
+                        'INTRO',
                         style: text,
                       )),
                   SizedBox(width: MediaQuery.of(context).size.height / 20),
@@ -97,7 +97,7 @@ class _MenuDesktopState extends State<MenuDesktop> {
                       );
                     },
                     child: Text(
-                      'Project',
+                      'WHAT',
                       style: text,
                     ),
                   ),
@@ -114,7 +114,7 @@ class _MenuDesktopState extends State<MenuDesktop> {
                       );
                     },
                     child: Text(
-                      'Skills',
+                      'WORK',
                       style: text,
                     ),
                   ),

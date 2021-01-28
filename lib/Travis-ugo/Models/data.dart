@@ -21,7 +21,7 @@ class Data {
 }
 
 final Data travis = Data(
-  title: 'Travis ugo portfolio',
+  title: 'Portfolio',
   subtitle: 'Portfolio Web application',
   info: '''
 A responsive portfolio web app and a user friendy interface,

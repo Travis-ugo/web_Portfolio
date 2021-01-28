@@ -15,17 +15,11 @@ class _HomeMobileRedesignState extends State<HomeMobileRedesign> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: mainColor,
+        backgroundColor: Color(0xFF0B0D0F),
         body: Stack(
           children: [
             SingleChildScrollView(
               child: Container(
-                // decoration: BoxDecoration(
-                //   image: DecorationImage(
-                //     image: AssetImage('assets/backdrop.jpeg'),
-                //     fit: BoxFit.fill,
-                //   ),
-                //),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -33,12 +27,12 @@ class _HomeMobileRedesignState extends State<HomeMobileRedesign> {
                     Container(
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/backdrop.jpeg'),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
+                      // decoration: BoxDecoration(
+                      //   image: DecorationImage(
+                      //     image: AssetImage('assets/backdrop.jpeg'),
+                      //     fit: BoxFit.fill,
+                      //   ),
+                      // ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 50),
                         child: Column(
@@ -64,6 +58,7 @@ class _HomeMobileRedesignState extends State<HomeMobileRedesign> {
                                   width: 50,
                                   color: Colors.white,
                                 ),
+                                SizedBox(width: 10),
                                 Text(
                                   'Mobile Developer\nUX/UI Designer\nWebDeveloper',
                                   textAlign: TextAlign.left,
@@ -77,7 +72,9 @@ class _HomeMobileRedesignState extends State<HomeMobileRedesign> {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 35),
+                            SizedBox(
+                              height: 35,
+                            ),
                             Container(
                               height: 260,
                               width: 260,
@@ -101,28 +98,52 @@ class _HomeMobileRedesignState extends State<HomeMobileRedesign> {
                         ),
                       ),
                     ),
+                    SizedBox(height: 35),
                     Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/backdrop.jpeg'),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
+                      // decoration: BoxDecoration(
+                      //   image: DecorationImage(
+                      //     image: AssetImage('assets/backdrop.jpeg'),
+                      //     fit: BoxFit.fill,
+                      //   ),
+                      // ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            'Consistency is all i need to succed\nHard work and Practice will do the magic\nHard work and Practice will do the magic hold molly',
-                            textAlign: TextAlign.left,
+                            'YOUNG AND CREATIVE',
                             style: TextStyle(
-                                color: Color(0xFFEBEBEB),
-                                fontWeight: FontWeight.w300,
-                                letterSpacing: 0.5,
-                                fontSize: 16),
+                              color: Color(0xFFEBEBEB),
+                              fontWeight: FontWeight.w400,
+                              letterSpacing: 0.5,
+                              fontSize: 12,
+                            ),
                           ),
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height / 10,
+                          SizedBox(height: 50),
+                          Text(
+                            'Consistency is all i need to Hard work\nwill do the magic and Practice',
+                            style: TextStyle(
+                              color: Color(0xFFEBEBEB),
+                              fontWeight: FontWeight.w400,
+                              letterSpacing: 0.5,
+                              fontSize: 20,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
+                          SizedBox(height: 20),
+                          Text(
+                            'Consistency is all i need to succed\nHard work and Practice will do the magic\nHard work and Practice ',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Color(0xFFEBEBEB),
+                              fontWeight: FontWeight.w300,
+                              letterSpacing: 0.3,
+                              fontSize: 14,
+                            ),
+                          ),
+                          // SizedBox(
+                          //   height: MediaQuery.of(context).size.height / 80,
+                          // ),
+                          SizedBox(height: 150),
                           RecentWork(),
                           SizedBox(height: 70),
                           MobilePin(),
@@ -188,15 +209,15 @@ class RecentWork extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
+      height: MediaQuery.of(context).size.height / 2,
       width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/backdrop.jpeg'),
-        ),
-      ),
+      // decoration: BoxDecoration(
+      //   image: DecorationImage(
+      //     image: AssetImage('assets/backdrop.jpeg'),
+      //   ),
+      // ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
@@ -219,7 +240,9 @@ class RecentWork extends StatelessWidget {
               width: MediaQuery.of(context).size.width / 2.3,
               height: MediaQuery.of(context).size.height / 16,
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.white),
+                border: Border.all(
+                  color: Color(0xFFEBEBEB),
+                ),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -228,20 +251,20 @@ class RecentWork extends StatelessWidget {
                     'View Recent work',
                     style: GoogleFonts.varelaRound(
                       textStyle: TextStyle(
-                        fontSize: 14,
+                        fontSize: 12,
                         fontWeight: FontWeight.w500,
                         color: Color(0xFFEBEBEB),
                       ),
                     ),
                   ),
                   VerticalDivider(
-                    color: Colors.white,
+                    color: Color(0xFFEBEBEB),
                     thickness: 2,
                   ),
                   const Icon(
                     Icons.arrow_forward_ios,
                     size: 18,
-                    color: Colors.white,
+                    color: Color(0xFFEBEBEB),
                   ),
                 ],
               ),

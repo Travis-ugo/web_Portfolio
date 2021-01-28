@@ -12,7 +12,7 @@ class MenuMobile extends StatefulWidget {
 class _MenuMobileState extends State<MenuMobile> {
   void open() {
     setState(() {
-      height = height == 0.0 ? MediaQuery.of(context).size.height - 70 : 0.0;
+      height = height == 0.0 ? MediaQuery.of(context).size.height - 60 : 0.0;
       suplus = suplus == 0 ? 0 : 0;
     });
   }
@@ -73,7 +73,7 @@ class _MenuMobileState extends State<MenuMobile> {
                         mouseCursor: SystemMouseCursors.click,
                         icon: Icon(
                           CupertinoIcons.xmark,
-                          size: 50,
+                          size: 55,
                           color: Colors.black,
                         ),
                         onPressed: () {
@@ -94,10 +94,10 @@ class _MenuMobileState extends State<MenuMobile> {
                       open();
                     },
                     child: Text(
-                      'Home',
+                      'INTRO',
                       style: TextStyle(
-                        fontSize: 20 - suplus,
-                        fontWeight: FontWeight.w400,
+                        fontSize: 18 - suplus,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
@@ -110,10 +110,10 @@ class _MenuMobileState extends State<MenuMobile> {
                       open();
                     },
                     child: Text(
-                      'projects',
+                      'WORK',
                       style: TextStyle(
-                        fontSize: 20 - suplus,
-                        fontWeight: FontWeight.w400,
+                        fontSize: 18 - suplus,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
@@ -128,8 +128,8 @@ class _MenuMobileState extends State<MenuMobile> {
                     child: Text(
                       'skills',
                       style: TextStyle(
-                        fontSize: 20 - suplus,
-                        fontWeight: FontWeight.w400,
+                        fontSize: 18 - suplus,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
@@ -142,10 +142,10 @@ class _MenuMobileState extends State<MenuMobile> {
                       open();
                     },
                     child: Text(
-                      'Contact',
+                      'ABOUT',
                       style: TextStyle(
-                        fontSize: 20 - suplus,
-                        fontWeight: FontWeight.w400,
+                        fontSize: 18 - suplus,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
@@ -154,10 +154,10 @@ class _MenuMobileState extends State<MenuMobile> {
                   ),
                   GestureDetector(
                     child: Text(
-                      'Resume',
+                      'RESUME',
                       style: TextStyle(
-                        fontSize: 20 - suplus,
-                        fontWeight: FontWeight.w400,
+                        fontSize: 18 - suplus,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
@@ -172,19 +172,12 @@ class _MenuMobileState extends State<MenuMobile> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        GestureDetector(
-                          onTap: () async {
-                            await launch(
-                                Uri.parse('https://twitter.com/Travis86622225')
-                                    .toString());
-                          },
-                          child: SelectableText(
-                            'thrinitee@gmail.com',
-                            style: TextStyle(
-                              fontSize: 24 - suplus,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black,
-                            ),
+                        Text(
+                          'GET IN TOUCH',
+                          style: TextStyle(
+                            fontSize: 12 - suplus,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black,
                           ),
                         ),
                         SizedBox(height: 5),
