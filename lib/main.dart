@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Love Galour',
+      title: 'Travis-ugo',
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => Loading(),

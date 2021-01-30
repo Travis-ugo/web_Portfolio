@@ -1,11 +1,11 @@
 {
-    "name": "travis_ugo",
-    "short_name": "travis_ugo",
+    "name": "Travis_ugo",
+    "short_name": "TU",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#141414",
+    "theme_color": "#424547",
+    "description": "Travis Ugochukwu Okonicha portfolio web app",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
