@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travis_ugo/Travis-ugo/Desktop/menu_descktop.dart';
-import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/menu_mobile.dart';
+import 'package:travis_ugo/Travis-ugo/HomeMobile/menu_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/Skills/mobile_skills.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 

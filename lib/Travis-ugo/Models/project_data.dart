@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
 class DesktopData extends StatefulWidget {
@@ -83,7 +84,7 @@ class _DesktopRedesignState extends State<DesktopRedesign> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
       child: Center(
-        child: InkWell(
+        child: GestureDetector(
           onTap: () {
             Data instance = widget.love;
             Navigator.pushNamed(context, '/DesktopInfo', arguments: {
@@ -96,19 +97,11 @@ class _DesktopRedesignState extends State<DesktopRedesign> {
               'year': instance.year,
             });
           },
-          onHover: (value) {
-            setState(() {
-              // _font = _font == MediaQuery.of(context).size.width / 10.5
-              //     ? MediaQuery.of(context).size.width / 10.5 + 600
-              //     : MediaQuery.of(context).size.width / 10.5;
-              // _opacity = _opacity == 1 ? 0.5 : 1;
-            });
-          },
           child: Text(
             widget.title,
             style: GoogleFonts.varelaRound(
               textStyle: TextStyle(
-                color: Colors.white,
+                color: (isColored ? Color(0xFF3D3D3D) : Color(0xFFf6f6f6)),
                 fontSize: _font,
                 fontWeight: FontWeight.w700,
               ),
@@ -151,7 +144,7 @@ class MobileRedesign extends StatelessWidget {
             title,
             style: GoogleFonts.varelaRound(
               textStyle: TextStyle(
-                color: Colors.white,
+                color: (isColored ? Color(0xFF3D3D3D) : Color(0xFFf6f6f6)),
                 fontSize: 46,
                 fontWeight: FontWeight.w600,
               ),

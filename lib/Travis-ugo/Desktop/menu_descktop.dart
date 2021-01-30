@@ -1,7 +1,7 @@
 import 'package:travis_ugo/Travis-ugo/Dispatch/correction.dart';
+import 'package:travis_ugo/Travis-ugo/Mobile/home_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
 class MenuDesktop extends StatefulWidget {
@@ -35,7 +35,7 @@ class _MenuDesktopState extends State<MenuDesktop> {
       textStyle: TextStyle(
         fontSize: MediaQuery.of(context).size.height / 40,
         fontWeight: FontWeight.w800,
-        color: mainColor,
+        color: (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
         letterSpacing: 0.5,
       ),
     );

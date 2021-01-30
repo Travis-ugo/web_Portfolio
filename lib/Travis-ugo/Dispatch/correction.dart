@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:travis_ugo/Travis-ugo/Desktop/home_desktop.dart';
-import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
+import 'package:travis_ugo/Travis-ugo/Mobile/home_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
@@ -28,7 +29,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: (isColored ? Color(0xFFf6f6f6) : Color(0xFF303030)),
+      backgroundColor: (isColored ? Color(0xFFf6f6f6) : Color(0xFF1F1F1F)),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -39,7 +40,6 @@ class _HomeDesktopState extends State<HomeDesktop> {
                   child: Container(
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
-                    //color: Colors.amber,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -88,6 +88,15 @@ class _HomeDesktopState extends State<HomeDesktop> {
                                       MediaQuery.of(context).size.height / 20,
                                 ),
                                 MyIcon(),
+                                IconButton(
+                                  icon: (isColored ? moon : sun),
+                                  onPressed: () {
+                                    setState(() {
+                                      isColored =
+                                          isColored == true ? false : true;
+                                    });
+                                  },
+                                ),
                                 SizedBox(height: 15),
                               ],
                             ),
@@ -110,7 +119,56 @@ class _HomeDesktopState extends State<HomeDesktop> {
                 MenuResp(),
               ],
             ),
-            Recent(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(height: 50),
+                Text(
+                  'YOUNG AND CREATIVE',
+                  style: GoogleFonts.varelaRound(
+                    textStyle: TextStyle(
+                      color:
+                          (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 0.5,
+                      fontSize: 10,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 50),
+                Text(
+                  'Consistency is all i need to Hard work\nwill do the magic and Practice',
+                  style: GoogleFonts.varelaRound(
+                    textStyle: TextStyle(
+                      color:
+                          (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 0.5,
+                      fontSize: 36,
+                    ),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 20),
+                Text(
+                  'Consistency is all i need to succed Hard work and Practice will\ndo the magic Hard work and Practice ',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.varelaRound(
+                    textStyle: TextStyle(
+                      color:
+                          (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 0.3,
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 150),
+                Recent(),
+                SizedBox(height: 30),
+                DesktopPin(),
+              ],
+            ),
           ],
         ),
       ),
@@ -150,11 +208,12 @@ class _MenuRespState extends State<MenuResp> {
               children: [
                 Text(
                   'Travis-ugo',
-                  style: GoogleFonts.montserrat(
+                  style: GoogleFonts.varelaRound(
                     textStyle: TextStyle(
-                      fontSize: 14, //MediaQuery.of(context).size.width / 45,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color:
+                          (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
                       letterSpacing: 0.5,
                     ),
                   ),
@@ -163,39 +222,60 @@ class _MenuRespState extends State<MenuResp> {
                 Row(
                   children: [
                     InkWell(
-                      onTap: () {},
-                      child: Text(
-                        'WHO',
-                        // style: text,
-                      ),
-                    ),
-                    SizedBox(width: MediaQuery.of(context).size.height / 20),
-                    InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/DesktopService');
+                        Navigator.pushNamed(context, '/home');
                       },
                       child: Text(
-                        'WHAT',
-                        // style: text,
+                        'WHO',
+                        style: GoogleFonts.varelaRound(
+                          textStyle: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 1,
+                            color: (isColored
+                                ? Color(0xFF303030)
+                                : Color(0xFFf6f6f6)),
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(width: MediaQuery.of(context).size.height / 20),
                     InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/Desktopproject');
+                        Navigator.pushNamed(context, '/projects');
                       },
                       child: Text(
                         'WORK',
-                        //style: text,
+                        style: GoogleFonts.varelaRound(
+                          textStyle: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 1,
+                            color: (isColored
+                                ? Color(0xFF303030)
+                                : Color(0xFFf6f6f6)),
+                          ),
+                        ),
                       ),
                     ),
-                    IconButton(
-                      icon: (isColored ? moon : sun),
-                      onPressed: () {
-                        setState(() {
-                          isColored = isColored == true ? false : true;
-                        });
+                    SizedBox(width: MediaQuery.of(context).size.height / 20),
+                    InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/service');
                       },
+                      child: Text(
+                        'WHAT',
+                        style: GoogleFonts.varelaRound(
+                          textStyle: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 1,
+                            color: (isColored
+                                ? Color(0xFF303030)
+                                : Color(0xFFf6f6f6)),
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -205,7 +285,15 @@ class _MenuRespState extends State<MenuResp> {
                   onPressed: () => open(),
                   child: Text(
                     'CONTACT',
-                    // style: text,
+                    style: GoogleFonts.varelaRound(
+                      textStyle: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 0.5,
+                        color:
+                            (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -245,12 +333,11 @@ class _MenuRespState extends State<MenuResp> {
                       Text(
                         'Resume',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 14,
                           color: textColor,
                         ),
                       ),
 
-                      // SizedBox(height: MediaQuery.of(context).size.height / 6),
                       Text(
                         'Contact Me',
                         style: TextStyle(

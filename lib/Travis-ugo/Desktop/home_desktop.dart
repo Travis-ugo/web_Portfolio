@@ -126,10 +126,6 @@ class HomeDesktopRedesign extends StatelessWidget {
                 ],
               ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.only(top: 20),
-            //   child: MenuDesktop(),
-            // ),
           ],
         ),
       ),
@@ -150,35 +146,41 @@ class Recent extends StatelessWidget {
           Text(
             'Recent\nWork',
             textAlign: TextAlign.center,
-            style: largeText,
+            style: GoogleFonts.varelaRound(
+              textStyle: TextStyle(
+                fontSize: 75,
+                fontWeight: FontWeight.w700,
+                color: (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
+              ),
+            ),
           ),
           const SizedBox(height: 20),
           InkWell(
-            onTap: () => Navigator.pushNamed(context, '/Desktopproject'),
+            onTap: () => Navigator.pushNamed(context, '/projects'),
             child: Container(
-              width: MediaQuery.of(context).size.width / 7,
-              height: MediaQuery.of(context).size.height / 14,
+              width: MediaQuery.of(context).size.width / 7.5,
+              height: MediaQuery.of(context).size.height / 15,
               decoration: BoxDecoration(
                 border: Border.all(
-                    color: (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
+                    color: (isColored ? Color(0xFF555555) : Color(0xFFf6f6f6)),
                     style: BorderStyle.solid),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    'View all work',
+                    'VIEW ALL WORK',
                     style: GoogleFonts.varelaRound(
                       textStyle: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
+                        fontSize: 9,
+                        fontWeight: FontWeight.w500,
                         color:
                             (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
                       ),
                     ),
                   ),
                   Container(
-                    height: 17,
+                    height: MediaQuery.of(context).size.height / 15,
                     width: 1,
 
                     color: (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),

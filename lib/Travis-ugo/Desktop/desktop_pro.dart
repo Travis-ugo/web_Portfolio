@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:travis_ugo/Travis-ugo/Desktop/menu_descktop.dart';
+import 'package:travis_ugo/Travis-ugo/Dispatch/correction.dart';
+import 'package:travis_ugo/Travis-ugo/Mobile/home_mobile.dart';
+import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 import 'package:travis_ugo/Travis-ugo/Models/project_data.dart';
 
@@ -7,7 +10,7 @@ class ProjectRiri extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0B0D0F), //Color(0xFF0F0F0F),
+      backgroundColor: (isColored ? Color(0xFFf6f6f6) : Color(0xFF1F1F1F)),
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -25,8 +28,9 @@ class ProjectRiri extends StatelessWidget {
                       textStyle: TextStyle(
                         // fontSize: 240,
                         fontSize: MediaQuery.of(context).size.width / 5.5,
-                        fontWeight: FontWeight.w600,
-                        color: mainColor,
+                        fontWeight: FontWeight.w500,
+                        color:
+                            (isColored ? Color(0xFF3D3D3D) : Color(0xFFf6f6f6)),
                       ),
                     ),
                   ),
@@ -36,7 +40,7 @@ class ProjectRiri extends StatelessWidget {
                   icon: Icon(
                     CupertinoIcons.chevron_compact_down,
                     size: 65,
-                    color: mainColor,
+                    color: (isColored ? Color(0xFF3D3D3D) : Color(0xFFf6f6f6)),
                   ),
                   onPressed: () {
                     Navigator.pop(context);
@@ -61,15 +65,17 @@ class ProjectRiri extends StatelessWidget {
                         'SELECT PROJECT',
                         style: GoogleFonts.varelaRound(
                           textStyle: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w300,
-                            color: mainColor,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            color: (isColored
+                                ? Color(0xFF3D3D3D)
+                                : Color(0xFFf6f6f6)),
                           ),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height / 8,
+                      height: MediaQuery.of(context).size.height / 5,
                     ),
                     DesktopRedesign(
                       love: travis,
@@ -96,17 +102,14 @@ class ProjectRiri extends StatelessWidget {
                       title: telegram.title,
                     ),
                     SizedBox(height: 100),
-                    MobilePin(),
+                    DesktopPin(),
                   ],
                 ),
                 // ),
               ],
             ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.only(top: 20),
-          //   child: MenuMobile(),
-          // ),
+          MenuResp(),
         ],
       ),
     );

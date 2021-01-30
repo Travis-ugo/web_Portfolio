@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
+import 'package:travis_ugo/Travis-ugo/Mobile/home_mobile.dart';
 
 class DesktopRedesign extends StatelessWidget {
   @override

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:travis_ugo/Travis-ugo/Home/HomeMobile/menu_mobile.dart';
+import 'package:travis_ugo/Travis-ugo/Dispatch/correction.dart';
+import 'package:travis_ugo/Travis-ugo/Mobile/home_mobile.dart';
+import 'package:travis_ugo/Travis-ugo/Mobile/menu_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/Models/project_data.dart';
+import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
 class ProjectsMobileDesign extends StatefulWidget {
@@ -13,7 +16,7 @@ class _ProjectsMobileDesignState extends State<ProjectsMobileDesign> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFF0B0D0F),
+        backgroundColor: (isColored ? Color(0xFFf6f6f6) : Color(0xFF303030)),
         body: Stack(
           children: [
             SingleChildScrollView(
@@ -30,7 +33,9 @@ class _ProjectsMobileDesignState extends State<ProjectsMobileDesign> {
                       style: GoogleFonts.varelaRound(
                         textStyle: TextStyle(
                           fontSize: 80,
-                          color: Color(0xFFEBEBEB),
+                          color: (isColored
+                              ? Color(0xFF303030)
+                              : Color(0xFFf6f6f6)),
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -49,7 +54,9 @@ class _ProjectsMobileDesignState extends State<ProjectsMobileDesign> {
                             textStyle: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
-                              color: Color(0xFFEBEBEB),
+                              color: (isColored
+                                  ? Color(0xFF303030)
+                                  : Color(0xFFf6f6f6)),
                             ),
                           ),
                         ),
@@ -91,7 +98,7 @@ class _ProjectsMobileDesignState extends State<ProjectsMobileDesign> {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 20),
-              child: MenuMobile(),
+              child: MenuResp(),
             ),
           ],
         ),

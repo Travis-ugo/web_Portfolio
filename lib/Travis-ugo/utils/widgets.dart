@@ -6,4 +6,3 @@ export 'package:flutter/rendering.dart';
 export 'package:travis_ugo/Travis-ugo/Skills/desktop_skills.dart';
 export 'package:travis_ugo/Travis-ugo/Models/data.dart';
 export 'package:travis_ugo/Travis-ugo/Models/skill_data.dart';
-export 'package:travis_ugo/Travis-ugo/Home/HomeMobile/home_mobile.dart';
