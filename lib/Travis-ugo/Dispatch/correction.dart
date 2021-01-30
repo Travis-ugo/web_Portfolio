@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:travis_ugo/Travis-ugo/Desktop/home_desktop.dart';
 import 'package:travis_ugo/Travis-ugo/Mobile/home_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:travis_ugo/Travis-ugo/Mobile/mobile_footer.dart';
-import 'package:travis_ugo/Travis-ugo/Desktop/menu_descktop.dart';
 import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:travis_ugo/Travis-ugo/Utils/widgets.dart';
 

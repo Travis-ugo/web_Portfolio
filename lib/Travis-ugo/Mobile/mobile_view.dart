@@ -170,7 +170,12 @@ class MobileRiri extends StatelessWidget {
   }
 }
 
-class Mobile extends StatelessWidget {
+class Mobile extends StatefulWidget {
+  @override
+  _MobileState createState() => _MobileState();
+}
+
+class _MobileState extends State<Mobile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -224,6 +229,14 @@ class Mobile extends StatelessWidget {
                       ),
                       MyIcon(),
                       SizedBox(height: 15),
+                      IconButton(
+                        icon: (isColored ? moon : sun),
+                        onPressed: () {
+                          setState(() {
+                            isColored = isColored == true ? false : true;
+                          });
+                        },
+                      ),
                       Icon(
                         Icons.keyboard_arrow_down_sharp,
                         size: 45,
