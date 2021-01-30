@@ -1,25 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
-
-class MobilePageView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return PageView(
-      scrollDirection: Axis.vertical,
-      children: [],
-    );
-  }
-}
-
-class DesktopPageView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return PageView(
-      scrollDirection: Axis.vertical,
-      children: [],
-    );
-  }
-}
 
 class Mobi extends StatefulWidget {
   @override
@@ -42,8 +23,11 @@ class Changer extends StatefulWidget {
 
 bool isColored = true;
 
-Icon moon = Icon(MdiIcons.moonFirstQuarter);
-Icon sun = Icon(Icons.lightbulb);
+Icon sun = Icon(FeatherIcons.sun, size: 13, color: Colors.white);
+Icon moon = Icon(FeatherIcons.moon, size: 13);
+
+Icon mSun = Icon(FeatherIcons.sun, size: 15, color: Colors.white);
+Icon mMoon = Icon(FeatherIcons.moon, size: 15, color: Colors.black);
 
 class _ChangerState extends State<Changer> {
   void toggleColor() {
@@ -66,23 +50,3 @@ class _ChangerState extends State<Changer> {
     );
   }
 }
-
-//icon: (_isFavorited ? Icon(Icons.star) : Icon(Icons.star_border)),
-// void _toggleFavorite() {
-//   setState(() {
-//     if (_isFavorited) {
-//       _favoriteCount -= 1;
-//       _isFavorited = false;
-//     } else {
-//       _favoriteCount += 1;
-//       _isFavorited = true;
-//     }
-//   });
-// }
-// bool _active = false;
-
-// void _handleTap() {
-//   setState(() {
-//     _active = !_active;
-//   });
-// }

@@ -179,7 +179,7 @@ class _MobileState extends State<Mobile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: (isColored ? Color(0xFFf6f6f6) : Color(0xFF1F1F1F)),
+      backgroundColor: (isColored ? Color(0xFFf6f6f6) : Color(0xFF0B0D0F)),
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -190,8 +190,16 @@ class _MobileState extends State<Mobile> {
                   width: MediaQuery.of(context).size.width,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SizedBox(height: 30),
+                      IconButton(
+                        icon: (isColored ? mMoon : mSun),
+                        onPressed: () {
+                          setState(() {
+                            isColored = isColored == true ? false : true;
+                          });
+                        },
+                      ),
                       CircleAvatar(
                         backgroundColor: Colors.transparent,
                         backgroundImage: AssetImage('assets/black..jpg'),
@@ -211,37 +219,26 @@ class _MobileState extends State<Mobile> {
                         ),
                       ),
                       Text(
-                        '''\ni design and build beautiful mobile and desktop for users design\nand build beautiful''',
+                        '''i design and build beautiful mobile and desktop for users design and build beautiful''',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.varelaRound(
                           textStyle: TextStyle(
                             fontWeight: FontWeight.w100,
-                            fontSize: MediaQuery.of(context).size.width / 32,
-                            letterSpacing: 1.1,
+                            fontSize: MediaQuery.of(context).size.width / 29,
+                            letterSpacing: 0.9,
                             color: (isColored
                                 ? Color(0xFF303030)
                                 : Color(0xFFf6f6f6)),
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height / 20,
-                      ),
                       MyIcon(),
-                      SizedBox(height: 15),
-                      IconButton(
-                        icon: (isColored ? moon : sun),
-                        onPressed: () {
-                          setState(() {
-                            isColored = isColored == true ? false : true;
-                          });
-                        },
-                      ),
+                      Text('Travis-ugo'),
                       Icon(
                         Icons.keyboard_arrow_down_sharp,
-                        size: 45,
+                        size: 30,
                         color:
-                            (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
+                            (isColored ? Color(0xFF383838) : Color(0xFFf6f6f6)),
                       ),
                     ],
                   ),

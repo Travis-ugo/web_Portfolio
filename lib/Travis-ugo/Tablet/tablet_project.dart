@@ -91,8 +91,19 @@ class _ProjectsMobileDesignState extends State<ProjectsMobileDesign> {
                       MobilePin(),
                     ],
                   ),
-                  // ),
                 ],
+              ),
+            ),
+            Positioned(
+              top: 25,
+              left: MediaQuery.of(context).size.width / 2.5,
+              child: IconButton(
+                icon: (isColored ? moon : sun),
+                onPressed: () {
+                  setState(() {
+                    isColored = isColored == true ? false : true;
+                  });
+                },
               ),
             ),
             Padding(

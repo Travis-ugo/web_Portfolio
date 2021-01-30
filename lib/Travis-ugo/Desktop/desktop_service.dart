@@ -6,11 +6,16 @@ import 'package:travis_ugo/Travis-ugo/Dispatch/correction.dart';
 import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:travis_ugo/Travis-ugo/Utils/widgets.dart';
 
-class ServiceDesktop extends StatelessWidget {
+class ServiceDesktop extends StatefulWidget {
+  @override
+  _ServiceDesktopState createState() => _ServiceDesktopState();
+}
+
+class _ServiceDesktopState extends State<ServiceDesktop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: (isColored ? Color(0xFFf6f6f6) : Color(0xFF303030)),
+      backgroundColor: (isColored ? Color(0xFFf6f6f6) : Color(0xFF1F1F1F)),
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -223,6 +228,18 @@ class ServiceDesktop extends StatelessWidget {
                 SizedBox(height: MediaQuery.of(context).size.height / 3),
                 DesktopFooter()
               ],
+            ),
+          ),
+          Positioned(
+            top: 25,
+            left: MediaQuery.of(context).size.width / 3,
+            child: IconButton(
+              icon: (isColored ? moon : sun),
+              onPressed: () {
+                setState(() {
+                  isColored = isColored == true ? false : true;
+                });
+              },
             ),
           ),
           MenuResp(),

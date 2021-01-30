@@ -16,7 +16,7 @@ class _ProjectsMobileDesignState extends State<ProjectsMobileDesign> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFF0B0D0F),
+        backgroundColor: (isColored ? Color(0xFFf6f6f6) : Color(0xFF0B0D0F)),
         body: Stack(
           children: [
             SingleChildScrollView(

@@ -4,11 +4,6 @@ import 'package:travis_ugo/Travis-ugo/Mobile/home_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 
-// class HomeTablet extends StatefulWidget {
-//   @override
-//   _HomeTabletState createState() => _HomeTabletState();
-// }
-
 ScrollController scrollController;
 TextStyle largeText = GoogleFonts.varelaRound(
   textStyle: TextStyle(
@@ -18,11 +13,13 @@ TextStyle largeText = GoogleFonts.varelaRound(
   ),
 );
 
-class HomeTablet extends StatelessWidget {
+class HomeTablet extends StatefulWidget {
   @override
-  // Widget build(BuildContext context) {
+  _HomeTabletState createState() => _HomeTabletState();
+}
 
-//class _HomeTabletState extends State<HomeTablet> {
+class _HomeTabletState extends State<HomeTablet> {
+  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,6 +99,18 @@ class HomeTablet extends StatelessWidget {
                         ),
                       ],
                     ),
+                  ),
+                ),
+                Positioned(
+                  top: 25,
+                  left: MediaQuery.of(context).size.width / 3,
+                  child: IconButton(
+                    icon: (isColored ? moon : sun),
+                    onPressed: () {
+                      setState(() {
+                        isColored = isColored == true ? false : true;
+                      });
+                    },
                   ),
                 ),
                 MenuResp(),

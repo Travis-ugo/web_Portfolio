@@ -172,28 +172,28 @@ class MyIcon extends StatelessWidget {
         IconButton(
           icon: Icon(MdiIcons.email),
           color: (isColored ? Color(0xFF303030) : Color(0xFFEBEBEB)),
-          iconSize: 16,
+          iconSize: 14,
           onPressed: () async => await launch(
               Uri.parse('https://twitter.com/Travis86622225').toString()),
         ),
         IconButton(
           icon: Icon(MdiIcons.twitter),
           color: (isColored ? Color(0xFF303030) : Color(0xFFEBEBEB)),
-          iconSize: 16,
+          iconSize: 14,
           onPressed: () async => await launch(
               Uri.parse('https://twitter.com/Travis86622225').toString()),
         ),
         IconButton(
           icon: Icon(MdiIcons.github),
           color: (isColored ? Color(0xFF303030) : Color(0xFFEBEBEB)),
-          iconSize: 16,
+          iconSize: 14,
           onPressed: () async => await launch(
               Uri.parse('https://github.com/Travis-ugo').toString()),
         ),
         IconButton(
           icon: Icon(MdiIcons.linkedin),
           color: (isColored ? Color(0xFF303030) : Color(0xFFEBEBEB)),
-          iconSize: 16,
+          iconSize: 14,
           onPressed: () async => await launch(Uri.parse(
                   'https://www.linkedin.com/in/travis-okonicha-66a15b1b8/')
               .toString()),
@@ -349,7 +349,7 @@ class DesktopPin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      height: MediaQuery.of(context).size.height / 3,
+      height: MediaQuery.of(context).size.height / 2.5,
       width: MediaQuery.of(context).size.width,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -360,7 +360,7 @@ class DesktopPin extends StatelessWidget {
               textStyle: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w300,
-                color: (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
+                color: Color(0xFF303030),
               ),
             ),
           ),
@@ -370,48 +370,44 @@ class DesktopPin extends StatelessWidget {
               IconButton(
                 icon: Icon(MdiIcons.email),
                 color: Colors.black,
-                iconSize: 16,
+                iconSize: 14,
                 onPressed: () async {
                   await launch(Uri.parse('https://twitter.com/Travis86622225')
                       .toString());
                 },
               ),
-              SizedBox(height: MediaQuery.of(context).size.height / 15),
               IconButton(
                 icon: Icon(MdiIcons.twitter),
                 color: Colors.black,
-                iconSize: 16,
+                iconSize: 14,
                 onPressed: () async {
                   await launch(Uri.parse('https://twitter.com/Travis86622225')
                       .toString());
                 },
               ),
-              SizedBox(height: MediaQuery.of(context).size.height / 15),
               IconButton(
                 icon: Icon(MdiIcons.github),
                 color: Colors.black,
-                iconSize: 16,
+                iconSize: 14,
                 onPressed: () async {
                   await launch(
                       Uri.parse('https://github.com/Travis-ugo').toString());
                 },
               ),
-              SizedBox(height: MediaQuery.of(context).size.height / 15),
               IconButton(
                 icon: Icon(MdiIcons.linkedin),
                 color: Colors.black,
-                iconSize: 16,
+                iconSize: 14,
                 onPressed: () async {
                   await launch(Uri.parse(
                           'https://www.linkedin.com/in/travis-okonicha-66a15b1b8/')
                       .toString());
                 },
               ),
-              SizedBox(height: MediaQuery.of(context).size.height / 15),
               IconButton(
                 icon: Icon(MdiIcons.twitter),
                 color: Colors.black,
-                iconSize: 16,
+                iconSize: 14,
                 onPressed: () async {
                   await launch(Uri.parse('https://twitter.com/Travis86622225')
                       .toString());
@@ -419,7 +415,16 @@ class DesktopPin extends StatelessWidget {
               ),
             ],
           ),
-          Text('version 2.1'),
+          Text(
+            'version 2.1',
+            style: GoogleFonts.varelaRound(
+              textStyle: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w300,
+                color: Color(0xFF303030),
+              ),
+            ),
+          ),
           Text('. . .'),
         ],
       ),

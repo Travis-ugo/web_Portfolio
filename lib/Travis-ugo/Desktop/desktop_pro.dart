@@ -5,7 +5,12 @@ import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 import 'package:travis_ugo/Travis-ugo/Models/project_data.dart';
 
-class ProjectRiri extends StatelessWidget {
+class ProjectRiri extends StatefulWidget {
+  @override
+  _ProjectRiriState createState() => _ProjectRiriState();
+}
+
+class _ProjectRiriState extends State<ProjectRiri> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,15 +52,7 @@ class ProjectRiri extends StatelessWidget {
                 ),
 
                 SizedBox(height: MediaQuery.of(context).size.height / 2),
-                //Container(
-                // decoration: BoxDecoration(
-                //   image: DecorationImage(
-                //     image: AssetImage('assets/backdrop.jpeg'),
-                //     fit: BoxFit.fill,
-                //   ),
-                // ),
-                //color: Color(0xFF0F0F0F),
-                // child:
+
                 Column(
                   children: [
                     SizedBox(height: 26),
@@ -106,6 +103,18 @@ class ProjectRiri extends StatelessWidget {
                 ),
                 // ),
               ],
+            ),
+          ),
+          Positioned(
+            top: 25,
+            left: MediaQuery.of(context).size.width / 3,
+            child: IconButton(
+              icon: (isColored ? moon : sun),
+              onPressed: () {
+                setState(() {
+                  isColored = isColored == true ? false : true;
+                });
+              },
             ),
           ),
           MenuResp(),

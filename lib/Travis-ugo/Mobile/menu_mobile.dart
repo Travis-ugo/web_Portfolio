@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
 import 'package:travis_ugo/Travis-ugo/utils/widgets.dart';
 import 'home_mobile.dart';
@@ -32,19 +33,26 @@ class _MenuMobileState extends State<MenuMobile> {
     return Stack(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 45),
+          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              InkWell(
-                onTap: () {},
-                child: ActionsMobile(),
+              Text(
+                'Resume',
+                style: GoogleFonts.varelaRound(
+                  textStyle: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 1,
+                    color: Color(0xFF303030),
+                  ),
+                ),
               ),
               IconButton(
                 icon: Icon(
-                  CupertinoIcons.equal,
-                  size: 35,
-                  color: Colors.blue,
+                  Icons.menu,
+                  size: 22,
+                  color: (isColored ? Color(0xFF303030) : Color(0xFFf6f6f6)),
                 ),
                 onPressed: () {
                   open();
@@ -63,7 +71,7 @@ class _MenuMobileState extends State<MenuMobile> {
               duration: Duration(milliseconds: 250),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -93,10 +101,14 @@ class _MenuMobileState extends State<MenuMobile> {
                       open();
                     },
                     child: Text(
-                      'INTRO',
-                      style: TextStyle(
-                        fontSize: 18 - suplus,
-                        fontWeight: FontWeight.w500,
+                      'WHO',
+                      style: GoogleFonts.varelaRound(
+                        textStyle: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 1,
+                          color: Color(0xFF303030),
+                        ),
                       ),
                     ),
                   ),
@@ -105,14 +117,18 @@ class _MenuMobileState extends State<MenuMobile> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, '/mobileproject');
+                      Navigator.pushNamed(context, '/projects');
                       open();
                     },
                     child: Text(
                       'WORK',
-                      style: TextStyle(
-                        fontSize: 18 - suplus,
-                        fontWeight: FontWeight.w500,
+                      style: GoogleFonts.varelaRound(
+                        textStyle: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 1,
+                          color: Color(0xFF303030),
+                        ),
                       ),
                     ),
                   ),
@@ -121,31 +137,22 @@ class _MenuMobileState extends State<MenuMobile> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, '/mobilefooter');
+                      Navigator.pushNamed(context, '/service');
                       open();
                     },
                     child: Text(
-                      'WHO',
-                      style: TextStyle(
-                        fontSize: 18 - suplus,
-                        fontWeight: FontWeight.w500,
+                      'WHAT',
+                      style: GoogleFonts.varelaRound(
+                        textStyle: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 1,
+                            color: Color(0xFF303030)),
                       ),
                     ),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height / 20,
-                  ),
-                  GestureDetector(
-                    child: Text(
-                      'RESUME',
-                      style: TextStyle(
-                        fontSize: 18 - suplus,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 10,
                   ),
                   Container(
                     height:
@@ -157,10 +164,12 @@ class _MenuMobileState extends State<MenuMobile> {
                       children: [
                         Text(
                           'GET IN TOUCH',
-                          style: TextStyle(
-                            fontSize: 10 - suplus,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.black,
+                          style: GoogleFonts.varelaRound(
+                            textStyle: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 1,
+                                color: Color(0xFF303030)),
                           ),
                         ),
                         SizedBox(height: 5),

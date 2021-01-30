@@ -12,7 +12,7 @@ class ServiceMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: (isColored ? Color(0xFFf6f6f6) : Color(0xFF303030)),
+      backgroundColor: (isColored ? Color(0xFFf6f6f6) : Color(0xFF0B0D0F)),
       body: Stack(
         children: [
           SingleChildScrollView(

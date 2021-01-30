@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:travis_ugo/Travis-ugo/Desktop/home_desktop.dart';
 import 'package:travis_ugo/Travis-ugo/Mobile/home_mobile.dart';
 import 'package:travis_ugo/Travis-ugo/Utils/pallets.dart';
@@ -34,6 +35,18 @@ class _HomeDesktopState extends State<HomeDesktop> {
           children: [
             Stack(
               children: [
+                Positioned(
+                  top: 25,
+                  left: MediaQuery.of(context).size.width / 3,
+                  child: IconButton(
+                    icon: (isColored ? moon : sun),
+                    onPressed: () {
+                      setState(() {
+                        isColored = isColored == true ? false : true;
+                      });
+                    },
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 80, top: 50),
                   child: Container(
@@ -87,15 +100,6 @@ class _HomeDesktopState extends State<HomeDesktop> {
                                       MediaQuery.of(context).size.height / 20,
                                 ),
                                 MyIcon(),
-                                IconButton(
-                                  icon: (isColored ? moon : sun),
-                                  onPressed: () {
-                                    setState(() {
-                                      isColored =
-                                          isColored == true ? false : true;
-                                    });
-                                  },
-                                ),
                                 SizedBox(height: 15),
                               ],
                             ),
@@ -307,7 +311,8 @@ class _MenuRespState extends State<MenuResp> {
                 color: Colors.white,
                 duration: Duration(milliseconds: 250),
                 child: Padding(
-                  padding: const EdgeInsets.all(30.0),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -329,21 +334,22 @@ class _MenuRespState extends State<MenuResp> {
                         ],
                       ),
                       SizedBox(height: MediaQuery.of(context).size.height / 50),
-                      Text(
-                        'Resume',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: textColor,
+                      GestureDetector(
+                        onTap: () {},
+                        child: Text(
+                          'Resume',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: textColor,
+                          ),
                         ),
                       ),
-
                       Text(
                         'Contact Me',
                         style: TextStyle(
                           color: Colors.black,
                         ),
                       ),
-                      // SizedBox(height: 10),
                       Center(
                         child: Text('Thrinitee@gmail.com', style: largeText),
                       ),
